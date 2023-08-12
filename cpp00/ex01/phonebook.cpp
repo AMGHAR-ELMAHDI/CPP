@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 20:02:32 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/12 17:26:36 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/13 00:24:52 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,15 @@ int   PhoneBook::checkDigit(std::string str)
     return(0);
 }
 
+void    getCorrectLenght(std::string *str)
+{
+    if(str->length() > 10)
+    {
+        *str = str->substr(0, 9); 
+        *str = *str + ".";
+    }
+}
+
 int   PhoneBook::add(PhoneBook *phone, Contact *ctt)
 {
     std::string str;
@@ -46,36 +55,61 @@ int   PhoneBook::add(PhoneBook *phone, Contact *ctt)
 
     std::cout << "Enter a first name: ";
     std::getline(std::cin, str);
+    if(std::cin.eof())
+        return(std::cout << "\n" ,1);
     if (!str.empty() && phone->checkWhiteSpace(str))
+    {
+        getCorrectLenght(&str);
         ctt->setFirstName(str);
+    }
     else
         return(std::cout << "First name cannot be empty. Please try again." << std::endl, 1);
 
     std::cout << "Enter a last name: ";
     std::getline(std::cin, str);
+    if(std::cin.eof())
+        return(std::cout << "\n" ,1);
     if (!str.empty() && phone->checkWhiteSpace(str))
+    {
+        getCorrectLenght(&str);
         ctt->setlastName(str);
+    }
     else
         return (std::cout << "Last name cannot be empty. Please try again." << std::endl, 1);
 
     std::cout << "Enter a nickname: ";
     std::getline(std::cin, str);
+    if(std::cin.eof())
+        return(std::cout << "\n" ,1);
     if (!str.empty() && phone->checkWhiteSpace(str))
+    {
+        getCorrectLenght(&str);   
         ctt->setnickname(str);
+    }
     else
         return (std::cout << "Nickname cannot be empty. Please try again." << std::endl, 1);
 
     std::cout << "Enter a phone number: ";
     std::getline(std::cin, str);
+    if(std::cin.eof())
+        return(std::cout << "\n" ,1);
     if (!str.empty() && phone->checkWhiteSpace(str) && !phone->checkDigit(str))
+    {
+        getCorrectLenght(&str);
         ctt->setphoneNumber(str);
+    }
     else
         return (std::cout << "Phone number is empty or the input is not a number Please try again." << std::endl, 1);
 
     std::cout << "Enter a darkest secret: ";
     std::getline(std::cin, str);
+    if(std::cin.eof())
+        return(std::cout << "\n" ,1);
     if (!str.empty() && phone->checkWhiteSpace(str))
+    {
+        getCorrectLenght(&str);
         ctt->setdarkestSecret(str);
+    }
     else
         return (std::cout << "Darkest secret cannot be empty. Please try again." << std::endl, 1);
 
@@ -101,18 +135,21 @@ int   PhoneBook::search(PhoneBook *phone)
     
     for (size_t i = 0; i < 8; i++)
     {
-        std::cout << "|" << std::setw(10)  << i + 1 << "|"
-        << std::setw(10) << phone->getarr(i).getFirstName() << "|"
-        << std::setw(10) << phone->getarr(i).getlastName()  << "|"
-        << std::setw(10) << phone->getarr(i).getnickname() << "|\n";
-        std::cout << "---------------------------------------------\n";
+        if((phone->getarr(i).getFirstName()).length() > 0)
+        {
+            std::cout << "|" << std::setw(10)  << i + 1 << "|"
+            << std::setw(10) << phone->getarr(i).getFirstName() << "|"
+            << std::setw(10) << phone->getarr(i).getlastName()  << "|"
+            << std::setw(10) << phone->getarr(i).getnickname() << "|\n";
+            std::cout << "---------------------------------------------\n";
+        }
     }
     
     std::cout << "Enter the index of wanted entry: ";
     std::getline(std::cin, str);
     if (!str.empty() && phone->checkWhiteSpace(str) && !phone->checkDigit(str))
     {
-       index = stoi(str);
+       index = std::atoi(str.c_str());
        if(index >= 1 && index <= 8)
        {
             index--;

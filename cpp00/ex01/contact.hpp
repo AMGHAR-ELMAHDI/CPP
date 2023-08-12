@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 17:03:24 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/11 23:44:12 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/12 18:30:35 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class  Contact
     public:
 
     void setFirstName(std::string str);
-    std::string getFirstName(void);
+    std::string getFirstName(void);//add const
 
     void setlastName(std::string str);
     std::string getlastName(void);

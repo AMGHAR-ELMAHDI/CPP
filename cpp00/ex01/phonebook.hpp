@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 17:03:24 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/12 17:13:47 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/12 18:49:57 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 
 #include "contact.hpp"
 #include <iostream>
+#include <cstdlib>
 #include <iomanip>
 
 class  PhoneBook
 {
     private:
         Contact  arr[8];
-        
+
     public:
         void setarr(Contact oo, int index);
         Contact getarr(int index);

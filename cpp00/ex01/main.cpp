@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:23:54 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/12 17:15:30 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/12 18:59:30 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int main()
     
     while (std::getline(std::cin, inputLine))
     {
+        if(std::cin.eof())
+            break;
         if (inputLine == "ADD")
         {
             if (phone.add(&phone, &ctt))
