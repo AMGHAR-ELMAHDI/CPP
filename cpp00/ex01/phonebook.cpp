@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 20:02:32 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/12 16:52:48 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/12 17:26:36 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,16 +86,46 @@ int   PhoneBook::add(PhoneBook *phone, Contact *ctt)
     return (0);
 }
 
-void   PhoneBook::search(PhoneBook *phone)
+int   PhoneBook::search(PhoneBook *phone)
 {
+    std::string str;
+    int         index;
+
+    std::cout 
+    << "---------------------------------------------\n"
+    << "|" << std::setw(10) << "index"
+    << "|" << std::setw(10) << "first name"
+    << "|" << std::setw(10) << "last name"
+    << "|" << std::setw(10) << "nickname" << "|\n" 
+    << "---------------------------------------------\n";
+    
     for (size_t i = 0; i < 8; i++)
     {
-        std::cout 
-        << "---------------------------------------------\n"
-        << "|" << std::setw(10)  << i + 1 << "|"
+        std::cout << "|" << std::setw(10)  << i + 1 << "|"
         << std::setw(10) << phone->getarr(i).getFirstName() << "|"
         << std::setw(10) << phone->getarr(i).getlastName()  << "|"
         << std::setw(10) << phone->getarr(i).getnickname() << "|\n";
+        std::cout << "---------------------------------------------\n";
     }
-    std::cout << "---------------------------------------------\n";
+    
+    std::cout << "Enter the index of wanted entry: ";
+    std::getline(std::cin, str);
+    if (!str.empty() && phone->checkWhiteSpace(str) && !phone->checkDigit(str))
+    {
+       index = stoi(str);
+       if(index >= 1 && index <= 8)
+       {
+            index--;
+            std::cout << "first name:\t" <<phone->getarr(index).getFirstName() << "\n" 
+            << "Last name:\t" << phone->getarr(index).getlastName() << "\n" 
+            << "Phone number:\t" << phone->getarr(index).getphoneNumber() << "\n" 
+            << "Darkest secret:\t" << phone->getarr(index).getdarkestSecret() << "\n" 
+            << "Nickname:\t" << phone->getarr(index).getnickname() << "\n";
+       }
+       else
+        return (std::cout << "Index range should be between 1 and 8, Please try again." << std::endl, 1);
+    }
+    else
+        return (std::cout << "Index is empty or its not a number Please try again." << std::endl, 1);
+    return(0);
 }
