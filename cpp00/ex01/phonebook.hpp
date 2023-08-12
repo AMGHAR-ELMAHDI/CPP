@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 17:03:24 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/12 01:32:12 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/12 16:41:34 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "contact.hpp"
 #include <iostream>
+#include <iomanip>
 
 class  PhoneBook
 {
@@ -24,8 +25,10 @@ class  PhoneBook
     public:
         void setarr(Contact oo, int index);
         Contact getarr(int index);
-        void add(Contact o, PhoneBook phone);
-    
+        int add(PhoneBook *phone, Contact *ctt);
+        void search(PhoneBook *phone);
+        int checkWhiteSpace(std::string str);
+        int checkDigit(std::string str);
     //ADD
     //SEARCH
     //EXIT
