@@ -11,8 +11,12 @@
 /* ************************************************************************** */
 
 #include<iostream>
+#include "Zombie.hpp"
 
 int main()
 {
-    return 0;
+    randomChump("BIG NIGGA");
+//    Zombie *hh =  newZombie("HHHHGJSAFD\n");
+//    hh->announce();
+//    delete hh;
 }

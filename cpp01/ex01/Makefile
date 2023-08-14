@@ -20,8 +20,7 @@ NAME = exec
 
 SRC = main.cpp\
 		Zombie.cpp\
-		randomChump.cpp\
-		newZombie.cpp\
+		zombieHorde.cpp
 		
 
 all: $(NAME)

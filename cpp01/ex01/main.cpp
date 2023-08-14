@@ -1,12 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 02:55:33 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/13 02:55:34 by eamghar          ###   ########.fr       */
+/*   Created: 2023/08/10 18:23:54 by eamghar           #+#    #+#             */
+/*   Updated: 2023/08/13 02:54:37 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Zombie.hpp"
+
+int main()
+{
+    int     n = 5;
+    Zombie *arr = zombieHorde(n, "Cheesy");
+    for (int i = 0; i < n; i++)
+    {
+        arr[i].announce();
+    }
+    delete[] arr;
+}
