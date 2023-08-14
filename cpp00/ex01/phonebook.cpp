@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 20:02:32 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/13 00:24:52 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/13 19:51:28 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,9 +155,9 @@ int   PhoneBook::search(PhoneBook *phone)
             index--;
             std::cout << "first name:\t" <<phone->getarr(index).getFirstName() << "\n" 
             << "Last name:\t" << phone->getarr(index).getlastName() << "\n" 
+            << "Nickname:\t" << phone->getarr(index).getnickname() << "\n"
             << "Phone number:\t" << phone->getarr(index).getphoneNumber() << "\n" 
-            << "Darkest secret:\t" << phone->getarr(index).getdarkestSecret() << "\n" 
-            << "Nickname:\t" << phone->getarr(index).getnickname() << "\n";
+            << "Darkest secret:\t" << phone->getarr(index).getdarkestSecret() << "\n";
        }
        else
         return (std::cout << "Index range should be between 1 and 8, Please try again." << std::endl, 1);
