@@ -1,35 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/13 02:55:43 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/15 16:37:48 by eamghar          ###   ########.fr       */
+/*   Created: 2023/08/10 18:23:54 by eamghar           #+#    #+#             */
+/*   Updated: 2023/08/15 16:48:15 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef ZOMBIE
-#define ZOMBIE
 
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
 
-class Zombie
+int main()
 {
-    private:
-        std::string name;
-    public:
-        Zombie(std::string name);
-        Zombie();
-        ~Zombie();
-        void    setName(std::string name);
-        void    announce( void );
-};
+    std::string     new_str;
+    std::string     *stringPTR = NULL;
+    std::string     stringREF = NULL;
 
-Zombie* zombieHorde( int N, std::string name);
+    new_str = "HI THIS BRAIN";
 
-
-#endif
+    stringPTR = &new_str;
+    *stringREF = new_str;
+    std::cout << new_str << "\t"<< stringPTR << "\t" << stringREF<< std::endl; 
+}
