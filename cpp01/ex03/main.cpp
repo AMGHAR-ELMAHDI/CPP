@@ -6,27 +6,27 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:23:54 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/16 05:08:20 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/16 18:46:21 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstdlib>
-#include <iomanip>
-
-// void       change(std::string *str, std::string &st)
-// {
-//     std::cout << &str << "\n" << &st << "\n";
-// }
+#include "Weapon.hpp"
 
 int main()
 {
-    std::string     new_str;
-    new_str = "HI THIS BRAIN";
-
-    std::string     &stringREF = new_str;
-    std::string     *stringPTR = &new_str;
-    std::cout << &new_str << "\n" << stringPTR << "\n" << &stringREF << std::endl; 
-    std::cout << new_str << "\n" << *stringPTR << "\n" << stringREF << std::endl;
-    // change(stringPTR, stringREF);
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanA bob("Bob", club);
+        bob.attack();
+        club.setType("some other type of club");
+        bob.attack();
+    }
+    {
+        Weapon club = Weapon("crude spiked club");
+        HumanB jim("Jim");
+        jim.setWeapon(club);
+        jim.attack();
+        club.setType("some other type of club");
+        jim.attack();
+    }
 }
