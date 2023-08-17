@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 05:34:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/17 01:18:50 by eamghar          ###   ########.fr       */
+/*   Created: 2023/08/16 23:32:55 by eamghar           #+#    #+#             */
+/*   Updated: 2023/08/17 02:27:35 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON
-#define WEAPON
+#ifndef HUMANB
+#define HUMANB
 
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
+#include "Weapon.hpp"
 
-class Weapon
+
+class HumanB
 {
     private:
-        std::string type;
-
+        std::string name;
+        Weapon      *weapon;
     public:
-        Weapon();
-        Weapon(std::string newType);
-        ~Weapon();
-        std::string const &getType(void);
-        void    setType(std::string new_type);
+        // HumanB();
+        HumanB(std::string name);
+        ~HumanB();
+        void    attack(void);
+        void    setName(std::string newName);
+        void    setWeapon(std::string *wp);
+        std::string getName(void);
 };
+
+
 
 
 #endif

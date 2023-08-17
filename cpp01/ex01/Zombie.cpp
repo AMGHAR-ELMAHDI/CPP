@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 02:55:35 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/15 16:37:54 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/16 23:08:40 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +29,4 @@ Zombie::~Zombie()
 }
 
 Zombie::Zombie(std::string name) : name(name) {};
+
