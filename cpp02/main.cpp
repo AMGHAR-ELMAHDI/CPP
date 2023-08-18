@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 05:32:27 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/17 21:36:50 by eamghar          ###   ########.fr       */
+/*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
+/*   Updated: 2023/08/18 04:31:35 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "Fixed.hpp"
 
-Weapon::Weapon() {}
-
-Weapon::Weapon(std::string newType)
+int main(int ac, char **av)
 {
-    this->setType(newType);
-    std::cout << this->type << " Constructor called" << std::endl;
-}
-
-Weapon::~Weapon()
-{
-    std::cout << this->type << " Destructor called" << std::endl;
-}
-
-std::string const &Weapon::getType(void)
-{
-    return this->type;
-}
-
-void Weapon::setType(std::string new_type)
-{
-    this->type = new_type;
+    
 }

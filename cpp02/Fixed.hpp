@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/16 05:32:27 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/17 21:36:50 by eamghar          ###   ########.fr       */
+/*   Created: 2023/08/18 04:31:29 by eamghar           #+#    #+#             */
+/*   Updated: 2023/08/18 04:49:22 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#ifndef FIXED
+#define FIXED
 
-Weapon::Weapon() {}
+#include<iostream>
+#include<string>
+#include<fstream>
 
-Weapon::Weapon(std::string newType)
+class Fixed
 {
-    this->setType(newType);
-    std::cout << this->type << " Constructor called" << std::endl;
+    private:
+        
+    public:
+        Fixed(/* args */);
+        ~Fixed();
+};
+
+Fixed::Fixed(/* args */)
+{
 }
 
-Weapon::~Weapon()
+Fixed::~Fixed()
 {
-    std::cout << this->type << " Destructor called" << std::endl;
 }
 
-std::string const &Weapon::getType(void)
-{
-    return this->type;
-}
 
-void Weapon::setType(std::string new_type)
-{
-    this->type = new_type;
-}
+#endif
