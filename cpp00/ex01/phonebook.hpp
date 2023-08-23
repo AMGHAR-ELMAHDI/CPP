@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 17:03:24 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/12 18:49:57 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/23 15:44:21 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,6 @@ class  PhoneBook
         int search(PhoneBook *phone);
         int checkWhiteSpace(std::string str);
         int checkDigit(std::string str);
-    //ADD
-    //SEARCH
-    //EXIT
 };
 
 

@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 20:02:32 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/13 19:55:39 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/23 15:49:35 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,3 +63,54 @@ std::string Contact::getphoneNumber(void)
     return(this->phoneNumber);
 }
 
+//-----------------------------------------//
+
+void Contact::setFirstNameFull(std::string str)
+{
+    this->firstNameFull = str;
+}
+
+std::string Contact::getFirstNameFull(void)
+{
+    return(this->firstNameFull);
+}
+
+void Contact::setlastNameFull(std::string str)
+{
+    this->lastNameFull = str;
+}
+
+std::string Contact::getlastNameFull(void)
+{
+    return(this->lastNameFull);
+}
+
+void Contact::setnicknameFull(std::string str)
+{
+    this->nicknameFull = str;
+}
+
+std::string Contact::getnicknameFull(void)
+{
+    return(this->nicknameFull);
+}
+
+void Contact::setdarkestSecretFull(std::string str)
+{
+    this->darkestSecretFull = str;
+}
+
+std::string Contact::getdarkestSecretFull(void)
+{
+    return(this->darkestSecretFull);
+}
+
+void Contact::setphoneNumberFull(std::string str)
+{
+    this->phoneNumberFull = str;
+}
+
+std::string Contact::getphoneNumberFull(void)
+{
+    return(this->phoneNumberFull);
+}

@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 20:02:32 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/18 02:58:06 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/23 15:52:46 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int   PhoneBook::add(PhoneBook *phone, Contact *ctt)
         return(std::cout << "\n" ,1);
     if (!str.empty() && phone->checkWhiteSpace(str))
     {
+        ctt->setFirstNameFull(str);
         getCorrectLenght(&str);
         ctt->setFirstName(str);
     }
@@ -71,6 +72,7 @@ int   PhoneBook::add(PhoneBook *phone, Contact *ctt)
         return(std::cout << "\n" ,1);
     if (!str.empty() && phone->checkWhiteSpace(str))
     {
+        ctt->setlastNameFull(str);
         getCorrectLenght(&str);
         ctt->setlastName(str);
     }
@@ -83,6 +85,7 @@ int   PhoneBook::add(PhoneBook *phone, Contact *ctt)
         return(std::cout << "\n" ,1);
     if (!str.empty() && phone->checkWhiteSpace(str))
     {
+        ctt->setnicknameFull(str);
         getCorrectLenght(&str);   
         ctt->setnickname(str);
     }
@@ -95,6 +98,7 @@ int   PhoneBook::add(PhoneBook *phone, Contact *ctt)
         return(std::cout << "\n" ,1);
     if (!str.empty() && phone->checkWhiteSpace(str) && !phone->checkDigit(str))
     {
+        ctt->setphoneNumberFull(str);
         getCorrectLenght(&str);
         ctt->setphoneNumber(str);
     }
@@ -107,6 +111,7 @@ int   PhoneBook::add(PhoneBook *phone, Contact *ctt)
         return(std::cout << "\n" ,1);
     if (!str.empty() && phone->checkWhiteSpace(str))
     {
+        ctt->setdarkestSecretFull(str);
         getCorrectLenght(&str);
         ctt->setdarkestSecret(str);
     }
@@ -153,11 +158,11 @@ int   PhoneBook::search(PhoneBook *phone)
        if(index >= 1 && index <= 8)
        {
             index--;
-            std::cout << "first name:\t" <<phone->getarr(index).getFirstName() << "\n" 
-            << "Last name:\t" << phone->getarr(index).getlastName() << "\n" 
-            << "Nickname:\t" << phone->getarr(index).getnickname() << "\n"
-            << "Phone number:\t" << phone->getarr(index).getphoneNumber() << "\n" 
-            << "Darkest secret:\t" << phone->getarr(index).getdarkestSecret() << "\n";
+            std::cout << "first name:\t" <<phone->getarr(index).getFirstNameFull() << "\n" 
+            << "Last name:\t" << phone->getarr(index).getlastNameFull() << "\n" 
+            << "Nickname:\t" << phone->getarr(index).getnicknameFull() << "\n"
+            << "Phone number:\t" << phone->getarr(index).getphoneNumberFull() << "\n" 
+            << "Darkest secret:\t" << phone->getarr(index).getdarkestSecretFull() << "\n";
        }
        else
         return (std::cout << "Index range should be between 1 and 8, Please try again." << std::endl, 1);

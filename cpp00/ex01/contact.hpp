@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 17:03:24 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/13 02:45:21 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/23 15:48:19 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,21 @@
 class  Contact
 {
     private:
-
-    std::string firstName;
-    std::string lastName;
-    std::string nickname;
-    std::string darkestSecret;
-    std::string phoneNumber;
+        std::string firstName;
+        std::string lastName;
+        std::string nickname;
+        std::string darkestSecret;
+        std::string phoneNumber;
+        
+        std::string firstNameFull;
+        std::string lastNameFull;
+        std::string nicknameFull;
+        std::string darkestSecretFull;
+        std::string phoneNumberFull;
 
     public:
-
     void setFirstName(std::string str);
-    std::string getFirstName(void);//add const
+    std::string getFirstName(void);
 
     void setlastName(std::string str);
     std::string getlastName(void);
@@ -42,6 +46,21 @@ class  Contact
     
     void setphoneNumber(std::string str);
     std::string getphoneNumber(void);
+    //-----------------------------------------//
+    void setFirstNameFull(std::string str);
+    std::string getFirstNameFull(void);
+
+    void setlastNameFull(std::string str);
+    std::string getlastNameFull(void);
+
+    void setnicknameFull(std::string str);
+    std::string getnicknameFull(void);
+
+    void setdarkestSecretFull(std::string str);
+    std::string getdarkestSecretFull(void);
+    
+    void setphoneNumberFull(std::string str);
+    std::string getphoneNumberFull(void);
 };
 
 
