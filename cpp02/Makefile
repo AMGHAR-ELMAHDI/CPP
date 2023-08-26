@@ -19,6 +19,7 @@ FRM = rm -rf
 NAME = exec
 
 SRC =	main.cpp\
+		Fixed.cpp\
 		
 
 all: $(NAME)

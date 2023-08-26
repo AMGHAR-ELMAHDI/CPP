@@ -20,19 +20,14 @@
 class Fixed
 {
     private:
-        
+        int                 num;
+        static const int    fractionalBits;
     public:
-        Fixed(/* args */);
+        Fixed();
         ~Fixed();
+        int getRawBits( void ) const;
+        void setRawBits( int const raw );
 };
-
-Fixed::Fixed(/* args */)
-{
-}
-
-Fixed::~Fixed()
-{
-}
 
 
 #endif
