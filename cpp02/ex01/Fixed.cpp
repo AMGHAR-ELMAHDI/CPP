@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:32:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/27 21:54:23 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/28 00:51:02 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,14 @@ Fixed::Fixed()
 
 Fixed::Fixed(const int n)
 {
-    std::cout << "Constant integer Constructor Called " << std::endl; 
-    this->num = 0;
+    std::cout << "Int Constructor Called " << std::endl; 
     this->num = n << fractionalBits;
 }
 
 Fixed::Fixed(const float n)
 {
-    std::cout << "Constant floating-point number Constructor Called " << std::endl; 
-    num = (int)roundf(n * pow(2, fractionalBits));
+    std::cout << "Float Constructor Called " << std::endl; 
+    this->num = roundf( n * ( 1 << fractionalBits ));
 }
 
 Fixed::Fixed(const Fixed &obj)
@@ -41,18 +40,18 @@ Fixed::Fixed(const Fixed &obj)
 
 Fixed::~Fixed()
 {
-    std::cout << "Default Destructor Called " << std::endl;
+    std::cout << "Destructor Called " << std::endl;
 }
 
 int Fixed::getRawBits( void ) const
 {
-    std::cout << "getRawBits member function called " << std::endl;
+    std::cout << "GetRawBits member function called " << std::endl;
     return(this->num);
 }
 
 void Fixed::setRawBits( int const raw )
 {
-    std::cout << "setRawBits member function called " << std::endl; 
+    std::cout << "SetRawBits member function called " << std::endl; 
     this->num = raw;
 };
 
@@ -72,7 +71,6 @@ float Fixed::toFloat( void ) const
     return(ret);
 };
 
-
 int Fixed::toInt( void ) const
 {
     float ret;
@@ -81,8 +79,8 @@ int Fixed::toInt( void ) const
     return(ret);
 };
 
-std::ostream    &operator<<(std::ostream& os, const Fixed& dt)
+std::ostream    &operator<<(std::ostream &os, Fixed const &dt)
 {
-    os << dt.getRawBits();
+    os << dt.toFloat();
     return os;
 }

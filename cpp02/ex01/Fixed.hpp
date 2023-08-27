@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:31:29 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/27 21:51:02 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/28 00:47:12 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ class Fixed
         int toInt( void ) const;
 };
 std::ostream &operator<<(std::ostream &os, const Fixed &dt);
-
 
 #endif
