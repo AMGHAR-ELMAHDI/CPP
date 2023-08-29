@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:32:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/29 00:24:08 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/29 04:10:54 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -181,4 +181,32 @@ Fixed &Fixed::operator--(int)
 {
     this->num--;
     return *this;
+}
+
+const Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a.num < b.num)
+		return a;
+	return b;
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+{
+	if (a.num < b.num)
+		return a;
+	return b;
+}
+
+const Fixed& Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a.num > b.num)
+		return a;
+	return b;
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (a.num > b.num)
+		return a;
+	return b;
 }
