@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/17 19:48:36 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/28 00:00:11 by eamghar          ###   ########.fr       */
+/*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
+/*   Updated: 2023/08/30 18:57:58 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL
-#define HARL
+#include "ScavTrap.hpp"
 
-#include <iostream>
-#include <string>
-
-class Harl
+int main( void )
 {
-    private:
-        void debug(void);
-        void info(void);
-        void warning(void);
-        void error(void);
-    public:
-        Harl();
-        ~Harl();
-        void complain(std::string level);
-};
-
-
-#endif
+    ScavTrap    Scav("Cheesy");
+    Scav.attack("Dumbass1");
+    Scav.takeDamage(2);
+    std::cout << "first  " << Scav.getHitPoints() << std::endl;
+    Scav.beRepaired(5);
+    std::cout << "second  " << Scav.getHitPoints() << std::endl;
+    return 0;
+}

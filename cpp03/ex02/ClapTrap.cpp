@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:32:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/30 17:27:23 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/30 21:03:32 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ ClapTrap::ClapTrap(const ClapTrap &obj)
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Default Destructor Called" << std::endl;
+    std::cout << "Destructor Called" << std::endl;
 }
 
 void ClapTrap::attack(const std::string& target)
