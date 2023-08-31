@@ -10,11 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main( void )
 {
-    ScavTrap    Scav("Cheesy");
+    FragTrap    Scav("Cheesy");
     Scav.attack("Dumbass1");
     Scav.takeDamage(2);
     std::cout << "first  " << Scav.getHitPoints() << std::endl;

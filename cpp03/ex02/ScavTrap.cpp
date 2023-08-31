@@ -28,11 +28,11 @@ ScavTrap::~ScavTrap()
     std::cout << "ScavTrap Default Destructor Called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &obj)
-{
-   std::cout << "ScavTrap Copy constructor Called " << std::endl;
-   *this = obj;
-}
+// ScavTrap::ScavTrap(const ScavTrap &obj)
+// {
+//    std::cout << "ScavTrap Copy constructor Called " << std::endl;
+//    *this = obj;
+// }
 
 void ScavTrap::guardGate()
 {
