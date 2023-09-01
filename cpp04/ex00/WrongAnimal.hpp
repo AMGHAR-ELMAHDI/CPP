@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:36:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/01 23:43:20 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/01 23:44:18 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,5 @@ class WrongAnimal
         void setType(std::string newType);
         void makeSound(void)const;
 };
-
-
 
 #endif
