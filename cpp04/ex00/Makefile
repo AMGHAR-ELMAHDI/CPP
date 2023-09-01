@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/08/30 15:46:40 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/01 21:58:01 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ FRM = rm -rf
 NAME = exec
 
 SRC =	main.cpp\
-		ClapTrap.cpp\
+		Animal.cpp\
+		Dog.cpp\
+		Cat.cpp\
 		
 
 all: $(NAME)

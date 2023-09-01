@@ -1,51 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:44:55 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/01 23:35:20 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/01 23:35:41 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
+#include "Dog.hpp"
 
-Animal::Animal()
+Dog::Dog()
 {
-    std::cout << "Animal Default Constructor Called" << std::endl;
-    this->type = "Animal";
+    std::cout << "Dog Default Constructor Called" << std::endl;
+    this->type = "Dog";
 }
 
-Animal::Animal(std::string newType)
+Dog::Dog(std::string newType)
 {
-    std::cout << "Animal Constructor Called" << std::endl;
+    std::cout << "Dog Constructor Called" << std::endl;
     this->type = newType;
 }
 
-Animal::Animal(const Animal &obj)
+Dog::Dog(const Dog &obj)
 {
-    std::cout << "Animal Copy Constructor Called" << std::endl;
+    std::cout << "Dog Copy Constructor Called" << std::endl;
     *this = obj;
 }
 
-Animal::~Animal()
+Dog::~Dog()
 {
-    std::cout << "Animal Destructor Called" << std::endl;
+    std::cout << "Dog Destructor Called" << std::endl;
 }
 
-std::string Animal::getType(void)const
+void Dog::makeSound()const
 {
-    return(this->type);
-}
-
-void    Animal::setType(std::string newType)
-{
-    this->type = newType;
-}
-
-void Animal::makeSound(void)const
-{
-    std::cout << "Random Animal Sounds" << std::endl;
+    std::cout << "Bark Bark Bark..." << std::endl;
 }
