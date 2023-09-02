@@ -6,26 +6,24 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/09/02 21:40:12 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/02 21:36:55 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = c++
+CC = zabi
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=zabi98
 
 FRM = rm -rf
 
 NAME = exec
 
 SRC =	main.cpp\
-		Zombie.cpp\
-		randomChump.cpp\
-		newZombie.cpp\
 		
+
 all: $(NAME)
 
-$(NAME): $(SRC) Zombie.hpp
+$(NAME): $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:

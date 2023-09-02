@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 02:55:35 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/15 16:36:35 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/02 21:43:42 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,24 @@
 
 void Zombie::announce( void )
 {
-    std::cout << this->name << " BraiiiiiiinnnzzzZ...\n";
+    std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
 void    Zombie::setName(std::string name)
 {
     this->name = name;
 }
+
+std::string  Zombie::getName()
+{
+    return(this->name);
+}
+
 Zombie::Zombie() {};
 
 Zombie::~Zombie()
 {
-    std::cout << this->name << " Destructor called\n";       
+    std::cout << this->name << " Destructor called" << std::endl;       
 }
 
 Zombie::Zombie(std::string name) : name(name) {};

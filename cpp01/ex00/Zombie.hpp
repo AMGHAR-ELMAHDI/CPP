@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 02:55:43 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/15 16:35:24 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/02 21:41:20 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Zombie
         Zombie();
         ~Zombie();
         void    setName(std::string name);
+        std::string getName();
         void    announce( void );
 };
 
