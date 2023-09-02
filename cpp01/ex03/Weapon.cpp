@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 05:32:27 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/17 21:36:50 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/02 23:01:34 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ Weapon::Weapon() {}
 Weapon::Weapon(std::string newType)
 {
     this->setType(newType);
-    std::cout << this->type << " Constructor called" << std::endl;
+    std::cout << this->type << " Weapon Constructor called" << std::endl;
 }
 
 Weapon::~Weapon()
 {
-    std::cout << this->type << " Destructor called" << std::endl;
+    std::cout << this->type << " Weapon Destructor called" << std::endl;
 }
 
 std::string const &Weapon::getType(void)

@@ -6,14 +6,14 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 19:00:12 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/02 05:09:03 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/02 23:01:58 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 #include "Weapon.hpp"
 
-// HumanA::HumanA() {};
+HumanA::HumanA() {};
 
 HumanA::~HumanA()
 {

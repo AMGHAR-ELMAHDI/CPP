@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/08/17 02:22:21 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/02 22:57:08 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,10 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 FRM = rm -rf
 
 NAME = exec
+
+HEADER =	HumanA.hpp\
+			HumanB.hpp\
+			Weapon.hpp\
 
 SRC =	main.cpp\
 		HumanA.cpp\
