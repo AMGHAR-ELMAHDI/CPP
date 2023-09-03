@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:23:54 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/02 22:53:14 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 02:22:19 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 #include <cstdlib>
 #include <iomanip>
 
-// void       change(std::string *str, std::string &st)
-// {
-//     std::cout << &str << "\n" << &st << "\n";
-// }
+void       change(std::string *str, std::string &st)
+{
+    std::cout << "inside change function : "<< &str << " | " << &st << "\n";
+}
 
 int main()
 {
@@ -35,5 +35,5 @@ int main()
     std::cout << new_str << std::endl;
     std::cout << *stringPTR << std::endl;
     std::cout << stringREF << std::endl;
-    // change(stringPTR, stringREF);
+    change(stringPTR, stringREF);
 }

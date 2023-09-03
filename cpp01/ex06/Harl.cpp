@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:34 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/17 20:03:35 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 02:40:41 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,9 @@ void Harl::complain(std::string level)
             this->warning();
         case 3:
             this->error();
+            break;
         default:
+            std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
             break;
     }
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/03 00:03:44 by eamghar           #+#    #+#             */
+/*   Updated: 2023/09/03 00:12:26 by eamghar          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include<iostream>
 #include<string>
 #include<fstream>
@@ -7,7 +19,6 @@ int main(int ac, char **av)
 {
     if(ac == 4)
     {
-        // remove("filename.txt");
         std::string         line;
         size_t             index;
         std::string        find = av[2];
@@ -15,14 +26,14 @@ int main(int ac, char **av)
 
         std::ifstream inn(av[1]);
         if (!inn.is_open()) {
-            std::cout << "Error fd" << std::endl;
+            std::cout << "Error fd in" << std::endl;
             return 0;
         }
 
         std::string str = av[1];
-        std::ofstream MyFile(str + ".replace");
-        if (!MyFile.is_open()) {
-            std::cout << "Error fd" << std::endl;
+        std::ofstream myFile(str + ".replace");
+        if (!myFile.is_open()) {
+            std::cout << "Error fd out" << std::endl;
             return 0;
         }
         while (std::getline(inn, line)) {
@@ -31,9 +42,9 @@ int main(int ac, char **av)
                 while ((index = line.find(find, index)) != std::string::npos)
                     line = line.substr(0, index) + replace + line.substr(index + find.length());
             }
-            MyFile << line << std::endl;
+            myFile << line << std::endl;
         }
         inn.close();
-        MyFile.close();
+        myFile.close();
     }
 }

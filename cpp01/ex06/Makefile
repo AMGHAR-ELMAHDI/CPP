@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/08/28 00:00:01 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/03 00:29:09 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 FRM = rm -rf
 
-NAME = exec
+NAME = harlFilter
 
 SRC =	main.cpp\
 		Harl.cpp\

@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 19:00:24 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/02 23:02:03 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 02:24:36 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class HumanA
         std::string name;
         Weapon      &weapon;
     public:
-        HumanA();
         HumanA(std::string namee, Weapon &wp);
         ~HumanA();
         void    attack(void);

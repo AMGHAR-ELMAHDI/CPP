@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:34 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/17 19:52:20 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 02:37:58 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,30 +22,18 @@ Harl::~Harl()
     std::cout << " Destructor called " << std::endl;
 }
 
-void Harl::complain(std::string level)
+void    Harl::complain( std:: string level )
 {
-    size_t index = 0;
+    int i = 0;
 
-    while ((index = level.find("DEBUG")) != std::string::npos)
-    {
-        this->debug();
-        break;
-    }
-    while ((index = level.find("INFO")) != std::string::npos)
-    {
-        this->info();
-        break;
-    }
-    while ((index = level.find("WARNING")) != std::string::npos)
-    {
-        this->warning();
-        break;
-    }
-    while ((index = level.find("ERROR")) != std::string::npos)
-    {
-        this->error();
-        break;
-    }
+    t_func  funcs[] = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
+    
+    std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR"};
+    
+    while (i < 4 && levels[i].compare(level))
+        i++;
+    if (i < 4)
+        (this->*funcs[i])();
 }
 
 void Harl::debug( void )
