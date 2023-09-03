@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/09/02 22:57:08 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/03 21:55:42 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC =	main.cpp\
 
 all: $(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(SRC) $(HEADER)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:

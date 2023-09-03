@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:44:55 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/02 05:14:33 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 21:52:09 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ Dog::Dog()
 {
     std::cout << "Dog Default Constructor Called" << std::endl;
     this->type = "Dog";
-    this->br = new Brain();
+    this->br = new (std::nothrow)Brain();
 }
 
 Dog::Dog(std::string newType)
 {
     std::cout << "Dog Constructor Called" << std::endl;
     this->type = newType;
-    this->br = new Brain();
+    this->br = new (std::nothrow)Brain();
 }
 
 Dog::Dog(const Dog &obj)

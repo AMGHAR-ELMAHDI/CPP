@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:34 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 02:37:58 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 19:31:56 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,31 @@
 
 Harl::Harl()
 {
-    std::cout << " Constructor called " << std::endl;
+    // std::cout << " Constructor called " << std::endl;
 }
 
 Harl::~Harl()
 {
-    std::cout << " Destructor called " << std::endl;
+    // std::cout << " Destructor called " << std::endl;
 }
 
 void    Harl::complain( std:: string level )
 {
+    void    (Harl::*t_func[5])(  );
+    
     int i = 0;
 
-    t_func  funcs[] = { &Harl::debug, &Harl::info, &Harl::warning, &Harl::error };
+    t_func[0] =  &Harl::debug;
+    t_func[1] =  &Harl::info;
+    t_func[2] =  &Harl::warning;
+    t_func[3] =  &Harl::error;
     
     std::string levels[] = { "DEBUG", "INFO", "WARNING", "ERROR"};
     
     while (i < 4 && levels[i].compare(level))
         i++;
     if (i < 4)
-        (this->*funcs[i])();
+        (this->*t_func[i])();
 }
 
 void Harl::debug( void )

@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 05:34:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 02:26:14 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 22:12:15 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
+#include <string>
 
 class Weapon
 {

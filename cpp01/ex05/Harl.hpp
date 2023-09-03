@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:36 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 02:35:52 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 19:32:41 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,5 @@ class Harl
         ~Harl();
         void complain(std::string level);
 };
-
-typedef void (Harl::*t_func) ( void );
 
 #endif

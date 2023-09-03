@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 23:32:55 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 00:10:54 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 21:55:14 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <cstdlib>
 #include <iomanip>
+#include <string>
 #include "Weapon.hpp"
 
 

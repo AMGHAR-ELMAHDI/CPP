@@ -6,18 +6,12 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:23:54 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 02:22:19 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 21:03:27 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstdlib>
-#include <iomanip>
-
-void       change(std::string *str, std::string &st)
-{
-    std::cout << "inside change function : "<< &str << " | " << &st << "\n";
-}
+#include <string>
 
 int main()
 {
@@ -35,5 +29,4 @@ int main()
     std::cout << new_str << std::endl;
     std::cout << *stringPTR << std::endl;
     std::cout << stringREF << std::endl;
-    change(stringPTR, stringREF);
 }

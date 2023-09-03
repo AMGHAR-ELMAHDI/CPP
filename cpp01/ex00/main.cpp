@@ -6,11 +6,10 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:23:54 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 02:05:59 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 21:45:48 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<iostream>
 #include "Zombie.hpp"
 
 int main( void )
@@ -19,9 +18,17 @@ int main( void )
     Zombie zombi1("CheesyStack");
     
     std::cout << "Creating zombie on the heap." << std::endl;
-    Zombie *zombi2 = newZombie("CheesyHeap");
-    zombi2->announce();
-    delete zombi2;
+    Zombie *zombie2 = newZombie("CheesyHeap");
+    if(zombie2)
+    {
+        zombie2->announce();
+        delete zombie2;
+    }
+    else
+    {
+        std::cout << "Can't allocate zombie2" << std::endl;
+        return(1);
+    }
 
     std::cout << "Calling randomChump()." << std::endl;
     randomChump("randZ");

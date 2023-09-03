@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 02:57:09 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 02:04:06 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 21:40:57 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Zombie* newZombie( std::string name )
 {
-    Zombie *newZ = new Zombie(name);
-
+    Zombie *newZ = new (std::nothrow)Zombie(name);
     return(newZ);
 }

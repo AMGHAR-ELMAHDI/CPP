@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 00:03:44 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 00:12:26 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/03 19:19:46 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,22 @@ int main(int ac, char **av)
             std::cout << "Error fd out" << std::endl;
             return 0;
         }
-        while (std::getline(inn, line)) {
+        while (std::getline(inn, line))
+        {
             index = 0;
-            if(find.length() != 0 && replace.length() != 0) {
-                while ((index = line.find(find, index)) != std::string::npos)
+            if((find.length() != 0 && replace.length() != 0))
+            {
+                while ((index = line.find(find, index)) != std::string::npos) {
                     line = line.substr(0, index) + replace + line.substr(index + find.length());
+                    index += replace.length();
+                }
             }
-            myFile << line << std::endl;
+            myFile << line;
+            if (!inn.eof())
+                myFile << "" << std::endl;
         }
         inn.close();
         myFile.close();
     }
 }
+
