@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 21:50:38 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 20:29:37 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ int main()
     i->makeSound();
     j->makeSound();
     meta->makeSound();
+    delete j;
+    delete i;
+    delete meta;
     return 0;
 }

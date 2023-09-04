@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:36:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/01 23:02:26 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 20:28:40 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal
         Animal();
         Animal(std::string newType);
         Animal(const Animal &obj);
-        ~Animal();
+        virtual ~Animal();
         std::string getType(void)const;
         void setType(std::string newType);
         virtual void makeSound(void)const;
