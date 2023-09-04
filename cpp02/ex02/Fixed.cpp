@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:32:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/04 17:19:03 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 18:28:34 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,7 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat( void ) const
 {
-    float ret = 0;
-    
-    ret = (float)this->num / (1 << fractionalBits);
-    return(ret);
+    return((float)this->num / (float)256);
 }
 
 int Fixed::toInt( void ) const
@@ -85,36 +82,37 @@ Fixed &Fixed::operator=(const Fixed &other)
     return *this;
 }
 
-Fixed &Fixed::operator+(const Fixed &other)const
+Fixed Fixed::operator+(const Fixed &other)const
 {
-    static Fixed result;
+    Fixed result;
 
     if (this != &other)
         result.num = this->num + other.num;
     return result;
 }
 
-Fixed &Fixed::operator-(const Fixed &other)const
+Fixed Fixed::operator-(const Fixed &other)const
 {
-    static Fixed result;
+    Fixed result;
 
     if (this != &other)
         result.num = this->num - other.num;
     return result;
 }
 
-Fixed &Fixed::operator*(const Fixed &other)const
+Fixed Fixed::operator*(const Fixed &other)const
 {
-    static Fixed result;
+    Fixed result;
 
     if (this != &other)
-        result.num = this->num * (other.num >> fractionalBits);
+        result.setRawBits(this->getRawBits() * (other.toFloat()));
+
     return result;
 }
 
-Fixed &Fixed::operator/(const Fixed &other)const
+Fixed Fixed::operator/(const Fixed &other)const
 {
-    static Fixed result;
+    Fixed result;
 
     if (this != &other)
         result.num = (this->num << fractionalBits) * other.num;

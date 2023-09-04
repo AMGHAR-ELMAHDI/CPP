@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/04 16:49:25 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 18:16:43 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main( void )
 	// std::cout << Fixed::max( a, b ) << std::endl;
 
 	Fixed a(10.0f);
-	Fixed b(3.5f);
+	Fixed b(2.5f);
 	
 	Fixed c;
 	c = (a * b);
