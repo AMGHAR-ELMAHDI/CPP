@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:32:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/27 21:37:58 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 01:18:15 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Fixed::Fixed(const Fixed &obj)
 
 Fixed::~Fixed()
 {
-    std::cout << "Default Destructor Called " << std::endl;
+    std::cout << "Destructor Called " << std::endl;
 }
 
 int Fixed::getRawBits( void ) const

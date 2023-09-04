@@ -6,12 +6,12 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:31:29 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/29 04:07:16 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 16:39:34 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED
-#define FIXED
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include<iostream>
 #include<string>
@@ -34,10 +34,10 @@ class Fixed
         int toInt( void ) const;
         Fixed &operator=(const Fixed &other);
         //-----The 4 arithmetic operators: +, -, *, and / ----/
-        Fixed &operator+(const Fixed &other);
-        Fixed &operator-(const Fixed &other);
-        Fixed &operator*(const Fixed &other);
-        Fixed &operator/(const Fixed &other);
+        Fixed &operator+(const Fixed &other)const;
+        Fixed &operator-(const Fixed &other)const;
+        Fixed &operator*(const Fixed &other)const;
+        Fixed &operator/(const Fixed &other)const;
         //-----The 6 comparison operators: >, <, >=, <=, == and != -----/
         bool operator>(const Fixed &other) const;
         bool operator<(const Fixed &other) const;

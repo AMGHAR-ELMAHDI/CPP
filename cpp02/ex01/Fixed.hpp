@@ -6,16 +6,17 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:31:29 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/28 00:47:12 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 01:24:12 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED
-#define FIXED
+#ifndef FIXED_HPP
+#define FIXED_HPP
 
 #include<iostream>
 #include<string>
 #include<fstream>
+#include<cmath>
 
 class Fixed
 {

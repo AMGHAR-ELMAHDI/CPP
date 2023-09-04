@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/08/17 21:47:22 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/04 16:39:08 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,10 +21,11 @@ NAME = exec
 SRC =	main.cpp\
 		Fixed.cpp\
 		
+HEADER = Fixed.hpp
 
 all: $(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(SRC) $(HEADER)
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:

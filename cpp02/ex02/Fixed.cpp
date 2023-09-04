@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:32:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/29 04:10:54 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 16:57:10 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,30 +85,40 @@ Fixed &Fixed::operator=(const Fixed &other)
     return *this;
 }
 
-Fixed &Fixed::operator+(const Fixed &other)
+Fixed &Fixed::operator+(const Fixed &other)const
 {
+    static Fixed result;
+
     if (this != &other)
-        this->num += other.num;
-    return *this;
+        result.num = this->num + other.num;
+    return result;
 }
 
-Fixed &Fixed::operator-(const Fixed &other)
+Fixed &Fixed::operator-(const Fixed &other)const
 {
+    static Fixed result;
+
     if (this != &other)
-        this->num -= other.num;
-    return *this;
+        result.num = this->num - other.num;
+    return result;
 }
 
-Fixed &Fixed::operator*(const Fixed &other)
+Fixed &Fixed::operator*(const Fixed &other)const
 {
-    this->num *=  other.num >> fractionalBits;
-    return *this;
+    static Fixed result;
+
+    if (this != &other)
+        result.num = this->num * (other.num >> fractionalBits);
+    return result;
 }
 
-Fixed &Fixed::operator/(const Fixed &other)
+Fixed &Fixed::operator/(const Fixed &other)const
 {
-    this->num = (this->num << fractionalBits) / other.num;
-    return *this;
+    static Fixed result;
+
+    if (this != &other)
+        result.num = (this->num << fractionalBits) * other.num;
+    return result;
 }
 
 bool Fixed::operator>(const Fixed &other) const
