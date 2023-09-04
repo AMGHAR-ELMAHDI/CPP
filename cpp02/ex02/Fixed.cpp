@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:32:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/04 19:01:51 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 19:11:38 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ Fixed Fixed::operator-(const Fixed &other)const
 {
     Fixed result;
 
-        result.num = this->num - other.num;
+    result.num = this->num - other.num;
     return result;
 }
 
@@ -102,8 +102,7 @@ Fixed Fixed::operator*(const Fixed &other)const
 {
     Fixed result;
 
-        result.setRawBits(this->getRawBits() * (other.toFloat()));
-
+    result.setRawBits(this->getRawBits() * (other.toFloat()));
     return result;
 }
 
@@ -111,50 +110,49 @@ Fixed Fixed::operator/(const Fixed &other)const
 {
     Fixed result;
 
-        result.num = (this->num << fractionalBits) * other.num;
+    result.num = (this->num << fractionalBits) / other.num;
     return result;
 }
 
 bool Fixed::operator>(const Fixed &other) const
 {
-        if(this->num > other.num)
-            return (true);
+    if(this->num > other.num)
+        return (true);
     return false;
 }
 
 bool Fixed::operator<(const Fixed &other) const
 {
-
-        if(this->num < other.num)
-            return (true);
+    if(this->num < other.num)
+        return (true);
     return false;
 }
 
 bool Fixed::operator>=(const Fixed &other) const
 {
-        if(this->num >= other.num)
-            return (true);
+    if(this->num >= other.num)
+        return (true);
     return false;
 }
 
 bool Fixed::operator<=(const Fixed &other) const
 {
-        if(this->num <= other.num)
-            return (true);
+    if(this->num <= other.num)
+        return (true);
     return false;
 }
 
 bool Fixed::operator==(const Fixed &other) const
 {
-        if(this->num == other.num)
-            return true;
+    if(this->num == other.num)
+        return true;
     return false;
 }
 
 bool Fixed::operator!=(const Fixed &other) const
 {
-        if(this->num != other.num)
-            return (true);
+    if(this->num != other.num)
+        return (true);
     return false;
 }
 
