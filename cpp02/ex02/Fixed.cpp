@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:32:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/04 18:28:34 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 19:01:51 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,42 +16,42 @@ const int Fixed::fractionalBits = 8;
 
 Fixed::Fixed()
 {
-    std::cout << "Default Constructor Called " << std::endl; 
+    // std::cout << "Default Constructor Called " << std::endl; 
     this->num = 0;
 }
 
 Fixed::Fixed(const int n)
 {
-    std::cout << "Int Constructor Called " << std::endl; 
+    // std::cout << "Int Constructor Called " << std::endl; 
     this->num = n << fractionalBits;
 }
 
 Fixed::Fixed(const float n)
 {
-    std::cout << "Float Constructor Called " << std::endl; 
+    // std::cout << "Float Constructor Called " << std::endl; 
     this->num = roundf( n * ( 1 << fractionalBits ));
 }
 
 Fixed::Fixed(const Fixed &obj)
 {
-   std::cout << "Copy constructor Called " << std::endl;
+//    std::cout << "Copy constructor Called " << std::endl;
    *this = obj;
 }
 
 Fixed::~Fixed()
 {
-    std::cout << "Destructor Called " << std::endl;
+    // std::cout << "Destructor Called " << std::endl;
 }
 
 int Fixed::getRawBits( void ) const
 {
-    std::cout << "GetRawBits member function called " << std::endl;
+    // std::cout << "GetRawBits member function called " << std::endl;
     return(this->num);
 }
 
 void Fixed::setRawBits( int const raw )
 {
-    std::cout << "SetRawBits member function called " << std::endl; 
+    // std::cout << "SetRawBits member function called " << std::endl; 
     this->num = raw;
 }
 
@@ -76,7 +76,7 @@ std::ostream    &operator<<(std::ostream &os, Fixed const &dt)
 
 Fixed &Fixed::operator=(const Fixed &other)
 {
-    std::cout << "Copy assignement opperator called " << std::endl; 
+    // std::cout << "Copy assignement opperator called " << std::endl; 
     if (this != &other)
         this->num = other.num;
     return *this;
@@ -86,7 +86,6 @@ Fixed Fixed::operator+(const Fixed &other)const
 {
     Fixed result;
 
-    if (this != &other)
         result.num = this->num + other.num;
     return result;
 }
@@ -95,7 +94,6 @@ Fixed Fixed::operator-(const Fixed &other)const
 {
     Fixed result;
 
-    if (this != &other)
         result.num = this->num - other.num;
     return result;
 }
@@ -104,7 +102,6 @@ Fixed Fixed::operator*(const Fixed &other)const
 {
     Fixed result;
 
-    if (this != &other)
         result.setRawBits(this->getRawBits() * (other.toFloat()));
 
     return result;
@@ -114,14 +111,12 @@ Fixed Fixed::operator/(const Fixed &other)const
 {
     Fixed result;
 
-    if (this != &other)
         result.num = (this->num << fractionalBits) * other.num;
     return result;
 }
 
 bool Fixed::operator>(const Fixed &other) const
 {
-    if (this != &other)
         if(this->num > other.num)
             return (true);
     return false;
@@ -129,7 +124,7 @@ bool Fixed::operator>(const Fixed &other) const
 
 bool Fixed::operator<(const Fixed &other) const
 {
-    if (this != &other)
+
         if(this->num < other.num)
             return (true);
     return false;
@@ -137,7 +132,6 @@ bool Fixed::operator<(const Fixed &other) const
 
 bool Fixed::operator>=(const Fixed &other) const
 {
-    if (this != &other)
         if(this->num >= other.num)
             return (true);
     return false;
@@ -145,7 +139,6 @@ bool Fixed::operator>=(const Fixed &other) const
 
 bool Fixed::operator<=(const Fixed &other) const
 {
-    if (this != &other)
         if(this->num <= other.num)
             return (true);
     return false;
@@ -153,7 +146,6 @@ bool Fixed::operator<=(const Fixed &other) const
 
 bool Fixed::operator==(const Fixed &other) const
 {
-    if (this != &other)
         if(this->num == other.num)
             return true;
     return false;
@@ -161,34 +153,37 @@ bool Fixed::operator==(const Fixed &other) const
 
 bool Fixed::operator!=(const Fixed &other) const
 {
-    if (this != &other)
         if(this->num != other.num)
             return (true);
     return false;
 }
 
-Fixed &Fixed::operator++()
+Fixed Fixed::operator++()
 {
     this->num++;
     return *this;
 }
 
-Fixed &Fixed::operator--()
+Fixed Fixed::operator--()
 {
     this->num--;
     return *this;
 }
 
-Fixed &Fixed::operator++(int)
+Fixed Fixed::operator++(int)
 {
+    Fixed temp = *this;
+       
     this->num++;
-    return *this;
+    return (temp);
 }
 
-Fixed &Fixed::operator--(int)
+Fixed Fixed::operator--(int)
 {
+    Fixed temp = *this;
+
     this->num--;
-    return *this;
+    return temp;
 }
 
 const Fixed& Fixed::min(Fixed& a, Fixed& b)
