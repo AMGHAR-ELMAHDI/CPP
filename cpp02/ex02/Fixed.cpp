@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:32:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/04 16:57:10 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 17:19:03 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ float Fixed::toFloat( void ) const
 {
     float ret = 0;
     
-    ret = this->num / (pow(2, fractionalBits));
+    ret = (float)this->num / (1 << fractionalBits);
     return(ret);
 }
 
