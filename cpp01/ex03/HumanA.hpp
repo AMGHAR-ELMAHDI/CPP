@@ -6,12 +6,12 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 19:00:24 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 22:12:10 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 21:29:24 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA
-#define HUMANA
+#ifndef HUMANA_HPP
+#define HUMANA_HPP
 
 #include <iostream>
 #include <cstdlib>

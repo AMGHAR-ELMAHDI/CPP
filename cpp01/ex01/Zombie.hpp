@@ -6,12 +6,12 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/13 02:55:43 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 22:12:24 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 21:29:09 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE
-#define ZOMBIE
+#ifndef ZOMBIE_HPP
+#define ZOMBIE_HPP
 
 #include <iostream>
 #include <cstdlib>

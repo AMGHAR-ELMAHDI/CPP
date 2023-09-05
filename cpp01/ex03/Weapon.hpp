@@ -6,12 +6,12 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 05:34:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 22:12:15 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 21:29:34 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON
-#define WEAPON
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
 #include <iostream>
 #include <cstdlib>

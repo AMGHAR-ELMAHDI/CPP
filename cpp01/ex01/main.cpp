@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:23:54 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 21:48:17 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 21:36:44 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main()
         {
             arr[i].announce();
         }
-        arr[0].setName("fiddler");
+        arr[0].setName("Z1");
         std::cout << arr[0].getName() << std::endl;
         delete[] arr;
     }

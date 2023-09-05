@@ -6,12 +6,12 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:36 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 02:42:41 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/04 21:29:49 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL
-#define HARL
+#ifndef HARL_HPP
+#define HARL_HPP
 
 #include <iostream>
 #include <string>
