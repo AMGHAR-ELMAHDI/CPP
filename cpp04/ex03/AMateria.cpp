@@ -10,3 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AMateria.hpp"
+
+AMateria::AMateria(std::string const &type)
+{
+    std::cout << "AMateria Constructor Called" << std::endl;
+    this->type = type;
+}
+
+AMateria::~AMateria()
+{
+    std::cout << "AMateria Destructor Called" << std::endl;
+}
+
+std::string const& AMateria::getType() const
+{
+    return(this->type);
+}
+
+AMateria* AMateria::clone()const {};
+
+
