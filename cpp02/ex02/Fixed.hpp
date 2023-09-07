@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:31:29 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/04 18:58:08 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/06 21:18:42 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ class Fixed
         bool operator==(const Fixed &other) const;
         bool operator!=(const Fixed &other) const;
         //-----The 4 increment/decrement -----/
-        Fixed operator++();
-        Fixed operator--();
+        Fixed &operator++();
+        Fixed &operator--();
         Fixed operator++(int);
         Fixed operator--(int);
         //-----The overloaded member functions -----/

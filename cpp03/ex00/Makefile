@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/08/30 15:46:40 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/07 21:18:40 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRC =	main.cpp\
 
 all: $(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(SRC) ClapTrap.hpp
 	$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 
 clean:

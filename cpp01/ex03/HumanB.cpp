@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 23:32:05 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 02:30:26 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/06 14:16:59 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ HumanB::~HumanB()
 
 void    HumanB::attack(void)
 {
-    if (this->weapon != NULL && this->weapon->getType() != "")
-        std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
-    else
-        std::cout << this->name << " doesn't have a weapon to attack." << std::endl;
+    std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
 }
 
 std::string HumanB::getName(void)

@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:32:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/04 19:11:38 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/06 21:19:31 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -156,13 +156,13 @@ bool Fixed::operator!=(const Fixed &other) const
     return false;
 }
 
-Fixed Fixed::operator++()
+Fixed &Fixed::operator++()
 {
     this->num++;
     return *this;
 }
 
-Fixed Fixed::operator--()
+Fixed &Fixed::operator--()
 {
     this->num--;
     return *this;

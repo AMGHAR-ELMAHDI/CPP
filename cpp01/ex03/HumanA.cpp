@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/16 19:00:12 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 02:28:49 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/06 14:16:47 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ HumanA::HumanA(std::string name, Weapon &wp) : name(name), weapon(wp)
 
 void    HumanA::attack(void)
 {
-    if(this->weapon.getType() != "")
-        std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
-    else
-        std::cout << this->name << " doesn't have a weapon to attack." << std::endl;
+    std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
 }
 
 void    HumanA::setName(std::string newName)
