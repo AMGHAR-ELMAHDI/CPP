@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/30 20:58:10 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/07 21:32:35 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/07 21:45:56 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ FragTrap &FragTrap::operator=(const FragTrap &other)
     return *this;
 }
 
-void FragTrap::highFivesGuys(void)
+void FragTrap::highFive(void)
 {
    std::cout << "FragTrap requests a High five :)" << std::endl;
 }
