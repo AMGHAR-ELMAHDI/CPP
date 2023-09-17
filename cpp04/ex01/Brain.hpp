@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 04:39:32 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/02 05:01:02 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/17 01:27:55 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Brain
         Brain();
         Brain(std::string newIdea, int index);
         Brain(const Brain &obj);
+        Brain &operator=(const Brain &other);
         ~Brain();
         std::string getIdeas(int index)const;
         void setIdeas(std::string newidead, int index);

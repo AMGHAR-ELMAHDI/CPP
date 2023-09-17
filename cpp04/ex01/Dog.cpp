@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:44:55 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 21:51:19 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/17 01:32:44 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,26 @@ Dog::Dog(const Dog &obj)
     *this = obj;
 }
 
+Dog &Dog::operator=(const Dog &other)
+{
+    std::cout << "Dog Copy assignement opperator called " << std::endl; 
+    if (this != &other)
+    {
+        this->type = other.type;
+        this->br = new (std::nothrow)Brain();
+        for (size_t i = 0; i < 100; i++)
+        {
+            this->br->setIdeas(other.br->getIdeas(i), i);
+        }
+    }
+    return *this;
+}
+
 Dog::~Dog()
 {
     std::cout << "Dog Destructor Called" << std::endl;
-    delete this->br;
+    // if(this->br)
+        delete this->br;
 }
 
 void Dog::makeSound()const

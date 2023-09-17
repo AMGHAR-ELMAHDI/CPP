@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:36:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/02 05:12:58 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/17 01:24:03 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Dog : public Animal
         Dog();
         Dog(std::string newType);
         Dog(const Dog &obj);
+        Dog &operator=(const Dog &other);
         ~Dog();
         void makeSound()const;
 };
