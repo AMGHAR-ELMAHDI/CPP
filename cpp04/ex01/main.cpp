@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/17 01:33:44 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/17 07:20:35 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,9 @@ int main()
         Dog tmp = basic;
     }
 
-    const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
-    for ( int i = 0; i < 4; i++ ) {
+    const Animal* animals[2] = { new Dog(), new Cat()};
+    for (int i = 0; i < 2; i++)
+    {
         delete animals[i];
     }
 
