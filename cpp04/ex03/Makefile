@@ -6,33 +6,28 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/09/02 04:40:44 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/19 04:26:51 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-CFLAGS = -Wall -Werror -Wextra -std=c++98
+CFLAGS = -Wall -Werror -Wextra -std=c++98 -stdlib=libc++
 
 FRM = rm -rf
 
 NAME = exec
 
-HEADER =	WrongAnimal.hpp\
-			WrongCat.hpp\
-			Cat.hpp\
-			Dog.hpp\
-			Animal.hpp\
-			Brain.hpp\
+HEADER =	AMateria.hpp\
+			Cure.hpp\
+			ICharacter.hpp\
+			Ice.hpp\
 			
 
-SRC =	main.cpp\
-		Animal.cpp\
-		Dog.cpp\
-		Cat.cpp\
-		WrongAnimal.cpp\
-		WrongCat.cpp\
-		Brain.cpp\
+SRC =	AMateria.cpp\
+		Cure.cpp\
+		Ice.cpp\
+		main.cpp\
 		
 
 all: $(NAME)

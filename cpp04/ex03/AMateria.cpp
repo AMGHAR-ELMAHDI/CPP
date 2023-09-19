@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 05:44:24 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/17 09:19:40 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/19 04:20:03 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,15 @@ void AMateria::setType(const std::string newStr)
     this->type = newStr;
 };
 
-AMateria* AMateria::clone()const {};
-
-
 void AMateria::use(ICharacter& target)
 {
-    (void)target;
+    std::cout << "AMateria " << this->type << " used on " << target.getName() << std::endl;
 };
 
+AMateria* AMateria::clone() const
+{
+    return (AMateria*)this;
+}
 
 AMateria::AMateria(const AMateria &obj)
 {

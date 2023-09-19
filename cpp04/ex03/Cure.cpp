@@ -1,63 +1,63 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 09:20:35 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/19 04:24:04 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/19 04:21:53 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Cure.hpp"
 
-Ice::Ice()
+Cure::Cure()
 {
-    std::cout << "Ice Default Constructor Called" << std::endl;
-    this->type = "ice";
+    std::cout << "Cure Default Constructor Called" << std::endl;
+    this->type = "cure";
 }
 
-Ice::Ice(std::string const &type)
+Cure::Cure(std::string const &type)
 {
-    std::cout << "Ice Constructor Called" << std::endl;
+    std::cout << "Cure Constructor Called" << std::endl;
     this->type = type;
 }
 
-Ice::~Ice()
+Cure::~Cure()
 {
-    std::cout << "Ice Destructor Called" << std::endl;
+    std::cout << "Cure Destructor Called" << std::endl;
 }
 
-std::string const& Ice::getType() const
+std::string const& Cure::getType() const
 {
     return(this->type);
 }
 
-void Ice::setType(const std::string newStr)
+void Cure::setType(const std::string newStr)
 {
     this->type = newStr;
 };
 
-AMateria* Ice::clone() const
+AMateria* Cure::clone() const
 {
-    return (new Ice(*this));
+    return (new Cure(*this));
 }
 
-void Ice::use(ICharacter& target)
+void Cure::use(ICharacter& target)
 {
-    std::cout << "* shoots an ice bolt at "<< target.getName() << " *"<< std::endl;
+    std::cout << "* heals "<< target.getName() << "'s wounds *"<< std::endl;
 };
 
-Ice::Ice(const Ice &obj)
+Cure::Cure(const Cure &obj)
 {
-    std::cout << "Ice Copy constructor Called " << std::endl;
+    std::cout << "Cure Copy constructor Called " << std::endl;
     *this = obj;
 };
 
-Ice &Ice::operator=(const Ice &other)
+Cure &Cure::operator=(const Cure &other)
 {
-    std::cout << "Ice Copy assignement opperator called " << std::endl; 
+    std::cout << "Cure Copy assignement opperator called " << std::endl; 
     if (this != &other)
     {
         this->type = other.type;
