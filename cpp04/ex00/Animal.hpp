@@ -6,12 +6,12 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:36:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/04 20:28:40 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/20 18:54:34 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL
-#define ANIMAL
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
 #include<iostream>
 #include<string>
@@ -24,6 +24,7 @@ class Animal
         Animal();
         Animal(std::string newType);
         Animal(const Animal &obj);
+        Animal &operator=(const Animal &other);
         virtual ~Animal();
         std::string getType(void)const;
         void setType(std::string newType);

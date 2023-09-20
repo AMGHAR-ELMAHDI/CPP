@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:44:55 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/01 23:35:20 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/20 19:00:38 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ Animal::Animal(const Animal &obj)
     *this = obj;
 }
 
+Animal &Animal::operator=(const Animal &other)
+{
+    std::cout << "Animal Copy assignement opperator called " << std::endl; 
+    if (this != &other)
+    {
+        this->type = other.type;
+    }
+    return *this;
+}
+
 Animal::~Animal()
 {
     std::cout << "Animal Destructor Called" << std::endl;
@@ -49,3 +59,4 @@ void Animal::makeSound(void)const
 {
     std::cout << "Random Animal Sounds" << std::endl;
 }
+
