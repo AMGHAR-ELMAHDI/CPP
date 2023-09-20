@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/09/19 04:26:51 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/20 02:05:13 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,19 @@ FRM = rm -rf
 NAME = exec
 
 HEADER =	AMateria.hpp\
+			Character.hpp\
 			Cure.hpp\
 			ICharacter.hpp\
+			IMateriaSource.hpp\
 			Ice.hpp\
+			MateriaSource.hpp\
 			
 
 SRC =	AMateria.cpp\
+		Character.cpp\
 		Cure.cpp\
 		Ice.cpp\
+		MateriaSource.cpp\
 		main.cpp\
 		
 

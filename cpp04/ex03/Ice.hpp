@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 09:20:59 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/19 03:13:08 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/20 01:49:51 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,14 @@ class Ice : public AMateria
         virtual void use(ICharacter& target);
         ~Ice();
 };
+
+
+// AMateria* MateriaSource::getMateria( std::string const & type )
+// {
+//     for (int i = 0; i < 4; i++)
+//         if (materias[i] && materias[i]->getType() == type)
+//             return materias[i];
+//     return NULL;
+// }
 
 #endif

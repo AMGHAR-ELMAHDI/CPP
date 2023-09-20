@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 05:18:09 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/20 01:17:39 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/20 02:07:43 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,22 @@
 
 #include <iostream>
 #include <string>
+#include "AMateria.hpp"
 #include "IMateriaSource.hpp"
 
 class MateriaSource : public IMateriaSource
 {
+	private:
+		AMateria	*Materials[4];
 	public:
 		MateriaSource();
-		~MateriaSource() {};
+		~MateriaSource();
         MateriaSource(const MateriaSource &obj);
         MateriaSource &operator=(const MateriaSource &other);
 
-		virtual void learnMateria(AMateria*);
-		virtual AMateria* createMateria(std::string const & type);
+		void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
+		// void getMateria(std::string const & type );
 };
 
 #endif

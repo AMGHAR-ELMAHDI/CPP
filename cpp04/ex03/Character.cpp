@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 04:38:33 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/19 22:22:39 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/20 02:07:17 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ Character::~Character()
     std::cout << "Character Destructor Called" << std::endl;
     for (size_t i = 0; i < 4; i++)
     {
-        if(this->inventory[i])
-            delete this->inventory[i];
+        // if(this->inventory[i])
+        //     delete this->inventory[i];
     }
 }
 
