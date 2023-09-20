@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:36:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/02 05:10:49 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/20 19:11:25 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class Animal
         Animal();
         Animal(std::string newType);
         Animal(const Animal &obj);
+        Animal &operator=(const Animal &other);
         virtual ~Animal();
         std::string getType(void)const;
         void setType(std::string newType);

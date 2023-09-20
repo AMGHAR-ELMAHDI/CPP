@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:44:55 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/17 01:32:44 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/20 19:12:10 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ Dog &Dog::operator=(const Dog &other)
 Dog::~Dog()
 {
     std::cout << "Dog Destructor Called" << std::endl;
-    // if(this->br)
+    if(this->br)
         delete this->br;
 }
 
