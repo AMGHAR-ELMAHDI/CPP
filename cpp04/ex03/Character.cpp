@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 04:38:33 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/19 05:05:37 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/19 22:22:39 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void    Character::equip( AMateria* m )
             return;
         }
     }
+    // delete m; check for double free
     std::cout << "Character " << this->name << " can't equip " << m->getType() << std::endl;
 }
 
@@ -84,7 +85,7 @@ void Character::unequip(int idx)
 {
     if(this->inventory[idx] != NULL)
     {
-        delete this->inventory[idx];
+        // delete this->inventory[idx];//remove this
         this->inventory[idx] = NULL;
         std::cout << "Character " << this->name << " unequipped" << std::endl;
     }
