@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:44:55 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/17 01:32:57 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 19:10:01 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ Cat &Cat::operator=(const Cat &other)
     if (this != &other)
     {
         this->type = other.type;
+        if(this->br)
+            delete this->br;
         this->br = new (std::nothrow)Brain();
         for (size_t i = 0; i < 100; i++)
         {

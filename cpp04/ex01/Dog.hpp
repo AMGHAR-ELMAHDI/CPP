@@ -6,12 +6,12 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:36:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/17 01:24:03 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 19:13:06 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG
-#define DOG
+#ifndef DOG_HPP
+#define DOG_HPP
 
 #include<iostream>
 #include<string>

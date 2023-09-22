@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:44:55 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/01 23:39:38 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 19:15:15 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,16 @@ WrongCat::WrongCat(const WrongCat &obj)
 {
     std::cout << "WrongCat Copy Constructor Called" << std::endl;
     *this = obj;
+}
+
+WrongCat &WrongCat::operator=(const WrongCat &other)
+{
+    std::cout << "WrongCat Copy assignement opperator called " << std::endl; 
+    if (this != &other)
+    {
+        this->type = other.type;
+    }
+    return *this;
 }
 
 WrongCat::~WrongCat()

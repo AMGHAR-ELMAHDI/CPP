@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 04:38:33 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/20 02:07:17 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 18:59:41 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ Character::~Character()
     std::cout << "Character Destructor Called" << std::endl;
     for (size_t i = 0; i < 4; i++)
     {
-        // if(this->inventory[i])
-        //     delete this->inventory[i];
+        if(this->inventory[i])
+            delete this->inventory[i];
     }
 }
 
@@ -61,7 +61,12 @@ Character &Character::operator=(const Character &other)
     {
         this->name = other.name;
         for (size_t i = 0; i < 4; i++)
-            this->inventory[i] = other.inventory[i];
+        {
+            if(other.inventory[i])
+                this->inventory[i] = other.inventory[i]->clone();
+            else   
+                this->inventory[i] = NULL;
+        }
     }
     return *this;
 };
@@ -77,7 +82,6 @@ void    Character::equip( AMateria* m )
             return;
         }
     }
-    // delete m; check for double free
     std::cout << "Character " << this->name << " can't equip " << m->getType() << std::endl;
 }
 
@@ -98,7 +102,7 @@ void Character::use(int idx, ICharacter& target)
     if(this->inventory[idx] != NULL)
     {
         this->inventory[idx]->use(target);
-        std::cout << "Character " << this->name << " used " << this->inventory[idx] << " on " << target.getName() << std::endl;
+        std::cout << "Character " << this->name << " used " << this->inventory[idx]->getType() << " on " << target.getName() << std::endl;
     }
     else
         std::cout << "Character " << this->name << " can't use its Materia on " << target.getName() << std::endl;

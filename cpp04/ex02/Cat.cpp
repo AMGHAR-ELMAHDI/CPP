@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:44:55 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/03 21:51:47 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 19:11:14 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,23 @@ Cat::Cat(std::string newType)
     std::cout << "Cat Constructor Called" << std::endl;
     this->type = newType;
     this->br = new (std::nothrow)Brain();
+}
+
+Cat &Cat::operator=(const Cat &other)
+{
+    std::cout << "Cat Copy assignement opperator called " << std::endl; 
+    if (this != &other)
+    {
+        this->type = other.type;
+        if(this->br)
+            delete this->br;
+        this->br = new (std::nothrow)Brain();
+        for (size_t i = 0; i < 100; i++)
+        {
+            this->br->setIdeas(other.br->getIdeas(i), i);
+        }
+    }
+    return *this;
 }
 
 Cat::Cat(const Cat &obj)

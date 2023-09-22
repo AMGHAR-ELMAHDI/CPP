@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 01:09:53 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/20 02:07:54 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 19:03:44 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ MateriaSource::~MateriaSource()
     std::cout << "MateriaSource Destructor Called" << std::endl;
     for (size_t i = 0; i < 4; i++)
     {
-        // if(this->Materials[i])
-        //     delete this->Materials[i];
+        if(this->Materials[i])
+            delete this->Materials[i];
     }
 }
 
@@ -44,12 +44,14 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other)
     {
         for (size_t i = 0; i < 4; i++)
         {
-            this->Materials[i] = other.Materials[i];
+            if(other.Materials[i])
+                this->Materials[i] = other.Materials[i];
+            else
+                this->Materials[i] = NULL;
         }
     }
     return *this;
 };
-
 
 void MateriaSource::learnMateria(AMateria *newMateria)
 {
@@ -75,7 +77,3 @@ AMateria* MateriaSource::createMateria(std::string const & type)
     return(NULL);
     
 }
-
-// void MateriaSource::getMateria(std::string const & type )
-// {
-// }

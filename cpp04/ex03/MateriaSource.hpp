@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 05:18:09 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/20 02:07:43 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 19:01:16 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ class MateriaSource : public IMateriaSource
 
 		void learnMateria(AMateria*);
 		AMateria* createMateria(std::string const & type);
-		// void getMateria(std::string const & type );
 };
 
 #endif

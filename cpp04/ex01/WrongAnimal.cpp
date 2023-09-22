@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:44:55 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/20 18:58:37 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 19:14:36 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ WrongAnimal &WrongAnimal::operator=(const WrongAnimal &other)
     }
     return *this;
 }
-
 
 WrongAnimal::~WrongAnimal()
 {

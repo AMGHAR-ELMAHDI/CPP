@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:36:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/01 23:44:18 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 19:14:54 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class WrongAnimal
         WrongAnimal();
         WrongAnimal(std::string newType);
         WrongAnimal(const WrongAnimal &obj);
+        WrongAnimal &operator=(const WrongAnimal &other);
         ~WrongAnimal();
         std::string getType(void)const;
         void setType(std::string newType);

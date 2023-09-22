@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 04:40:15 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/02 05:00:59 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 19:09:21 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,19 @@ Brain::Brain(const Brain &obj)
 {
     std::cout << "Brain Copy Constructor Called" << std::endl;
     *this = obj;
+}
+
+Brain &Brain::operator=(const Brain &other)
+{
+    std::cout << "Brain Copy assignement opperator called " << std::endl; 
+    if (this != &other)
+    {
+        for (size_t i = 0; i < 100; i++)
+        {
+            this->ideas[i] = other.ideas[i];
+        }
+    }
+    return *this;
 }
 
 Brain::~Brain()

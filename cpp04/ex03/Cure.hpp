@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/17 09:20:59 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/19 04:23:05 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 18:53:50 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class Cure : public AMateria
         Cure &operator=(const Cure &other);
         virtual void use(ICharacter& target);
         virtual AMateria*   clone() const;
-        ~Cure();
+       virtual ~Cure();
 };
 
 #endif

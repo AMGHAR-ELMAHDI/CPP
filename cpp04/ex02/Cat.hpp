@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:36:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/02 05:39:26 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 19:11:28 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class Cat : public Animal
         Cat();
         Cat(std::string newType);
         Cat(const Cat &obj);
+        Cat &operator=(const Cat &other);
         ~Cat();
         void makeSound()const;
 };
