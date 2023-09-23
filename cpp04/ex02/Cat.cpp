@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:44:55 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/22 19:11:14 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/23 19:42:56 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ Cat::Cat(std::string newType)
     this->br = new (std::nothrow)Brain();
 }
 
+Cat::Cat(const Cat &obj)
+{
+    std::cout << "Cat Copy Constructor Called" << std::endl;
+    *this = obj;
+}
+
 Cat &Cat::operator=(const Cat &other)
 {
     std::cout << "Cat Copy assignement opperator called " << std::endl; 
@@ -41,12 +47,6 @@ Cat &Cat::operator=(const Cat &other)
         }
     }
     return *this;
-}
-
-Cat::Cat(const Cat &obj)
-{
-    std::cout << "Cat Copy Constructor Called" << std::endl;
-    *this = obj;
 }
 
 Cat::~Cat()

@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 04:31:34 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/20 02:07:08 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/23 19:00:56 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Character : public ICharacter
         std::string const &getName() const;
         void setName(const std::string);
         Character &operator=(const Character &other);
-        ~Character();
+        virtual ~Character();
         void equip(AMateria* m);
         void unequip(int idx);
         void use(int idx, ICharacter& target);

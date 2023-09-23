@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 04:40:15 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/17 01:29:12 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/23 18:53:09 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 Brain::Brain()
 {
     std::cout << "Brain Default Constructor Called" << std::endl;
+    for (int i = 0 ; i < 100 ; i++)
+        this->ideas[i] = "no idea";
 }
 
-Brain::Brain(std::string newIdea, int index)
+Brain::Brain(std::string newIdea)
 {
     std::cout << "Brain Constructor Called" << std::endl;
-    this->ideas[index] = newIdea;
+    for (int i = 0 ; i < 100 ; i++)
+        this->ideas[i] = newIdea;
 }
 
 Brain::Brain(const Brain &obj)

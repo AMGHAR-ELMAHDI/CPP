@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/02 05:44:29 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/19 04:20:20 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/23 19:01:09 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class AMateria
         AMateria &operator=(const AMateria &other);
         virtual AMateria* clone() const = 0;
         virtual void use(ICharacter& target);
-        ~AMateria();
+        virtual ~AMateria();
 };
 
 
