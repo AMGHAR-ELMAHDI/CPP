@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/23 19:34:31 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/23 19:50:13 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,10 @@ int main()
     }
 
     const Animal* animals[2] = { i, j};
+
     animals[0]->makeSound();
     animals[1]->makeSound();
+    
     delete j;
     delete i;
 

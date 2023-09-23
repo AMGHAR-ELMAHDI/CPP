@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/31 18:44:55 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/22 19:11:58 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/22 19:26:26 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ Dog::Dog(const Dog &obj)
 
 Dog &Dog::operator=(const Dog &other)
 {
-    std::cout << "Dog Copy assignement opperator called " << std::endl; 
+    std::cout << "Dog Copy assignement opperator called " << std::endl;
     if (this != &other)
     {
         this->type = other.type;
@@ -52,7 +52,8 @@ Dog &Dog::operator=(const Dog &other)
 Dog::~Dog()
 {
     std::cout << "Dog Destructor Called" << std::endl;
-    delete this->br;
+    if(this->br)
+        delete this->br;
 }
 
 void Dog::makeSound()const
