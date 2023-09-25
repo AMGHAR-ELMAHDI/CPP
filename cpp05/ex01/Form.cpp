@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:55:21 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 14:57:11 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/25 15:39:04 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Form::~Form()
 
 //-------------------Getters-----------------//
 
-const std::string Form::getName(void)const
+std::string Form::getName(void)const
 {
     return(this->name);
 }
@@ -72,7 +72,9 @@ int Form::getGradeExec(void)const
 
 std::ostream &operator<<(std::ostream &o, const Form&obj)
 {
-    o << obj.getName() << ", its Signed status is: "<< obj.getIsSigned() << ", its required sign grade is: " << obj.getGradeSigned() << ", and its required execution grade is: " << obj.getGradeExec() << std::endl;
+    o << "Form " << obj.getName() << ", its Signed status is: "<< obj.getIsSigned()
+    << ", its required sign grade is: " << obj.getGradeSigned() <<
+    ", and its required execution grade is: " << obj.getGradeExec() << std::endl;
     return o;
 }
 

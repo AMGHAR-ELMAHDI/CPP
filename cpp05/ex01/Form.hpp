@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:50:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 15:08:13 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/25 15:29:37 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Form
         ~Form();
     
         //-------------------Getters-----------------//
-        const std::string getName(void)const;
+        std::string getName(void)const;
         bool getIsSigned(void)const;
         int getGradeSigned(void)const;
         int getGradeExec(void)const;
