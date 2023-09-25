@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:50:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 18:41:44 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/25 19:50:24 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ class AForm
         AForm(const std::string Name, const int gS, const int gE);
         AForm(const AForm &obj);
         AForm &operator=(const AForm &other);
-        virtual void    beSigned(const Bureaucrat &b) = 0;
+        void    beSigned(const Bureaucrat &b);
         virtual ~AForm();
     
         //-------------------Getters-----------------//
         std::string getName(void)const;
-        bool getIsSigned(void)const;
-        int getGradeSigned(void)const;
-        int getGradeExec(void)const;
+        bool        getIsSigned(void)const;
+        int         getGradeSigned(void)const;
+        int         getGradeExec(void)const;
 
         //-------------------Exceptions-----------------//
         class GradeTooHighException : public std::exception
@@ -59,8 +59,7 @@ class AForm
                 }
         };
         //--------------------execute--------------------//
-        void    execute(Bureaucrat const & executor) const;
-        void    exec();
+        virtual int    execute(Bureaucrat const & executor) const = 0;
 };
 
 //--------------------overload of the insertion («) operator-------------//
