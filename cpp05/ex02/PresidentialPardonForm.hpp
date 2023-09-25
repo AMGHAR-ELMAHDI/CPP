@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 17:42:04 by eamghar          ###   ########.fr       */
+/*   Created: 2023/09/25 17:44:27 by eamghar           #+#    #+#             */
+/*   Updated: 2023/09/25 17:51:54 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
-int main()
-{   
-    std::cout << "/-------------------------------------------------/" << std::endl;
-    ShrubberyCreationForm dsw("Cheesy");
-    return(0);
-}
+#include "AForm.hpp"
+
+class PresidentialPardonForm : public AForm
+{
+    public:
+        PresidentialPardonForm();
+        PresidentialPardonForm(const std::string target);
+        void    beSigned(const Bureaucrat &b);
+        ~PresidentialPardonForm();
+};
+
+#endif

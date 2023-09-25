@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/09/24 02:28:43 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/25 17:39:04 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,20 +18,18 @@ FRM = rm -rf
 
 NAME = exec
 
-HEADER =	
-			
-			
-			
-			
-			
+HEADER =	AForm.hpp\
+			Bureaucrat.hpp\
+			PresidentialPardonForm.hpp\
+			RobotomyRequestForm.hpp\
+			ShrubberyCreationForm.hpp\
 
-SRC =	
-		
-		
-		
-		
-		
-		
+SRC =		AForm.cpp\
+			Bureaucrat.cpp\
+			PresidentialPardonForm.cpp\
+			RobotomyRequestForm.cpp\
+			ShrubberyCreationForm.cpp\
+			main.cpp\
 
 all: $(NAME)
 

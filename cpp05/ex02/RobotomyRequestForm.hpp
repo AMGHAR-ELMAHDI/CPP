@@ -1,20 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 17:42:04 by eamghar          ###   ########.fr       */
+/*   Created: 2023/09/25 17:44:36 by eamghar           #+#    #+#             */
+/*   Updated: 2023/09/25 17:49:45 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ShrubberyCreationForm.hpp"
+#ifndef ROBOTOMYREQUESTFORM_HPP
+#define ROBOTOMYREQUESTFORM_HPP
 
-int main()
-{   
-    std::cout << "/-------------------------------------------------/" << std::endl;
-    ShrubberyCreationForm dsw("Cheesy");
-    return(0);
-}
+#include "AForm.hpp"
+
+class RobotomyRequestForm : public AForm
+{
+    public:
+        RobotomyRequestForm();
+        RobotomyRequestForm(const std::string target);
+        void    beSigned(const Bureaucrat &b);
+        ~RobotomyRequestForm();
+};
+
+#endif
