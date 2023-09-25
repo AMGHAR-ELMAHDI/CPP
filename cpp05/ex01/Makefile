@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/09/24 02:28:43 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/25 14:04:47 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,20 +18,12 @@ FRM = rm -rf
 
 NAME = exec
 
-HEADER =	
-			
-			
-			
-			
-			
+HEADER =	Bureaucrat.hpp\
+			Form.hpp\
 
-SRC =	
-		
-		
-		
-		
-		
-		
+SRC =		Bureaucrat.cpp\
+			Form.cpp\
+			main.cpp\
 
 all: $(NAME)
 
