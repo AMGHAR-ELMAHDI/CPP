@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:50:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 17:41:40 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/25 18:41:44 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,9 @@ class AForm
                     return "Grade too Low Exception called";
                 }
         };
+        //--------------------execute--------------------//
+        void    execute(Bureaucrat const & executor) const;
+        void    exec();
 };
 
 //--------------------overload of the insertion («) operator-------------//

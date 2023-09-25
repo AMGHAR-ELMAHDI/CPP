@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/09/25 17:39:04 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/25 17:55:27 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,5 +40,6 @@ clean:
 	$(FRM) $(NAME)
 
 fclean: clean
+	$(FRM) *_shrubbery
 
 re: fclean all
