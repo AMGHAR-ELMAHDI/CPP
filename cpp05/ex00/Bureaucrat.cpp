@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 02:35:15 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 12:34:12 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/25 13:46:52 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Bureaucrat::Bureaucrat() : name("default") , grade(150)
 
 Bureaucrat::Bureaucrat(const std::string Name, int grade) : name(Name), grade(grade)
 {
-    std::cout << "Bureaucrat Parametrised constructor called" << std::endl;
+    std::cout << "Bureaucrat " << this->name << " Parametrised constructor called" << std::endl;
     if (this->grade < 1)
         throw GradeTooHighException();
     else if(this->grade > 150)
@@ -43,7 +43,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 
 Bureaucrat::~Bureaucrat()
 {
-    std::cout << "Bureaucrat Destructor called" << std::endl;
+    std::cout << "Bureaucrat " << this->name << " Destructor called" << std::endl;
 }
 
 //-------------------Getters-----------------//
@@ -74,6 +74,7 @@ void    Bureaucrat::decrementGrade()
     this->grade++;
 }
 
+//--------------------overload of the insertion («) operator-------------//
 
 std::ostream &operator<<(std::ostream &o, const Bureaucrat&obj)
 {
