@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 02:35:15 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 13:46:52 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/25 15:07:46 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,3 +82,11 @@ std::ostream &operator<<(std::ostream &o, const Bureaucrat&obj)
     return o;
 }
 
+void    Bureaucrat::signForm(const Form &f)
+{
+    if(f.getIsSigned() == true)
+        std::cout << "bureaucrat " << this->name << ",signed " << f.getName() << std::endl;
+    else
+        std::cout << "bureaucrat " << this->name << ",couldn’t sign " << f.getName()
+        << "because his grade: " << this->grade << "is lower than the form's: " << f.getGradeSigned() << std::endl;
+}

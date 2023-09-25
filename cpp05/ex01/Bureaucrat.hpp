@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 02:32:10 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 13:49:47 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/25 15:08:29 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 #include <iostream>
 #include <string>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -27,6 +30,7 @@ class Bureaucrat
         Bureaucrat(const std::string Name, int grade);
         Bureaucrat(const Bureaucrat &obj);
         Bureaucrat &operator=(const Bureaucrat &other);
+        void    signForm(const Form &f);
         ~Bureaucrat();
         
         //-------------------Getters-----------------//
