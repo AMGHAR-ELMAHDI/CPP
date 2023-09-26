@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:50:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 19:50:24 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/26 19:48:58 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,14 @@ class AForm
                 virtual const char* what() const throw()
                 {
                     return "Grade too Low Exception called";
+                }
+        };
+        class CantExecute : public std::exception
+        {
+            public:
+                virtual const char* what() const throw()
+                {
+                    return "Can't Execute Form Exception called";
                 }
         };
         //--------------------execute--------------------//

@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 02:35:15 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 18:55:18 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/26 20:14:55 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,4 +95,15 @@ void    Bureaucrat::signForm(AForm &f)
         << ", because his grade: " << this->grade << " is lower than the form's: " << f.getGradeSigned() << std::endl;
         std::cout << e.what() << std::endl;
     }
+}
+
+
+void    Bureaucrat::executeForm(const AForm &form)
+{
+    if(form.execute(*this) == 1)
+    {
+        std::cout << this->getName() << ", executed " << form.getName() << "." << std::endl;
+    }
+    else
+        std::cout << this->getName() << ", can't execute " << form.getName() << "." << std::endl;
 }

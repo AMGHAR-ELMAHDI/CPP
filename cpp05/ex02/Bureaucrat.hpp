@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 02:32:10 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 19:50:00 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/26 20:10:53 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,8 @@ class Bureaucrat
                     return "Grade too Low Exception called";
                 }
         };
-        // void        executeForm( const AForm& form ) const;//to add
+        
+        void    executeForm(const AForm &form);//to add
 };
 
 //--------------------overload of the insertion («) operator-------------//
