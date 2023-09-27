@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 00:38:36 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/27 18:38:55 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/27 19:31:50 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,19 +25,25 @@ AForm    *Intern::makeForm(const std::string formName, const std::string formTar
     while (i < 4 && levels[i].compare(formName))
         i++;
 
+    AForm   *form1 = new PresidentialPardonForm(formTarget);
+    AForm   *form2 = new RobotomyRequestForm(formTarget);
+    AForm   *form3 = new ShrubberyCreationForm(formTarget);
     switch (i)
     {
         case 0:
-            AForm   *form1 = new PresidentialPardonForm(formTarget);
             std::cout << "Intern creates " << formName << "." << std::endl;
+            delete form2;
+            delete form3;
             return(form1);
         case 1:
-            AForm   *form2 = new RobotomyRequestForm(formTarget);
             std::cout << "Intern creates " << formName << "." << std::endl;
+            delete form1;
+            delete form3;
             return(form2);
         case 2:
-            AForm   *form3 = new ShrubberyCreationForm(formTarget);
             std::cout << "Intern creates " << formName << "." << std::endl;
+            delete form1;
+            delete form2;
             return(form3);
         default:
             std::cout << "Error, Wrong Form Target" << std::endl;

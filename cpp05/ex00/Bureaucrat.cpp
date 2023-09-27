@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 02:35:15 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 13:46:52 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/27 19:19:57 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,3 +82,12 @@ std::ostream &operator<<(std::ostream &o, const Bureaucrat&obj)
     return o;
 }
 
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return "Grade too High Exception called";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return "Grade too Low Exception called";
+}

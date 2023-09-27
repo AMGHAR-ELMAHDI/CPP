@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 02:35:15 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/26 20:14:55 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/27 19:29:35 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,16 @@ std::ostream &operator<<(std::ostream &o, const Bureaucrat&obj)
 {
     o << obj.getName() << ", bureaucrat grade " << obj.getGrade();
     return o;
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+    return "Grade too High Exception called";
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+    return "Grade too Low Exception called";
 }
 
 void    Bureaucrat::signForm(AForm &f)
