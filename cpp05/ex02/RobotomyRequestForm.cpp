@@ -42,7 +42,12 @@ int    RobotomyRequestForm::execute(Bureaucrat const & executor)const
     if(executor.getGrade() <= this->getGradeSigned() && this->getIsSigned() == true)
     {
         std::cout << "Background drilling noises" << std::endl;
-        std::cout << target << ",has been robotomized successfully 50% of the time" << std::endl;
+        static int check;
+        if(check % 2 == 0)
+            std::cout << target << ",has been robotomized successfully" << std::endl;
+        else
+            std::cout << target << ",robotomy failed." << std::endl;
+        check++;
         return(1);
     }
     
@@ -54,7 +59,6 @@ int    RobotomyRequestForm::execute(Bureaucrat const & executor)const
     catch(AForm::CantExecute &e)
     {
         std::cerr << e.what() << '\n';
-        std::cout << target << ",robotomy failed." << std::endl;
     }
     return(0);
 }
