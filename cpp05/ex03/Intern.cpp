@@ -22,7 +22,7 @@ AForm    *Intern::makeForm(const std::string formName, const std::string formTar
     int i = 0;
     std::string levels[] = { "PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
     
-    while (i < 4 && levels[i].compare(formTarget))
+    while (i < 4 && levels[i].compare(formName))
         i++;
 
     switch (i)
