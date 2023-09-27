@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 00:38:36 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/27 01:27:55 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/27 18:38:55 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Intern::Intern()
 AForm    *Intern::makeForm(const std::string formName, const std::string formTarget)
 {
     int i = 0;
-    std::string levels[] = { "PresidentialPardonForm", "RobotomyRequestForm", "ShrubberyCreationForm"};
+    std::string levels[] = { "presidential request", "robotomy request", "shrubbery request"};
     
     while (i < 4 && levels[i].compare(formName))
         i++;
@@ -28,17 +28,17 @@ AForm    *Intern::makeForm(const std::string formName, const std::string formTar
     switch (i)
     {
         case 0:
-            AForm   *form = new PresidentialPardonForm(formTarget);
+            AForm   *form1 = new PresidentialPardonForm(formTarget);
             std::cout << "Intern creates " << formName << "." << std::endl;
-            return(form);
+            return(form1);
         case 1:
-            AForm   *form = new RobotomyRequestForm(formTarget);
+            AForm   *form2 = new RobotomyRequestForm(formTarget);
             std::cout << "Intern creates " << formName << "." << std::endl;
-            return(form);
+            return(form2);
         case 2:
-            AForm   *form = new ShrubberyCreationForm(formTarget);
+            AForm   *form3 = new ShrubberyCreationForm(formTarget);
             std::cout << "Intern creates " << formName << "." << std::endl;
-            return(form);
+            return(form3);
         default:
             std::cout << "Error, Wrong Form Target" << std::endl;
             break;
