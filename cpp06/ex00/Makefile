@@ -18,9 +18,9 @@ FRM = rm -rf
 
 NAME = exec
 
-HEADER = Bureaucrat.hpp\
+HEADER = Convert.hpp\
 
-SRC =	Bureaucrat.cpp\
+SRC =	Convert.cpp\
 		main.cpp\
 
 all: $(NAME)

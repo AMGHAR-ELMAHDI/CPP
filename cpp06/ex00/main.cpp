@@ -10,44 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "ScalarConverter.hpp"
 
 int main()
 {
-    Bureaucrat ds1("Cheesy1", 150);
-    Bureaucrat ds2("Cheesy2", 1);
-    try
-    {
-        Bureaucrat ds3("Cheesy3", 0);
-    }
-
-    catch(Bureaucrat::GradeTooHighException &e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
-    try
-    {
-        ds1.decrementGrade();
-    }
-    
-    catch(Bureaucrat::GradeTooLowException &e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
-    try
-    {
-        ds2.incrementGrade();
-    }
-
-    catch(Bureaucrat::GradeTooHighException &e)
-    {
-        std::cerr << e.what() << '\n';
-    }
-    
-    std::cout << ds1 << std::endl;
-    std::cout << ds2 << std::endl;
 
     return(0);
 }

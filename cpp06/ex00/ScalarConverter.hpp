@@ -10,31 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONVERT_HPP
-#define CONVERT_HPP
+#ifndef SCALARCONVERTER_HPP
+#define SCALARCONVERTER_HPP
 
 #include <iostream>
 #include <string>
 
-class convert
+class ScalarConverter
 {
-    private:
-        const std::string   name;
-        int                 grade;
-
     public:
-        convert();
-        convert(const std::string Name, int grade);
-        convert(const convert &obj);
-        convert &operator=(const convert &other);
-        ~convert();
-        //-------------------Getters-----------------//
-        int getGrade(void)const;
-        const std::string getName(void)const;
-        //-------------------Grade Modifiers-----------------//
-        void    incrementGrade();
-        void    decrementGrade();
-
+        ScalarConverter();
+        ScalarConverter(const ScalarConverter &obj);
+        ScalarConverter &operator=(const ScalarConverter &other);
+        ~ScalarConverter();
 };
 
 #endif
