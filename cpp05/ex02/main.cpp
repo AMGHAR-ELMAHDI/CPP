@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/28 16:22:12 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/28 16:32:15 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	{
 		ShrubberyCreationForm dsw("Cheesy");
 		Bureaucrat yyy("dd", 1);
-		// dsw.beSigned(yyy);
+		dsw.beSigned(yyy);
 		yyy.executeForm(dsw);
 	}
 	
