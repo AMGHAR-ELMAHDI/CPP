@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:50:49 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/26 19:48:58 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/28 16:19:50 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,26 +45,17 @@ class AForm
         class GradeTooHighException : public std::exception
         {
             public:
-                virtual const char* what() const throw()
-                {
-                    return "Grade too High Exception called";
-                }
+                virtual const char* what() const throw();
         };
         class GradeTooLowException : public std::exception
         {
             public:
-                virtual const char* what() const throw()
-                {
-                    return "Grade too Low Exception called";
-                }
+                virtual const char* what() const throw();
         };
         class CantExecute : public std::exception
         {
             public:
-                virtual const char* what() const throw()
-                {
-                    return "Can't Execute Form Exception called";
-                }
+                virtual const char* what() const throw();
         };
         //--------------------execute--------------------//
         virtual int    execute(Bureaucrat const & executor) const = 0;

@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:48:10 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/27 18:29:30 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/28 16:23:36 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,7 @@ int   ShrubberyCreationForm::execute(Bureaucrat const & executor)const
         file.close();
         return(1);
     }
-    
-    try
-    {
+    else
         throw CantExecute();
-    }
-    
-    catch(AForm::CantExecute &e)
-    {
-        std::cerr << e.what() << '\n';
-    }
     return(0);
 }

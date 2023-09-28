@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 02:32:10 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/27 19:28:15 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/28 16:27:33 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,11 @@ class Bureaucrat
             public:
                 virtual const char* what() const throw();
         };
-        
+        class CantExecute : public std::exception
+        {
+            public:
+                virtual const char* what() const throw();
+        };
         void    executeForm(const AForm &form);
 };
 

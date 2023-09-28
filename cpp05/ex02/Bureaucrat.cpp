@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 02:35:15 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/27 19:28:34 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/28 16:27:12 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,11 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 const char* Bureaucrat::GradeTooLowException::what() const throw()
 {
     return "Grade too Low Exception called";
+}
+
+const char* Bureaucrat::CantExecute::what() const throw()
+{
+    return "Can't Execute Form Exception called";
 }
 
 void    Bureaucrat::signForm(AForm &f)

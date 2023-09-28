@@ -6,15 +6,28 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/26 23:42:52 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/28 16:22:12 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 int main()
 {
 	std::cout << "/-------------------------------------------------/" << std::endl;
-	ShrubberyCreationForm dsw("Cheesy");
+	try
+	{
+		ShrubberyCreationForm dsw("Cheesy");
+		Bureaucrat yyy("dd", 1);
+		// dsw.beSigned(yyy);
+		yyy.executeForm(dsw);
+	}
+	
+	catch(std::exception &e)	
+	{	
+		std::cerr << e.what() << '\n';
+	}
 	return(0);
 }

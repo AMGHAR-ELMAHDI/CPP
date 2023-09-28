@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 15:26:12 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/28 16:16:49 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int main()
     std::cout << "--------------------------------------" << std::endl;
     try
     {
-        Bureaucrat bureaucrat("M9ADAM",11);
-        Form form("3A9D ZDIYAD", 10, 20);
+        Bureaucrat bureaucrat("C1",11);
+        Form form("BC", 10, 20);
 
         bureaucrat.signForm(form);
 

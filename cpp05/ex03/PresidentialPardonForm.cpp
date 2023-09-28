@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 17:44:22 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/26 20:06:54 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/28 16:22:57 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,16 +49,7 @@ int PresidentialPardonForm::execute(Bureaucrat const &executor)const
         std::cout << this->target << ",has been pardoned by Zaphod Beeblebrox" << std::endl;
         return(1);
     }
-    
-    try
-    {
+    else
         throw CantExecute();
-    }
-    
-    catch(AForm::CantExecute &e)
-    {
-        std::cerr << e.what() << '\n';
-        return(0);
-    }
     return(0);
 }

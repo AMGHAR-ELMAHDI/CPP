@@ -85,3 +85,18 @@ void    AForm::beSigned(const Bureaucrat &b)
     else
         throw GradeTooLowException();
 }
+
+const char* AForm::GradeTooHighException::what() const throw()
+{
+    return "Grade too High Exception called";
+}
+
+const char* AForm::GradeTooLowException::what() const throw()
+{
+    return "Grade too Low Exception called";
+}
+
+const char* AForm::CantExecute::what() const throw()
+{
+    return "Can't Execute Form Exception called";
+}

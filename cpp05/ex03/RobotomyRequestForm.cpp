@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 17:44:38 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/26 20:07:14 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/28 16:23:20 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,22 +42,19 @@ int    RobotomyRequestForm::execute(Bureaucrat const & executor)const
     if(executor.getGrade() <= this->getGradeSigned() && this->getIsSigned() == true)
     {
         std::cout << "Background drilling noises" << std::endl;
-        std::cout << target << ",has been robotomized successfully 50% of the time" << std::endl;
+        srand(time(NULL));
+        
+        if((rand()%100) % 2 == 0)
+            std::cout << target << ",has been robotomized successfully" << std::endl;
+        else
+            std::cout << target << ",robotomy failed." << std::endl;
         return(1);
     }
-    
-    try
-    {
+    else
         throw CantExecute();
-    }
-    
-    catch(AForm::CantExecute &e)
-    {
-        std::cerr << e.what() << '\n';
-        std::cout << target << ",robotomy failed." << std::endl;
-    }
     return(0);
 }
+
 
 RobotomyRequestForm::~RobotomyRequestForm()
 {

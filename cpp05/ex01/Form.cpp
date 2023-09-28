@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 13:55:21 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 15:39:04 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/28 16:16:02 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,14 @@ void    Form::beSigned(const Bureaucrat &b)
         this->isSigned = true;
     else
         throw GradeTooLowException();
+}
+
+const char* Form::GradeTooHighException::what() const throw()
+{
+    return "Grade too High Exception called";
+}
+
+const char* Form::GradeTooLowException::what() const throw()
+{
+    return "Grade too Low Exception called";
 }
