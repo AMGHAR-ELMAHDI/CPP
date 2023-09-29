@@ -42,6 +42,16 @@ ScalarConverter::~ScalarConverter()
 void    ScalarConverter::convert(std::string &str)
 {
     //char 1 // int 2 // float 3 // double 4 // float or double = 5
+
+    if(str.compare("nan") == 0)
+    {
+        std::cout << "char: impossible"<< "Non displayable"<< std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: nanf" << std::endl;
+        std::cout << "double: nan" << std::endl;
+    }
+
+
     int type = 0;
     int printable = 0;
     for (size_t i = 0; i < str.length() ; i++)
@@ -74,17 +84,23 @@ void    ScalarConverter::convert(std::string &str)
         }
     }
     else
-    {
         if(std::isprint(str[0]) == 1)
             printable = 1;
-    }
     
     std::stringstream   ss(str);
 
-    int     out;//change type accordinly
-    if (!(ss >> out))
-        return ;
-    std::cout << out << std::endl;
+    if(type == 1)
+    {
+        char    out;
+        int     out1;
+        float   out2;
+        double  out3;
+        if (!(ss >> out) || printable == 0)
+            std::cout << "char: "<< "Non displayable"<< std::endl;
+        std::cout << "int: " << out1 << std::endl;
+        std::cout << "float: " << out2 << std::endl;
+        std::cout << "double: " << out3 << std::endl;
+    }
     std::cout << type << std::endl;
 }
 
