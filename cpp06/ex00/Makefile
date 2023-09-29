@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/09/24 04:28:35 by eamghar          ###   ########.fr        #
+#    Updated: 2023/09/29 19:16:06 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,9 @@ FRM = rm -rf
 
 NAME = exec
 
-HEADER = Convert.hpp\
+HEADER = ScalarConverter.hpp\
 
-SRC =	Convert.cpp\
+SRC =	ScalarConverter.cpp\
 		main.cpp\
 
 all: $(NAME)

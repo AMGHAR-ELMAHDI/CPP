@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/25 13:48:26 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/29 19:34:22 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main()
 {
-
+    std::string ex = "36232";
+    ScalarConverter::convert(ex);
     return(0);
 }

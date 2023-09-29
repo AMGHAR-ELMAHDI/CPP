@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 17:03:24 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/23 15:48:19 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/09/28 19:11:26 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,6 @@ class  Contact
         std::string darkestSecret;
         std::string phoneNumber;
         
-        std::string firstNameFull;
-        std::string lastNameFull;
-        std::string nicknameFull;
-        std::string darkestSecretFull;
-        std::string phoneNumberFull;
 
     public:
     void setFirstName(std::string str);
