@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/06 22:00:32 by eamghar          ###   ########.fr       */
+/*   Created: 2023/10/06 18:17:15 by eamghar           #+#    #+#             */
+/*   Updated: 2023/10/06 22:33:18 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Intern.hpp"
+#ifndef C_HPP
+#define C_HPP
 
+#include "Base.hpp"
 
-int main()
+class C : public Base
 {
-	AForm*   rrf;
-	try
-	{
-		Intern  someRandomIntern;
-		Bureaucrat j("d", 150);
-		rrf = someRandomIntern.makeForm("shrubbery request", "Bender");
-		rrf->beSigned(j);
-		rrf->execute(j);
-	}
-	catch(std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	delete rrf;
-	return(0);
-}
+    public:
+        C();
+        C(const C &obj);
+        C &operator=(const C &other);
+        ~C();
+};
+
+#endif
