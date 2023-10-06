@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/28 16:16:49 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/05 18:13:57 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-    Bureaucrat ds1("Cheesy1", 150);
+    Bureaucrat ds1("Cheesy1", -1);
     Bureaucrat ds2("Cheesy2", 1);
     try
     {
