@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/06 22:41:13 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/07 17:34:32 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,46 +18,31 @@
 Base *generate(void)
 {
     srand(time(NULL));
-    int r  = (rand() % 100);
-    int i;
-    std::cout << "r==> " << r << std::endl;
-    if(r >= 0 && r <= 40)
-        i = 1;        
-    else if(r > 40 && r <= 80)
-        i = 2;
-    else if(r > 80)
-        i = 3;
+    
+    int r  = (rand() % 3);
+    
+    if(r == 0)
+        return(new A);        
+    else if(r == 1)
+        return(new B);
+    else if(r == 2)
+        return(new C);
     else
-        i = 1;
-    Base   *bptr1 = new A();
-    Base   *bptr2 = new B();
-    Base   *bptr3 = new C();
-    switch (i)
-    {
-        case 0:
-            delete bptr2;
-            delete bptr3;
-            return(bptr1);
-        case 1:
-            delete bptr1;
-            delete bptr3;
-            return(bptr2);
-        case 2:
-            delete bptr1;
-            delete bptr2;
-            return(bptr3);
-        default:
-            break;
-    }
-    delete bptr2;
-    delete bptr3;
-    return(bptr1);
+        return(new A);
 }
 
-// void identify(Base *p)
-// {
-    
-// }
+void identify(Base *p)
+{
+    //--------------Check if Object is of type A derived----------------------//
+    if(dynamic_cast<A *>(p))
+        std::cout << "The Type of object pointed to by p is: A" << std::endl;
+    else if(dynamic_cast<B *>(p))
+        std::cout << "The Type of object pointed to by p is: B" << std::endl;
+    else if(dynamic_cast<C *>(p))
+        std::cout << "The Type of object pointed to by p is: C" << std::endl;
+    else
+        std::cout << "Unknown Type" << std::endl;
+}
 
 // void identify(Base &p)
 // {
@@ -66,6 +51,8 @@ Base *generate(void)
 
 int main()
 {
-    std::cout << "----------------------------------------------------" << std::endl;
+    Base *b = generate();
+    identify(b);
+    delete b;
     return(0);
 }

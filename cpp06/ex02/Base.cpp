@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/06 17:58:35 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/07 17:15:09 by eamghar          ###   ########.fr       */
+/*   Created: 2023/10/07 17:15:53 by eamghar           #+#    #+#             */
+/*   Updated: 2023/10/07 17:16:13 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-#define BASE_HPP
+#include "Base.hpp"
 
-#include <iostream>
-#include <string>
-#include <cstdlib>
-
-class Base
+Base::~Base()
 {
-    public:
-        virtual ~Base();
-};
-
-#endif
+    std::cout << "Base Destructor called" << std::endl;
+}
