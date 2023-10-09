@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   whatever.hpp                                       :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:22:50 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/09 19:04:51 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/09 19:03:56 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER_HPP
-#define WHATEVER_HPP
+#ifndef ITER_HPP
+#define ITER_HPP
 
 #include <iostream>
 #include <string>
 
 
-// class whatever
+// class iter
 // {
 //     public:
-//         whatever();
-//         whatever(const whatever &obj);
-//         whatever &operator=(const whatever &other);
-//         ~whatever();
+//         iter();
+//         iter(const iter &other);
+//         iter &operator=(const iter &other);
+//         ~iter();
 
 //     //-----------------------------------------------------------------//
 	
@@ -31,32 +31,12 @@
 
 template<typename T>
 
-void	swap(T &a, T &b)
+void	iter(T &a, T b, T c)
 {
-	T	t;
-
-	t = a;
-	a = b;
-	b = t;
-}
-
-template<typename T>
-
-T	min(T const &a, T const &b)
-{
-	if(a < b)
-		return(a);
-}
-	return(b);
-
-
-template<typename T>
-
-T	max(T const &a, T const &b)
-{
-	if(a > b)
-		return(a);
-	return(b);
+	for (size_t i = 0; i < b; i++)
+	{
+		c(a[i]);
+	}	
 }
 
 #endif
