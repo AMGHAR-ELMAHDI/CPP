@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 18:01:24 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/07 17:11:02 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/09 13:44:26 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,6 @@
 
 class A : public Base
 {
-    public:
-        A();
-        A(const A &obj);
-        A &operator=(const A &other);
-        ~A();
     
 };
 

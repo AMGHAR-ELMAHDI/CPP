@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 18:17:15 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/06 22:33:18 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/09 13:44:44 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,7 @@
 
 class C : public Base
 {
-    public:
-        C();
-        C(const C &obj);
-        C &operator=(const C &other);
-        ~C();
+    
 };
 
 #endif

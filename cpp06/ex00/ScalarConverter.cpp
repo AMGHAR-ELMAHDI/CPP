@@ -113,7 +113,9 @@ void    ScalarConverter::castToDifferentValues(std::string str, int  type)
     }
 
     int printable = 0;
-    int num = std::stoi(str);
+    //change stoi to s
+    const char * ww = str.c_str();
+    int num = std::atoi(ww);
     if(num > 32 && num < 127)
         printable = 1;
 
@@ -123,6 +125,7 @@ void    ScalarConverter::castToDifferentValues(std::string str, int  type)
     double  out_double = 0;
     
     std::stringstream stream(str);
+        std::stringstream stream1(str.substr(0, str.length() - 1));
     
     switch (type)
     {
@@ -159,7 +162,7 @@ void    ScalarConverter::castToDifferentValues(std::string str, int  type)
             break;
 
             case 3://float
-                if(!(stream >> out_float))
+                if(!(stream1 >> out_float))
                     std::cout << "float Overflow Error" << std::endl;
                 else
                 {
@@ -198,6 +201,7 @@ void    ScalarConverter::castToDifferentValues(std::string str, int  type)
                 }
                 break;
         default:
+            std::cout << "Error" << std::endl;
             break;
     }
 

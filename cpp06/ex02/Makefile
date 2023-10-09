@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/10/07 17:16:23 by eamghar          ###   ########.fr        #
+#    Updated: 2023/10/09 13:44:56 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,7 @@ HEADER =	A.hpp \
 			Base.hpp \
 			C.hpp \
 
-SRC =	A.cpp \
-		B.cpp \
-		Base.cpp \
-		C.cpp \
+SRC =	Base.cpp \
 		main.cpp \
 
 
