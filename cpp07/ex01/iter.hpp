@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:22:50 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/09 19:03:56 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/11 16:44:14 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,21 @@
 #include <iostream>
 #include <string>
 
-
-// class iter
-// {
-//     public:
-//         iter();
-//         iter(const iter &other);
-//         iter &operator=(const iter &other);
-//         ~iter();
-
-//     //-----------------------------------------------------------------//
-	
-// };
-
 template<typename T>
 
-void	iter(T &a, T b, T c)
+void	iter(T *a, size_t  length, void (*func)(T &))
 {
-	for (size_t i = 0; i < b; i++)
+	for (size_t i = 0; i < length; i++)
 	{
-		c(a[i]);
+		func(a[i]);
 	}	
+}
+
+template < typename T >
+
+void    printElements( T &value )
+{
+    std::cout << value << std::endl;
 }
 
 #endif
