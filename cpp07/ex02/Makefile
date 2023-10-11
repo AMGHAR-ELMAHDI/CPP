@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/08/25 22:07:55 by eamghar          ###   ########.fr        #
+#    Updated: 2023/10/11 17:46:28 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,12 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 FRM = rm -rf
 
-NAME = phonebook
+NAME = exec
 
-HEADER =	contact.hpp\
-			phonebook.hpp\
+HEADER = Array.hpp\
 
-SRC =	contact.cpp \
-		phonebook.cpp \
-		main.cpp \
+SRC =	Array.cpp\
+		main.cpp\
 
 all: $(NAME)
 
@@ -36,5 +34,3 @@ clean:
 fclean: clean
 
 re: fclean all
-
-.PHONY : all clean fclean re

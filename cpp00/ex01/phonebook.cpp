@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 20:02:32 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/23 15:52:46 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/23 16:00:39 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void    getCorrectLenght(std::string *str)
 {
     if(str->length() > 10)
     {
-        *str = str->substr(0, 9); 
+        *str = str->substr(0, 9);
         *str = *str + ".";
     }
 }

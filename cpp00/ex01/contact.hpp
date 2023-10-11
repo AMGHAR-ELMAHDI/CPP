@@ -6,13 +6,13 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 17:03:24 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/28 19:11:26 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/25 22:04:08 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef CONTACT
 #define CONTACT
+
 #include "phonebook.hpp"
 #include <iostream>
 
@@ -25,6 +25,11 @@ class  Contact
         std::string darkestSecret;
         std::string phoneNumber;
         
+        std::string firstNameFull;
+        std::string lastNameFull;
+        std::string nicknameFull;
+        std::string darkestSecretFull;
+        std::string phoneNumberFull;
 
     public:
     void setFirstName(std::string str);
@@ -41,7 +46,8 @@ class  Contact
     
     void setphoneNumber(std::string str);
     std::string getphoneNumber(void);
-    //-----------------------------------------//
+
+    
     void setFirstNameFull(std::string str);
     std::string getFirstNameFull(void);
 
@@ -57,7 +63,5 @@ class  Contact
     void setphoneNumberFull(std::string str);
     std::string getphoneNumberFull(void);
 };
-
-
 
 #endif

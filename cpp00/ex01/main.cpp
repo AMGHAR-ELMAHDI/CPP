@@ -6,13 +6,12 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/10 18:23:54 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/28 19:09:00 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/23 15:59:38 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 #include "contact.hpp"
-
 
 int main()
 {
@@ -20,7 +19,7 @@ int main()
     Contact ctt;
     std::string inputLine;
 
-    std::cout << "The program only accepts ADD, SEARCH, and EXIT\n";
+    std::cout << "The program only accepts ADD, SEARCH, and EXIT" << std::endl;
     std::cout << "Enter a line of text: ";
     
     while (std::getline(std::cin, inputLine))

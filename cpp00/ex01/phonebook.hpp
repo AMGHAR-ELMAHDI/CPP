@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 17:03:24 by eamghar           #+#    #+#             */
-/*   Updated: 2023/08/23 15:44:21 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/08/25 22:02:41 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,5 @@ class  PhoneBook
         int checkWhiteSpace(std::string str);
         int checkDigit(std::string str);
 };
-
-
 
 #endif
