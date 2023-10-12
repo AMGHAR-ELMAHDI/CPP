@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/07 17:54:40 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/12 18:47:35 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,41 +50,42 @@ void identify(Base &p)
    {
         A &a = dynamic_cast<A &>(p);
         a.~A();
-        std::cout << "The Type of object refreenced to by p is: A" << std::endl;
+        std::cout << "The Type of object referenced to by p is: A" << std::endl;
         return;
    }
    catch(const std::exception& e)
    {
-        std::cerr << e.what() << std::endl;
+        // std::cerr << e.what() << std::endl;
    }
    //-----------------------------Check if B type---------------------------//
    try
    {
         B &b = dynamic_cast<B &>(p);
         b.~B();
-        std::cout << "The Type of object refreenced to by p is: B" << std::endl;
+        std::cout << "The Type of object referenced to by p is: B" << std::endl;
         return;
    }
    catch(const std::exception& e)
    {
-        std::cerr << e.what() << std::endl;
+        // std::cerr << e.what() << std::endl;
    }
    //-----------------------------Check if C type---------------------------//
    try
    {
         C &c = dynamic_cast<C &>(p);
         c.~C();
-        std::cout << "The Type of object refreenced to by p is: C" << std::endl;
+        std::cout << "The Type of object referenced to by p is: C" << std::endl;
         return;
    }
    catch(const std::exception& e)
    {
-        std::cerr << e.what() << std::endl;
+        // std::cerr << e.what() << std::endl;
    }
 }
 
 int main()
 {
+    std::cout << "--------------------------------------" << std::endl;
     Base *b = generate();
     
     B   a;
@@ -92,10 +93,11 @@ int main()
     Base &dd = a;
 
     identify(b);
+    std::cout << "--------------------------------------" << std::endl;
 
     identify(dd);
+    std::cout << "--------------------------------------" << std::endl;
 
     delete b;
-    
     return(0);
 }

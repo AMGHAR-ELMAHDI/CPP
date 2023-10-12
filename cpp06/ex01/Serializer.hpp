@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:22:50 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/06 17:47:28 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/12 18:58:13 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 struct Data
 {
-    int     a;
-    float   b;
-    char	c;
-    bool	bl;
+    int         a;
+    float       b;
+    char	    c;
+    bool	    bl;
     std::string	str;
 };
 
@@ -46,7 +46,7 @@ class Serializer
     //-----------------------------------------------------------------//
     
     static void    init_struct(Data *d);
-    static void    printUniPtr(uintptr_t raw);
+    // static void    printUniPtr(uintptr_t raw);
     static void    printStruct(Data *d);
 };
 

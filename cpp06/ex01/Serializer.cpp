@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:25:33 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/09 16:02:19 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/12 18:51:40 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,13 @@
 Serializer::Serializer()
 {
     std::cout << "Serializer Default constructor called" << std::endl;
+    s = 0;
 }
 
 Serializer::Serializer(const int ss) : s(ss)
 {
-    std::cout << "Serializer Default constructor called" << std::endl;
+    std::cout << "Serializer Parameterized constructor called" << std::endl;
+    s = 0;
 }
 
 Serializer::Serializer(const Serializer &obj)
@@ -64,23 +66,23 @@ void    Serializer::init_struct(Data *d)
     d->str  = "HUH???"; 
 }
 
-void    Serializer::printUniPtr(uintptr_t raw)
-{
-    int *i = reinterpret_cast<int *>(raw);
-    std::cout << "int: " << *i << std::endl;
+// void    Serializer::printUniPtr(uintptr_t raw)
+// {
+//     int *i = reinterpret_cast<int *>(raw);
+//     std::cout << "int: " << *i << std::endl;
     
-    float *f = reinterpret_cast<float *>(++i);
-    std::cout << "float: "<< *f << std::endl;
+//     float *f = reinterpret_cast<float *>(++i);
+//     std::cout << "float: "<< *f << std::endl;
 
-    char *c = reinterpret_cast<char *>(++i);
-    std::cout << "char: " << *c << std::endl;
+//     char *c = reinterpret_cast<char *>(++i);
+//     std::cout << "char: " << *c << std::endl;
 
-    bool *b = reinterpret_cast<bool *>(++i);
-    std::cout << "bool: " << *b << std::endl;
+//     bool *b = reinterpret_cast<bool *>(++i);
+//     std::cout << "bool: " << *b << std::endl;
 
-    std::string *s = reinterpret_cast<std::string *>(++i);
-    std::cout << "string: " << *s << std::endl;
-}
+//     std::string *s = reinterpret_cast<std::string *>(++i);
+//     std::cout << "string: " << *s << std::endl;
+// }
 
 void    Serializer::printStruct(Data *d)
 {
