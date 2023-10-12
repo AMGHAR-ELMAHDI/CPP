@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:22:50 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/12 18:58:13 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/12 19:08:58 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,16 @@ class Serializer
 {
     private:
         Serializer();
-		int		s;
-    
-    public:
-        Serializer(const int ss);
         Serializer(const Serializer &obj);
         Serializer &operator=(const Serializer &other);
+    
+    public:
         ~Serializer();
 
     //-----------------------------------------------------------------//
     
-    uintptr_t serialize(Data* ptr);
-    Data* deserialize(uintptr_t raw);
+    static uintptr_t serialize(Data* ptr);
+    static Data* deserialize(uintptr_t raw);
     
     //-----------------------------------------------------------------//
     

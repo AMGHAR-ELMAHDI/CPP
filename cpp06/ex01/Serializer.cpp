@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:25:33 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/12 18:51:40 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/12 19:08:55 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,6 @@
 Serializer::Serializer()
 {
     std::cout << "Serializer Default constructor called" << std::endl;
-    s = 0;
-}
-
-Serializer::Serializer(const int ss) : s(ss)
-{
-    std::cout << "Serializer Parameterized constructor called" << std::endl;
-    s = 0;
 }
 
 Serializer::Serializer(const Serializer &obj)
@@ -35,7 +28,7 @@ Serializer &Serializer::operator=(const Serializer &other)
     std::cout << "Serializer Copy assignement opperator called " << std::endl; 
     if (this != &other)
     {
-        this->s = other.s;
+        (void)other;
     }
     return *this;
 }
