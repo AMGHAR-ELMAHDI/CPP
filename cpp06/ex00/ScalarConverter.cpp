@@ -41,9 +41,11 @@ ScalarConverter::~ScalarConverter()
 
 void    ScalarConverter::convert(std::string &str)
 {
-    //char 1 // int 2 // float 3 // double 4 // float or double 5 // string 6
+    //char 1 // int 2 // float 3 // double 4 // float or double 5 // error 6
 
+//check after . if there is only digit and f
     int type = 0;
+
 	if(str.length() == 1 && std::isalpha(str[0]) && std::isprint(str[0]))
 	{
 		int num = str[0];
@@ -58,11 +60,16 @@ void    ScalarConverter::convert(std::string &str)
             if(str[i] == '.')
             {
                 type = 5;
-                break;
-            }
-            if(str[i] == '.' && str[i + 1] && str[i + 1] != '.')
-            {
-                type = 6;
+                int j = i;
+                while(str[++j])
+                {
+                    if(std::isdigit(str[j]) == 0 && str[j] != 'f')
+                    {
+                        type = 6;
+                        std::cout << "Error" << std::endl;
+                        return;
+                    }
+                }
                 break;
             }
         }
@@ -71,7 +78,7 @@ void    ScalarConverter::convert(std::string &str)
             size_t k;
             for (k = 0; k < str.length(); k++)
             {
-                if(std::isdigit(str[k]) == 0)
+                if(std::isdigit(str[k]) == 0 && str[k] != '-')
                     break;
             }
             if(k == str.length())
@@ -88,44 +95,70 @@ void    ScalarConverter::convert(std::string &str)
         }
     }
 
+    if(type == 3)
+    {
+        int count = 0;
+        for (size_t i = 0; i < str.length(); i++)
+        {
+            if(str[i] == 'f')
+                count++;
+        }
+        if(count != 1)
+            type = 6;
+    }
 	//------------------Cast to diffrent values---------------//
-    // if(type == 1)
-    //     puts("TYPE == CHAR");
-    // else if(type == 2)
-    //     puts("TYPE == INT");
-    // else if(type == 3)
-    //     puts("TYPE == FLOAT");
-    // else if(type == 4)
-    //     puts("TYPE == DOUBLE");
+    if(type == 1)
+        std::cout << "TYPE == CHAR" << std::endl;
+    else if(type == 2)
+        std::cout << "TYPE == INT" << std::endl;
+    else if(type == 3)
+        std::cout << "TYPE == FLOAT" << std::endl;
+    else if(type == 4)
+        std::cout << "TYPE == DOUBLE" << std::endl;
+    else
+        std::cout << "TYPE == STRING" << std::endl;
     castToDifferentValues(str, type);
 }
 
-
-void    ScalarConverter::castToDifferentValues(std::string str, int  type)
+int    checSpecialCases(std::string str)
 {
     if(str.compare("nan") == 0 || str.compare("-inff") == 0 || str.compare("+inff") == 0 || str.compare("nanf") == 0 || str.compare("+inf") == 0 || str.compare("-inf") == 0)
     {
-        std::cout << "char: impossible" << std::endl;
-        std::cout << "int: impossible" << std::endl;
-        std::cout << "float: nanf" << std::endl;
-        std::cout << "double: nan" << std::endl;
-        return;
+        std::cout << "char : " << "impossible" << std::endl;
+        std::cout << "int : " << "impossible" << std::endl;
+        if (str.compare("+inf") == 0 || str.compare("-inf") == 0 || str.compare("nan") == 0)
+        {
+            std::cout << "float : " << str + 'f' << std::endl;
+            std::cout << "double : " << str << std::endl;
+        }
+        else if (str.compare("+inff") == 0 || str.compare("-inff") == 0 || str.compare("nanf") == 0)
+        {
+            std::cout << "float : " << str << std::endl;
+            std::cout << "double : " << str.substr(0, str.length() - 1) << std::endl;
+        }
+        return(1);
     }
+    return(0);
+}
 
+void    ScalarConverter::castToDifferentValues(std::string str, int  type)
+{
     int printable = 0;
-    //change stoi to s
-    const char * ww = str.c_str();
-    int num = std::atoi(ww);
-    if(num > 32 && num < 127)
-        printable = 1;
-
     char    out_char = 0;
     int     out_int = 0;
     float   out_float = 0;
     double  out_double = 0;
-    
+
     std::stringstream stream(str);
-        std::stringstream stream1(str.substr(0, str.length() - 1));
+    std::stringstream stream1(str.substr(0, str.length() - 1));
+
+    if(checSpecialCases(str))
+        return;
+
+    const char *ww = str.c_str();
+    int num = std::atoi(ww);
+    if(num >= 32 && num < 127)
+        printable = 1;
     
     switch (type)
     {
