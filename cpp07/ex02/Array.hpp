@@ -33,7 +33,7 @@ class Array
         {
             std::cout << "Array Default constructor called" << std::endl;
             arr = new T[num];
-        };
+        }
         
 
         //--------------------Parameterized constructor-------------------------//

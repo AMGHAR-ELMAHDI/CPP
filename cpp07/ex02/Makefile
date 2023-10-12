@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/10/11 17:46:28 by eamghar          ###   ########.fr        #
+#    Updated: 2023/10/11 18:40:01 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,7 @@ NAME = exec
 
 HEADER = Array.hpp\
 
-SRC =	Array.cpp\
-		main.cpp\
+SRC =	main.cpp\
 
 all: $(NAME)
 
