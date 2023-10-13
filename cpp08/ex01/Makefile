@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/10/13 20:30:55 by eamghar          ###   ########.fr        #
+#    Updated: 2023/10/13 23:44:10 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FRM = rm -rf
 
 NAME = exec
 
-HEADER = easyfind.hpp\
+HEADER = Span.hpp\
 
 SRC =	main.cpp\
 		Span.cpp\
