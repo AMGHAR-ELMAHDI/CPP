@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:30:34 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/14 16:01:12 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/14 16:07:20 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,27 +44,35 @@ Span::~Span()
 
 void	Span::addNumber(int n)
 {
-    if(this->arr.size() < this->num)
-        this->arr.push_back(n);
+    if(this->vec.size() < this->num)
+        this->vec.push_back(n);
 }
 
-void	Span::shortestSpan()
+int Span::shortestSpan()
 {
-    for (size_t i = 0; i < this->arr.size(); i++)
+    if (vec.size() < 2)
+        throw std::runtime_error("Cannot find span. Insufficient vec.");
+
+    std::sort(vec.begin(), vec.end());
+
+    int shortest = vec[1] - vec[0];
+    for (size_t i = 2; i < vec.size(); i++)
     {
-        
+        int span = vec[i] - vec[i - 1];
+        shortest = std::min(shortest, span);
     }
-    
+
+    return shortest;
 }
 
 int Span::longestSpan()
 {
-    if (arr.size() < 2)
-        throw std::runtime_error("Cannot find span. Insufficient arr.");
+    if (vec.size() < 2)
+        throw std::runtime_error("Cannot find span. Insufficient vec.");
 
-    std::sort(arr.begin(), arr.end());
+    std::sort(vec.begin(), vec.end());
 
-    int longest = arr[arr.size() - 1] - arr[0];
+    int longest = vec[vec.size() - 1] - vec[0];
     return longest;
 }
 

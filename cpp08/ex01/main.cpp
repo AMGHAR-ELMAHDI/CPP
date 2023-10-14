@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/13 23:43:56 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/14 16:06:27 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int main()
     sp.addNumber(9);
     sp.addNumber(11);
     
-    // std::cout << sp.shortestSpan() << std::endl;
-    // std::cout << sp.longestSpan() << std::endl;
-return 0; }
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
+    return 0;
+}
