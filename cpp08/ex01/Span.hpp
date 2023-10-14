@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:22:50 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/13 23:51:13 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/14 16:00:56 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include <algorithm>
 #include <vector>
+
 
 
 class Span
@@ -51,10 +52,37 @@ class Span
 		};
 };
 
-// template<typename T>
 
+template<typename T>
 
 #endif
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // class SpanFinder {

@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:30:34 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/13 23:50:59 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/14 16:01:12 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,12 @@ void	Span::shortestSpan()
 
 int Span::longestSpan()
 {
-    if (numbers.size() < 2)
-        throw std::runtime_error("Cannot find span. Insufficient numbers.");
+    if (arr.size() < 2)
+        throw std::runtime_error("Cannot find span. Insufficient arr.");
 
-    std::sort(numbers.begin(), numbers.end());
+    std::sort(arr.begin(), arr.end());
 
-    int longest = numbers[numbers.size() - 1] - numbers[0];
+    int longest = arr[arr.size() - 1] - arr[0];
     return longest;
 }
 

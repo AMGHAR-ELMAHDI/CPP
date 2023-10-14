@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:22:50 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/13 20:28:43 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/14 15:58:51 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <string>
 #include <algorithm>
 #include <vector>
+#include <array>
 
 class IndexIsOutOfBounds : public std::exception
 {
@@ -29,24 +30,15 @@ class IndexIsOutOfBounds : public std::exception
 
 template<typename T>
 
-void	easyfind(T a, int num)
+void	easyfind(T &a, int num)
 {
-	std::vector<int> numVector = a;	
-	int		found = -1;
+	typename T::iterator it;
 
-	for (size_t i = 0; i < numVector.size(); i++)
-	{
-		if(numVector[i] == num)
-		{
-			found = i;
-			break;
-		}
-	}
-	
-	if(found != -1)
-		std::cout << "Found " << num << " at index: " << found << std::endl;
+	if ((it = std::find(a.begin(), a.end(), num)) != a.end())
+		std::cout << "found number at index: " << *it << std::endl;
 	else
 		throw IndexIsOutOfBounds();
 }
+
 
 #endif
