@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:30:34 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/14 16:07:20 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/14 21:50:34 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,19 +46,23 @@ void	Span::addNumber(int n)
 {
     if(this->vec.size() < this->num)
         this->vec.push_back(n);
+    else
+        throw TooManyElements();
 }
 
 int Span::shortestSpan()
 {
     if (vec.size() < 2)
-        throw std::runtime_error("Cannot find span. Insufficient vec.");
+        throw std::runtime_error("Cannot find span. Insufficient numbers.");
 
-    std::sort(vec.begin(), vec.end());
+    std::vector<int> v = this->vec;
 
-    int shortest = vec[1] - vec[0];
-    for (size_t i = 2; i < vec.size(); i++)
+    std::sort(v.begin(), v.end());
+    
+    int shortest = v[1] - v[0];
+    for (size_t i = 2; i < v.size(); i++)
     {
-        int span = vec[i] - vec[i - 1];
+        int span = v[i] - v[i - 1];
         shortest = std::min(shortest, span);
     }
 
@@ -68,11 +72,27 @@ int Span::shortestSpan()
 int Span::longestSpan()
 {
     if (vec.size() < 2)
-        throw std::runtime_error("Cannot find span. Insufficient vec.");
+        throw std::runtime_error("Cannot find span. Insufficient numbers.");
 
-    std::sort(vec.begin(), vec.end());
+    std::vector<int> v = this->vec;
 
-    int longest = vec[vec.size() - 1] - vec[0];
+    //use max element and min element instead
+    std::sort(v.begin(), v.end());
+
+    int longest = v[v.size() - 1] - v[0];
     return longest;
+}
+
+void	Span::fillSpan(std::vector<int>::const_iterator it1, std::vector<int>::const_iterator it2)
+{
+    vec.insert( vec.end(), it1, it2 );
+}
+
+void	Span::printValues()
+{
+    for (size_t i = 0; i < this->vec.size(); i++)
+    {
+        std::cout << "Value: " << this->vec[i] << std::endl;
+    }
 }
 

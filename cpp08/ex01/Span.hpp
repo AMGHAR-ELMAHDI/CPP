@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:22:50 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/14 16:08:01 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/14 21:50:14 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,11 @@ class Span
 		//----------------------longestSpan---------------------------//
 		int		longestSpan();
 		
+		//-----------------------fillSpan---------------------------//
+		void	fillSpan(std::vector<int>::const_iterator it1, std::vector<int>::const_iterator it2);
+		
+		//-----------------------printValues---------------------------//
+		void	printValues();
 		//----------------------Exceptions---------------------------//
 		class IndexIsOutOfBounds : public std::exception
 		{
@@ -47,6 +52,14 @@ class Span
 				virtual const char* what() const throw()
 				{
 					return("Index is out of bounds exception called");
+				}
+		};
+		class TooManyElements : public std::exception
+		{
+			public:
+				virtual const char* what() const throw()
+				{
+					return("Too Many Elements exception called");
 				}
 		};
 };

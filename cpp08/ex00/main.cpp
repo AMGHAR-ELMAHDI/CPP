@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/14 15:59:28 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/14 21:42:37 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main()
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     
     return 0;
