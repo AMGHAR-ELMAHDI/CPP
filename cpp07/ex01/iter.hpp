@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:22:50 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/16 14:34:30 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/16 15:38:38 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 #include <iostream>
 #include <string>
 
-template<typename T>
+template<typename T, typename S, typename F>
 
-void	iter(T *a, size_t  length, void (*func)(T &))
+void	iter(T a, S  length, void (*func)(F &))
 {
-	for (size_t i = 0; i < length; i++)
+	for (S i = 0; i < length; i++)
 	{
 		func(a[i]);
 	}	
