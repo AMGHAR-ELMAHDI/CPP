@@ -6,13 +6,13 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/14 14:26:52 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/16 13:48:02 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "whatever.hpp"
 
-int main( void )
+int main()
 {
     int a = 2;
     int b = 3;

@@ -48,6 +48,7 @@ class Array
         Array(const Array &obj)
         {
             std::cout << "Array Copy constructor Called " << std::endl;
+            arr = new T[this->num];
             *this = obj;
         };
 
@@ -58,10 +59,10 @@ class Array
             std::cout << "Array Copy assignement opperator called " << std::endl; 
             if (this != &other)
             {
+                this->num = other.num;
+
                 if(this->arr)
                     delete[] this->arr;
-
-                this->num = other.num;
 
                 this->arr = new T[this->num];
 
@@ -77,7 +78,8 @@ class Array
         ~Array()
         {
            std::cout << "Array Destructor called" << std::endl;
-            delete[] this->arr;
+           if(this->arr)
+                delete[] this->arr;
         };
 
 

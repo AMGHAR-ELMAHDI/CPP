@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:22:50 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/11 16:44:14 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/16 14:34:30 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	iter(T *a, size_t  length, void (*func)(T &))
 
 template < typename T >
 
-void    printElements( T &value )
+void    printElements(T &value)
 {
     std::cout << value << std::endl;
 }

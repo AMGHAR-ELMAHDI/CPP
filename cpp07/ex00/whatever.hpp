@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 22:22:50 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/14 14:26:14 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/16 13:47:46 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ T	min(T const &a, T const &b)
 		return(a);
 	return(b);
 }
-
 
 template<typename T>
 
