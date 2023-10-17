@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:30:34 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/14 21:50:34 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/17 16:27:27 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	Span::addNumber(int n)
     if(this->vec.size() < this->num)
         this->vec.push_back(n);
     else
-        throw TooManyElements();
+        throw std::runtime_error("Out of Range");
 }
 
 int Span::shortestSpan()
@@ -76,7 +76,6 @@ int Span::longestSpan()
 
     std::vector<int> v = this->vec;
 
-    //use max element and min element instead
     std::sort(v.begin(), v.end());
 
     int longest = v[v.size() - 1] - v[0];
