@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:30:34 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/17 17:38:04 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/18 15:44:57 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ int Span::shortestSpan()
     std::sort(v.begin(), v.end());
     
     int shortest = v[1] - v[0];
+    
     for (size_t i = 2; i < v.size(); i++)
     {
         int span = v[i] - v[i - 1];
