@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:30:34 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/18 15:44:57 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/18 18:49:28 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Span::Span() : num(0)
 
 Span::Span(unsigned int N) : num(N)
 {
-    std::cout << "Span Default constructor called" << std::endl;
+    std::cout << "Span Parametized constructor called" << std::endl;
 }
 
 Span::Span(const Span &obj)
