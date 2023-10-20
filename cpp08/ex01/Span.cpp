@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 20:30:34 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/18 18:49:28 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/19 18:05:22 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 Span::Span() : num(0)
 {
-    std::cout << "Span Default constructor called" << std::endl;    
+    std::cout << "Span Default constructor called" << std::endl; 
+    this->vec.reserve(0);
 }
 
 Span::Span(unsigned int N) : num(N)
 {
     std::cout << "Span Parametized constructor called" << std::endl;
+    this->vec.reserve(N);
 }
 
 Span::Span(const Span &obj)
@@ -88,7 +90,7 @@ int Span::longestSpan()
 void	Span::fillSpan(std::vector<int>::const_iterator it1, std::vector<int>::const_iterator it2)
 {
      if(this->vec.size() + std::distance(it1, it2) <= this->num)
-        vec.insert( vec.end(), it1, it2 );
+        vec.insert(vec.end(), it1, it2);
     else
         throw std::runtime_error("Out of Range");
 }

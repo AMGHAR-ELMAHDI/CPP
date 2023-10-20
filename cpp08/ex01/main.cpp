@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/18 15:51:59 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/19 18:23:33 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,20 @@ int main()
     {
         std::cout << e.what() << std::endl;
     }
+    try
+    {
+        Span sp(1000000);
+        std::vector < int > boj;
+        for (int i = 0; i < 1000000; i++)
+            boj.push_back(i);
+        sp.fillSpan(boj.begin(), boj.end());
+        std::cout << sp.shortestSpan() << std::endl;
+        std::cout << sp.longestSpan() << std::endl;
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+        
     return 0;
 }

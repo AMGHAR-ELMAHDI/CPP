@@ -1,35 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 22:22:50 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/19 14:36:18 by eamghar          ###   ########.fr       */
+/*   Created: 2023/09/24 02:32:10 by eamghar           #+#    #+#             */
+/*   Updated: 2023/10/20 12:12:07 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#ifndef BITCOINEXCHANGE_HPP
+#define BITCOINEXCHANGE_HPP
+
 
 #include <iostream>
 #include <string>
-#include <algorithm>
-#include <vector>
-#include <array>
+#include <sstream>
 
-template<typename T>
-
-void	easyfind(T &a, int num)
+class BitcoinExchange
 {
-	typename T::iterator it;
-
-	if ((it = std::find(a.begin(), a.end(), num)) != a.end())
-		std::cout << "Found number at index: " << *it << std::endl;
-	else
-		throw std::out_of_range();
-}
-
+    private:
+        
+    public:
+        BitcoinExchange(const BitcoinExchange &obj);
+        BitcoinExchange &operator=(const BitcoinExchange &other);
+        BitcoinExchange();
+        ~BitcoinExchange();
+};
 
 #endif

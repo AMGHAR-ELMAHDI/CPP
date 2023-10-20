@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 22:22:50 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/19 14:36:18 by eamghar          ###   ########.fr       */
+/*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
+/*   Updated: 2023/10/20 12:12:18 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EASYFIND_HPP
-#define EASYFIND_HPP
+#include "BitcoinExchange.hpp"
 
-#include <iostream>
-#include <string>
-#include <algorithm>
-#include <vector>
-#include <array>
-
-template<typename T>
-
-void	easyfind(T &a, int num)
+int main(int ac, char **av)
 {
-	typename T::iterator it;
-
-	if ((it = std::find(a.begin(), a.end(), num)) != a.end())
-		std::cout << "Found number at index: " << *it << std::endl;
-	else
-		throw std::out_of_range();
+    if(ac == 2)
+    {
+        std::string ex = av[1];
+    }
+    else
+        std::cout << "Error" << std::endl;
+    return(0);
 }
-
-
-#endif
