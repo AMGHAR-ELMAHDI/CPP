@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/09/29 19:16:06 by eamghar          ###   ########.fr        #
+#    Updated: 2023/10/20 14:01:05 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,11 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 FRM = rm -rf
 
-NAME = exec
+NAME = btc
 
-HEADER = ScalarConverter.hpp\
+HEADER = BitcoinExchange.hpp\
 
-SRC =	ScalarConverter.cpp\
+SRC =	BitcoinExchange.cpp\
 		main.cpp\
 
 all: $(NAME)
