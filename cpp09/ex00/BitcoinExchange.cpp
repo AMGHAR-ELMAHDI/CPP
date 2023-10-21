@@ -87,12 +87,59 @@ int		BitcoinExchange::checkFirstLine(std::string check)
 	return(0);
 }
 
+int isLeapYear(int year)
+{
+    return ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0);
+}
+
+int isValidDate(double year, double month, double day)
+{
+    if (year < 0 || month < 1 || month > 12 || day < 1)
+        return 1;
+
+    int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+    if (isLeapYear(year))
+        daysInMonth[1] = 29;
+
+    if (day > daysInMonth[(int)month - 1])
+        return 1;
+
+    return 0;
+}
+
 std::string getNextToken(std::istringstream& iss)
 {
     std::string token;
 
     std::getline(iss, token, '-');
     return token;
+}
+
+void BitcoinExchange::calculateValue(std::string date, double value)
+{
+	std::map<std::string, std::string>::iterator it;
+	double output;
+
+	if((it = this->mapData.find(date.substr(0, date.length() - 1))) != this->mapData.end())
+	{
+		output = value * std::stod(it->second);
+		std::cout << "Found and Value is:" << output << std::endl;
+	}
+	else
+	{
+		std::string print = date.substr(0, date.length() - 1);
+
+		it = this->mapData.lower_bound(print);
+
+
+		std::cout << "date|" << print << "|" << "comparison|" << it->first << "|" << std::endl;
+
+		output = value * std::stod(it->second);
+
+		std::cout << "Not Found and Value is:" << output << std::endl;
+	}
+
 }
 
 int	BitcoinExchange::checkLines(std::string check)
@@ -102,7 +149,7 @@ int	BitcoinExchange::checkLines(std::string check)
 	date = check.substr(0, this->in);
 	value = &check[this->in + 1];
 
-	if(date.length() != 11 || this->CountDashes(date) == 1)
+	if(date.length() != 11 || this->CountDashes(date) == 1 || value.length() > 4)
 		return(1);
 
     std::istringstream iss(date);
@@ -116,23 +163,22 @@ int	BitcoinExchange::checkLines(std::string check)
 	double	yearNum = std::stod(year);
 	double	monthNum = std::stod(month);
 	double	dayNum = std::stod(day);
+	double	valueNum = std::stod(value);
 
 	std::cout << "year|" << yearNum << "|" << "month|" << monthNum << "|" << "day|" << dayNum << "|"<< std::endl;
 	if(yearNum >= 2009 && monthNum >= 1 && dayNum >= 2)
 	{
-		if(monthNum >= 1 && monthNum <= 12)
-		{
-			if(dayNum >= 1 && dayNum <= 31)
-			{
-				if(monthNum)
-			}
-		}
-		else
+		if(isValidDate(yearNum, monthNum, dayNum) == 1)
 			return(1);
-
 	}
 	else
 		return(1);
+
+	std::cout << "VALLALA:"<< valueNum << std::endl;
+	if(valueNum < 0 || valueNum > 1000)
+		return(1);
+
+	this->calculateValue(date, valueNum);
 	return(0);
 }
 
@@ -147,19 +193,22 @@ int     BitcoinExchange::parseInputFile(char *input)
 	std::getline(inputFile, line);
 	if(inputFile.eof() || this->checkFirstLine(line) == 1)
 		return(1);
+
 	while (std::getline(inputFile, line))
 	{
-		if(this->CountPipes(line) == 1)
-			return(inputFile.close(), 1);
-
-		this->in = line.find('|');
+		if(this->CountPipes(line) == 0)
+		{
+			this->in = line.find('|');
+			this->mapInput[line.substr(0, this->in)] = &line[this->in + 1];
+		}
+	}
+	
+	for (std::map<std::string, std::string>::iterator it = this->mapInput.begin(); it != this->mapInput.end(); it++)
+	{
 		if(checkLines(line) == 1)
 			return(inputFile.close(), 1);
-
-		this->mapInput[line.substr(0, this->in)] = &line[this->in + 1];
-		// std::cout << "1|" << line.substr(0, this->in) << "|" << std::endl;
-		// std::cout << "2|" << &line[this->in + 1] << "|" << std::endl;
 	}
+	
 	inputFile.close();
     return 0;
 }
@@ -179,12 +228,6 @@ int     BitcoinExchange::parseDataFile()
 		this->mapData[this->line.substr(0, this->in)] = &this->line[this->in + 1];
 	}
 
-	// std::map<std::string, std::string>::iterator it = this->mapData.begin();
-	// while (it != this->mapData.end())
-	// {
-	// 	std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
-	// 	++it;
-	// }
 	dataFile.close();
     return 0;
 }
