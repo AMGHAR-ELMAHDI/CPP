@@ -87,17 +87,12 @@ int		BitcoinExchange::checkFirstLine(std::string check)
 	return(0);
 }
 
-std::map<int, std::string> splitString(const std::string &str, char d)
+std::string getNextToken(std::istringstream& iss)
 {
-    std::map<int, std::string> tokens;
     std::string token;
-    std::istringstream tokenStream(str);
-    int index = 0;
 
-    while (std::getline(tokenStream, token, d))
-        tokens[index++] = token;
-
-    return tokens;
+    std::getline(iss, token, '-');
+    return token;
 }
 
 int	BitcoinExchange::checkLines(std::string check)
@@ -109,42 +104,37 @@ int	BitcoinExchange::checkLines(std::string check)
 
 	if(date.length() != 11 || this->CountDashes(date) == 1)
 		return(1);
-	
-	std::map<int, std::string> result = splitString(date, '-');
-	std::map<int, std::string>::iterator it = result.begin();
-	while (it != result.end())
-	{
-		year = it->second;
-		std::cout << "Key: " << it->first << ", Value: " << it->second << std::endl;
-		++it;
-	}
-	// // year = it.
-	// month = check.substr(0, check.find('-'));
-	// day = check.substr(0, check.find('-'));
-	// std::cout << "year|" << year << "|" << "month|" << month << "|" << "day|" << day << "|"<< std::endl;
 
+    std::istringstream iss(date);
+    std::string token;
+
+	year =  getNextToken(iss);
+	month =  getNextToken(iss);
+	day =  getNextToken(iss);
+
+	
+	double	yearNum = std::stod(year);
+	double	monthNum = std::stod(month);
+	double	dayNum = std::stod(day);
+
+	std::cout << "year|" << yearNum << "|" << "month|" << monthNum << "|" << "day|" << dayNum << "|"<< std::endl;
+	if(yearNum >= 2009 && monthNum >= 1 && dayNum >= 2)
+	{
+		if(monthNum >= 1 && monthNum <= 12)
+		{
+			if(dayNum >= 1 && dayNum <= 31)
+			{
+				if(monthNum)
+			}
+		}
+		else
+			return(1);
+
+	}
+	else
+		return(1);
 	return(0);
 }
-
-
-std::string getNextToken(std::istringstream& iss) {
-    std::string token;
-    std::getline(iss, token, '-');
-    return token;
-}
-
-int main() {
-    std::string input = "Hello-World-Test";
-    std::istringstream iss(input);
-
-    std::string token;
-    while ((token = getNextToken(iss)) != "") {
-        std::cout << token << std::endl;
-    }
-
-    return 0;
-}
-
 
 int     BitcoinExchange::parseInputFile(char *input)
 {
