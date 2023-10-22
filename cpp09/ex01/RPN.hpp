@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 02:32:10 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/22 19:03:03 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/22 23:02:11 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,17 @@
 #include <fstream>
 #include <algorithm>
 #include <sstream>
-#include <map>
+#include <stack>
 
 
 class RPN
 {
     private:
-        
+        std::stack<int> stack;
+        int num1;
+        int num2;
+        std::string input;
+    
     public:
         RPN();
         RPN(const RPN &obj);
@@ -32,7 +36,7 @@ class RPN
         ~RPN();
         
         //-------------------------------------------------------//
-        
+        int     parseInput(char *s);
 };
 
 #endif

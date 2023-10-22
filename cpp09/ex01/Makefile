@@ -6,7 +6,7 @@
 #    By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/10 18:24:00 by eamghar           #+#    #+#              #
-#    Updated: 2023/10/22 19:01:56 by eamghar          ###   ########.fr        #
+#    Updated: 2023/10/22 22:00:33 by eamghar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CFLAGS = -Wall -Werror -Wextra -std=c++98
 
 FRM = rm -rf
 
-NAME = btc
+NAME = RPN
 
 HEADER = RPN.hpp\
 
