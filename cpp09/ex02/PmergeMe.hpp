@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.hpp                                            :+:      :+:    :+:   */
+/*   PmergeMe.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RPN_HPP
-#define RPN_HPP
+#ifndef PMERGE_ME_HPP
+#define PMERGE_ME_HPP
 
 #include <iostream>
 #include <string>
@@ -20,7 +20,7 @@
 #include <sstream>
 #include <stack>
 
-class RPN
+class PmergeMe
 {
     private:
         std::stack<int> stack;
@@ -29,10 +29,10 @@ class RPN
         std::string input;
     
     public:
-        RPN();
-        RPN(const RPN &obj);
-        RPN &operator=(const RPN &other);
-        ~RPN();
+        PmergeMe();
+        PmergeMe(const PmergeMe &obj);
+        PmergeMe &operator=(const PmergeMe &other);
+        ~PmergeMe();
         
         //-------------------------------------------------------//
         int     parseInput(char *s);
