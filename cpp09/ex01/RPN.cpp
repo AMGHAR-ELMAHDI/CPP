@@ -62,6 +62,14 @@ int countSpecial(std::string str)
     return(count);
 }
 
+int   checkDigit(std::string str)
+{
+    for (size_t i = 0; i < str.length(); i++)
+        if(!std::isdigit(str[i]))
+            return(1);
+    return(0);
+}
+
 int     RPN::parseInput(char *s)
 {
     int     index = 0;
@@ -73,7 +81,6 @@ int     RPN::parseInput(char *s)
     std::istringstream iss(input);
     while (std::getline(iss, input, ' '))
     {
-        std::cout << "|" << input << "|" << std::endl;
         if(index < 2 && iss.eof())
             return(1);
         if(checkSpecial(input))
@@ -93,6 +100,8 @@ int     RPN::parseInput(char *s)
         }
         else
         {
+            if(checkDigit(input) == 1)
+                return(1);
             this->stack.push(std::atoi(input.c_str()));
             index++;
         }
@@ -100,7 +109,6 @@ int     RPN::parseInput(char *s)
 
     if(countSpecial(sss) != index -1)
         return(1);
-    std::cout << "Special:|" << countSpecial(sss) << "|index: " << index << "|" << std::endl;
 
     std::cout << "END VALUE: "<< this->stack.top() << std::endl;   
     return(0);

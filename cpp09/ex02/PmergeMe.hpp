@@ -23,10 +23,6 @@
 class PmergeMe
 {
     private:
-        std::stack<int> stack;
-        int num1;
-        int num2;
-        std::string input;
     
     public:
         PmergeMe();
