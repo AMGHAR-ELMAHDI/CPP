@@ -127,6 +127,14 @@ void BitcoinExchange::calculateValue(std::string date, double value)
 	std::cout << date << " => " << value << " = " << output << std::endl;
 }
 
+int   checkDigit(std::string str)
+{
+    for (size_t i = 0; i < str.length(); i++)
+        if(!std::isdigit(str[i]))
+            return(1);
+    return(0);
+}
+
 int	BitcoinExchange::checkLines(std::string check)
 {
 	std::string date,value,year,month, day;
@@ -140,6 +148,11 @@ int	BitcoinExchange::checkLines(std::string check)
 		return(std::cout << "Error: Wrong argument." << std::endl, 1);
 	else if(value.length() > 4)
 		return(std::cout << "Error: too large a number." << std::endl, 1);
+
+	// value = &check[index + 2];
+	// std::cout << "|"<<date.substr(0,date.length() - 1) << "|" << value.substr(0, value.length() - 1)<<"|" << std::endl;
+	// if(checkDigit(date.substr(0,date.length() - 1)) || checkDigit(value.substr(0, value.length() - 1)))
+	// 	return(2);
 
     std::istringstream iss(date);
 
@@ -189,7 +202,8 @@ int     BitcoinExchange::parseInputFile(char *input)
 		if(this->CountPipes(str) == 1)
 			std::cout << "Error: Wrong number of pipes." << std::endl;
 		else
-			checkLines(str);
+			if(checkLines(str) == 2)
+				return(1);
 	}
 	
 	inputFile.close();
