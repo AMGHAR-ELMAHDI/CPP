@@ -50,9 +50,23 @@ int checkSpecial(std::string str)
     return(0);
 }
 
+
+int countSpecial(std::string str)
+{
+    int count = 0;
+
+    for (size_t i = 0; i < str.length(); i++)
+        if(str[i] == '*' || str[i] == '/' || str[i] == '+' || str[i] == '-')
+            count++;
+
+    return(count);
+}
+
 int     RPN::parseInput(char *s)
 {
+    int     index = 0;
     this->input = s;
+    std::string sss = this->input;
     if(input.length() < 3)
       return(1);
 
@@ -60,6 +74,8 @@ int     RPN::parseInput(char *s)
     while (std::getline(iss, input, ' '))
     {
         std::cout << "|" << input << "|" << std::endl;
+        if(index < 2 && iss.eof())
+            return(1);
         if(checkSpecial(input))
         {
             this->num2 = this->stack.top();
@@ -78,8 +94,13 @@ int     RPN::parseInput(char *s)
         else
         {
             this->stack.push(std::atoi(input.c_str()));
+            index++;
         }
     }
+
+    if(countSpecial(sss) != index -1)
+        return(1);
+    std::cout << "Special:|" << countSpecial(sss) << "|index: " << index << "|" << std::endl;
 
     std::cout << "END VALUE: "<< this->stack.top() << std::endl;   
     return(0);
