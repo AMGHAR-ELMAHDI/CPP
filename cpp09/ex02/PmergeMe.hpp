@@ -19,10 +19,12 @@
 #include <algorithm>
 #include <sstream>
 #include <stack>
+#include <vector>
 
 class PmergeMe
 {
     private:
+    std::vector<std::pair<int, int>> vector;
     
     public:
         PmergeMe();
@@ -31,7 +33,8 @@ class PmergeMe
         ~PmergeMe();
         
         //-------------------------------------------------------//
-        int     parseInput(char *s);
+        int     parseInput(char **s);
+        
 };
 
 #endif

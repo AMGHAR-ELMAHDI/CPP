@@ -38,9 +38,36 @@ PmergeMe::~PmergeMe()
     // std::cout << "PmergeMe Destructor called" << std::endl;
 }
 
-
-int     PmergeMe::parseInput(char *s)
+int   checkWhiteSpace(std::string str)
 {
-    (void)s;
+    for (size_t i = 0; i < str.length(); i++)
+        if(std::isspace(str[i]) == 1)
+            return(1);
+    return(0);
+}
+
+int   checkDigit(std::string str)
+{
+    for (size_t i = 0; i < str.length(); i++)
+        if(!std::isdigit(str[i]))
+            return(1);
+    return(0);
+}
+
+int     PmergeMe::parseInput(char **s)
+{
+    int     i = 0;
+    std::string str;
+
+    while (s[++i])
+    {
+        str = s[i];
+        std::cout << "|" << str << "|" << std::endl;
+
+        if(str.length() == 0 || checkWhiteSpace(str) || checkDigit(str))
+            return(1);
+        
+    }
+        
     return(0);
 }
