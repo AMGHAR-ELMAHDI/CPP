@@ -50,7 +50,6 @@ int checkSpecial(std::string str)
     return(0);
 }
 
-
 int countSpecial(std::string str)
 {
     int count = 0;
@@ -90,7 +89,11 @@ int     RPN::parseInput(char *s)
             this->num1 = this->stack.top();
             this->stack.pop();
             if(input == "/")
+            {
+                if(this->num2 == 0)
+                    return(1);
                 this->stack.push(this->num1 / this->num2);
+            }
             else if(input == "*")
                 this->stack.push(this->num1 * this->num2);
             else if(input == "+")
@@ -107,7 +110,7 @@ int     RPN::parseInput(char *s)
         }
     }
 
-    if(countSpecial(sss) != index -1)
+    if(countSpecial(sss) != index - 1)
         return(1);
 
     std::cout << "END VALUE: "<< this->stack.top() << std::endl;   

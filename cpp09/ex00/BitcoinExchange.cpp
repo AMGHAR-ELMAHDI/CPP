@@ -116,7 +116,7 @@ std::string getNextToken(std::istringstream &iss)
     return token;
 }
 
-void BitcoinExchange::calculateValue(std::string date, double value)
+void BitcoinExchange::calculateValue(std::string date, double value, std::string oldDate, bool overDate)
 {
 	std::string printDate = date.substr(0, date.length() - 1);
 	std::map<std::string, std::string>::iterator it;
@@ -124,13 +124,29 @@ void BitcoinExchange::calculateValue(std::string date, double value)
 
 	it = this->mapData.lower_bound(printDate);
 	output = value * std::stod(it->second);
-	std::cout << date << " => " << value << " = " << output << std::endl;
+	if(overDate == true)
+		std::cout << oldDate << " => " << value << " = " << output << std::endl;
+	else
+		std::cout << date << " => " << value << " = " << output << std::endl;
 }
 
 int   checkDigit(std::string str)
 {
     for (size_t i = 0; i < str.length(); i++)
-        if(!std::isdigit(str[i]))
+	{
+		if(i != 0 && str[i] == '.')
+			continue;
+		else
+    	    if(!std::isdigit(str[i]))
+	            return(1);
+	}
+    return(0);
+}
+
+int   checkWhiteSpace(std::string str)
+{
+    for (size_t i = 0; i < str.length(); i++)
+        if(!std::isspace(str[i]))
             return(1);
     return(0);
 }
@@ -144,21 +160,40 @@ int	BitcoinExchange::checkLines(std::string check)
 	date = check.substr(0, index);
 	value = &check[index + 1];
 
+	if(value[0] == ' ')
+	{
+		if(checkDigit(&value[1]))
+			return(std::cout << "Error: Wrong value" << std::endl, 1);
+	}
+	else
+		return(std::cout << "Error: Wrong value" << std::endl, 1);
+
+	std::string newValue = value;
+    std::stringstream stream(newValue);
+	float		outFloat;
+
+	if(!(stream >> outFloat))
+	 	return(std::cout << "Error: Overflow Error" << std::endl, 1);
+
+	if(value.length() == 0 || value.empty() || checkWhiteSpace(value) == 0)
+		return(std::cout << "Error: Empty value" << std::endl, 1);
+
+
 	if(date.length() != 11 || this->CountDashes(date) == 1)
 		return(std::cout << "Error: Wrong argument." << std::endl, 1);
-	else if(value.length() > 4)
+	else if(value.length() > 5)
 		return(std::cout << "Error: too large a number." << std::endl, 1);
 
-	// value = &check[index + 2];
-	// std::cout << "|"<<date.substr(0,date.length() - 1) << "|" << value.substr(0, value.length() - 1)<<"|" << std::endl;
-	// if(checkDigit(date.substr(0,date.length() - 1)) || checkDigit(value.substr(0, value.length() - 1)))
-	// 	return(2);
 
     std::istringstream iss(date);
 
 	year =  getNextToken(iss);
 	month =  getNextToken(iss);
 	day =  getNextToken(iss);
+
+
+	if(checkDigit(year) || checkDigit(month) || checkDigit(day.substr(0, day.length() - 1)))
+		return(std::cout << "Error: date only accepts numbers." << std::endl, 1);
 
 	double	yearNum = std::stod(year);
 	double	monthNum = std::stod(month);
@@ -181,7 +216,14 @@ int	BitcoinExchange::checkLines(std::string check)
 	else if(valueNum > 1000)
 		return(std::cout << "Error: too large a number." << std::endl, 1);
 
-	this->calculateValue(date, valueNum);
+	std::string oldDate = date.substr(0, date.length() - 1);
+	bool	overDate = false;
+	if(((yearNum == 2022 && ( (monthNum == 3 && dayNum > 29) || (monthNum > 3) ) ) ) || yearNum > 2022)
+	{
+		date = "2022-03-29 ";
+		overDate = true;
+	}
+	this->calculateValue(date, valueNum, oldDate, overDate);
 	return(0);
 }
 

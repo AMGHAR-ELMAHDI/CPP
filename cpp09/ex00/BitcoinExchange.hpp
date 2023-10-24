@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 02:32:10 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/22 18:05:38 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/24 15:56:50 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class BitcoinExchange
         int		checkFirstLine(std::string check);
         int     checkLines(std::string check);
         int		CountDashes(std::string check);
-        void    calculateValue(std::string date, double value);
+        void    calculateValue(std::string date, double value, std::string oldDate, bool overDate);
 };
 
 #endif
