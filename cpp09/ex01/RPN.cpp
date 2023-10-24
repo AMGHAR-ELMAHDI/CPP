@@ -66,6 +66,10 @@ int   checkDigit(std::string str)
     for (size_t i = 0; i < str.length(); i++)
         if(!std::isdigit(str[i]))
             return(1);
+            
+    int     num = std::atoi(str.c_str());
+    if(num < 0 || num > 9)
+        return(1);
     return(0);
 }
 
