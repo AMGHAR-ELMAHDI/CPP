@@ -24,9 +24,13 @@
 class PmergeMe
 {
     private:
-    std::vector<int> vectorSingle;
-    std::vector<std::pair<int, int> > vectorDouble;
-    std::deque<std::pair<int, int> > deque;
+        int                                             struggler;
+        std::vector<int>                                vectorSingle;
+        std::vector<int>::iterator                      iterSingle;
+        std::vector<std::pair<int, int> >               vectorDouble;
+        std::vector<std::pair<int, int> >::iterator     iterDouble;
+        std::deque<std::pair<int, int> >                deque;
+
     
     public:
         PmergeMe();
