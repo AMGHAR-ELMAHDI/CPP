@@ -24,7 +24,9 @@
 class PmergeMe
 {
     private:
-    std::vector<std::pair<int, int>> vector;
+    std::vector<int> vectorSingle;
+    std::vector<std::pair<int, int> > vectorDouble;
+    std::deque<std::pair<int, int> > deque;
     
     public:
         PmergeMe();
@@ -33,8 +35,9 @@ class PmergeMe
         ~PmergeMe();
         
         //-------------------------------------------------------//
-        int     parseInput(char **s);
-        
+        int    parseInput(char **s);
+        void   printVectorSingle(std::string print);
+        int    sortInput();
 };
 
 #endif

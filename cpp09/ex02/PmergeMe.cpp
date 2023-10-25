@@ -54,20 +54,36 @@ int   checkDigit(std::string str)
     return(0);
 }
 
+void   PmergeMe::printVectorSingle(std::string print)
+{
+    std::cout << print;
+    for (std::vector<int>::iterator it = this->vectorSingle.begin(); it != this->vectorSingle.end(); it++)
+        std::cout << " " << *it;
+    std::cout << std::endl;
+}
+
 int     PmergeMe::parseInput(char **s)
 {
-    int     i = 0;
+    int     i = 0, outInt;
     std::string str;
 
     while (s[++i])
     {
         str = s[i];
-        std::cout << "|" << str << "|" << std::endl;
-
         if(str.length() == 0 || checkWhiteSpace(str) || checkDigit(str))
             return(1);
-        
+        std::stringstream stream(str);
+        if(!(stream >> outInt))
+            return(1);
+        outInt  = std::stoi(str);
+        this->vectorSingle.push_back(outInt);
     }
-        
-    return(0);
+    return(this->printVectorSingle("Before: "), this->sortInput(), 0);
 }
+
+int    PmergeMe::sortInput()
+{
+    std::cout << "Size: " << this->vectorSingle.size() << std::endl;
+
+}
+
