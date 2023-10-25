@@ -78,30 +78,25 @@ int     PmergeMe::parseInput(char **s)
         outInt  = std::stoi(str);
         this->vectorSingle.push_back(outInt);
     }
+    if (this->vectorSingle.empty())
+        return (1);
     return(this->printVectorSingle("Before: "), this->sortInput(), 0);
 }
 
 int    PmergeMe::sortInput()
 {
-    if (this->vectorSingle.empty())
-        return (1);
-
-    iterSingle = vectorSingle.begin();
     if (this->vectorSingle.size() % 2 != 0)
     {
         this->struggler = vectorSingle.back();
         vectorSingle.pop_back();
     }
 
-    printVectorSingle("After: ");
-    
-    for (; *iterSingle && *iterSingle + 1; iterSingle += 2)
+    for (iterSingle = vectorSingle.begin(); iterSingle != vectorSingle.end(); iterSingle += 2)
         vectorDouble.push_back(std::make_pair(*iterSingle, *(iterSingle + 1)));
 
     for (iterDouble = vectorDouble.begin(); iterDouble != vectorDouble.end(); iterDouble++)
-    {
         std::cout << "|" << iterDouble->first << "|" << iterDouble->second << "|" << std::endl;
-    }
 
+    
     return(0);
 }
