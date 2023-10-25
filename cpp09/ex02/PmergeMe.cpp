@@ -93,11 +93,15 @@ int    PmergeMe::sortInput()
         vectorSingle.pop_back();
     }
 
-    for (; iterSingle != vectorSingle.end() - 1; iterSingle += 2)
+    printVectorSingle("After: ");
+    
+    for (; *iterSingle && *iterSingle + 1; iterSingle += 2)
         vectorDouble.push_back(std::make_pair(*iterSingle, *(iterSingle + 1)));
 
     for (iterDouble = vectorDouble.begin(); iterDouble != vectorDouble.end(); iterDouble++)
+    {
         std::cout << "|" << iterDouble->first << "|" << iterDouble->second << "|" << std::endl;
+    }
 
     return(0);
 }
