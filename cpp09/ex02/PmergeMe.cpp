@@ -62,6 +62,7 @@ void   PmergeMe::printvecMainChain(std::string print)
     std::cout << std::endl;
 }
 
+
 void   PmergeMe::printvecPend(std::string print)
 {
     std::cout << print;
@@ -140,8 +141,48 @@ int    PmergeMe::sortInput()
 
 void    PmergeMe::sortUsingJacobsthalNumbers()
 {
-    generateJacobsthalNumbers(this->vecPend.size());
+    generateJacobsthalNumbers(15);
     for (std::vector<int>::iterator it = jacobNumber.begin(); it != jacobNumber.end(); it++)
+        std::cout << *it << " ";
+    std::cout <<  std::endl;
+
+    iterSingle = jacobNumber.begin();
+    iterSingle += 3;
+
+    for (; iterSingle != jacobNumber.end(); iterSingle++)
+    {
+        int   num = (*iterSingle);
+
+        jacobCombination.push_back(num--);
+
+        std::vector<int>::iterator it = jacobNumber.begin();
+
+        for (; it != jacobNumber.end(); it++)
+        {
+            if(*it == num)
+                break;
+        }
+        if(it != jacobNumber.end())
+            continue;
+        else
+        {
+            jacobCombination.push_back(num--);
+            std::vector<int>::iterator it = jacobNumber.begin();
+
+            for (; it != jacobNumber.end(); it++)
+            {
+                if(*it == num)
+                    break;
+            }
+            if(it != jacobNumber.end())
+                continue;
+            else
+                jacobCombination.push_back(num--);
+        }
+    }
+    
+    std::cout << "----------------Jacob Combination--------------------" << std::endl;
+    for (std::vector<int>::iterator it = jacobCombination.begin(); it != jacobCombination.end(); it++)
         std::cout << *it << " ";
     std::cout <<  std::endl;
 }
@@ -158,6 +199,24 @@ int PmergeMe::jacobsthal(int n)
 
 void PmergeMe::generateJacobsthalNumbers(int limit)
 {
-  for (int i = 0; i <= limit; i++)
+  for (int i = 0; i < limit; i++)
     this->jacobNumber.push_back(jacobsthal(i));
+}
+
+
+int PmergeMe::binarySearch(std::vector<int> vec, int x)
+{
+    int     left = 0, right = this->vecMainChain.size();
+
+    while (left <= right)
+    {
+        int middle = left + (right - left) / 2;
+        if (vec[middle] == x)
+            return (middle);
+        if (vec[middle] < x)
+            left = middle + 1;
+        else
+            right = middle - 1;
+    }
+    return (left);
 }

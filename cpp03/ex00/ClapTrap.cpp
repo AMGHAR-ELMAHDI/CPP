@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 04:32:25 by eamghar           #+#    #+#             */
-/*   Updated: 2023/09/07 21:22:03 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/26 15:06:30 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void ClapTrap::takeDamage(unsigned int amount)
             this->HitPoints -= amount;
     }
 }
+
 void ClapTrap::beRepaired(unsigned int amount)
 {
     if(this->EnergyPoints > 0 && this->HitPoints > 0)

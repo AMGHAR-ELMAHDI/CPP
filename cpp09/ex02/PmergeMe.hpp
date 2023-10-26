@@ -29,6 +29,7 @@ class PmergeMe
         std::vector<int>                                vecMainChain;
         std::vector<int>                                vecPend;
         std::vector<int>                                jacobNumber;
+        std::vector<int>                                jacobCombination;
         std::vector<std::pair<int, int> >               vectorDouble;
         //-------------------------Iterators-----------------------//
         std::vector<int>::iterator                      iterSingle;
@@ -50,6 +51,7 @@ class PmergeMe
         void    sortUsingJacobsthalNumbers();
         void    generateJacobsthalNumbers(int limit);
         int     jacobsthal(int n);
+        int     binarySearch(std::vector<int> vec, int x);
 };
 
 #endif
