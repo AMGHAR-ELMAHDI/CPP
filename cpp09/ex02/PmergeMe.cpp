@@ -54,18 +54,18 @@ int   checkDigit(std::string str)
     return(0);
 }
 
-void   PmergeMe::printVectorSingle(std::string print)
+void   PmergeMe::printvecMainChain(std::string print)
 {
     std::cout << print;
-    for (std::vector<int>::iterator it = this->vectorSingle.begin(); it != this->vectorSingle.end(); it++)
+    for (std::vector<int>::iterator it = this->vecMainChain.begin(); it != this->vecMainChain.end(); it++)
         std::cout << " " << *it;
     std::cout << std::endl;
 }
 
-void   PmergeMe::printVectorSingle2(std::string print)
+void   PmergeMe::printvecPend(std::string print)
 {
     std::cout << print;
-    for (std::vector<int>::iterator it = this->vectorSingle2.begin(); it != this->vectorSingle2.end(); it++)
+    for (std::vector<int>::iterator it = this->vecPend.begin(); it != this->vecPend.end(); it++)
         std::cout << " " << *it;
     std::cout << std::endl;
 }
@@ -92,22 +92,22 @@ int     PmergeMe::parseInput(char **s)
         if(!(stream >> outInt))
             return(1);
         outInt  = std::stoi(str);
-        this->vectorSingle.push_back(outInt);
+        this->vecMainChain.push_back(outInt);
     }
-    if (this->vectorSingle.empty())
+    if (this->vecMainChain.empty())
         return (1);
-    return(this->printVectorSingle("Before: "), this->sortInput(), 0);
+    return(this->printvecMainChain("Before: "), this->sortInput(), 0);
 }
 
 int    PmergeMe::sortInput()
 {
-    if (this->vectorSingle.size() % 2 != 0)
+    if (this->vecMainChain.size() % 2 != 0)
     {
-        this->struggler = vectorSingle.back();
-        vectorSingle.pop_back();
+        this->struggler = vecMainChain.back();
+        vecMainChain.pop_back();
     }
 
-    for (iterSingle = vectorSingle.begin(); iterSingle != vectorSingle.end(); iterSingle += 2)
+    for (iterSingle = vecMainChain.begin(); iterSingle != vecMainChain.end(); iterSingle += 2)
         vectorDouble.push_back(std::make_pair(*iterSingle, *(iterSingle + 1)));
 
     for (iterDouble = vectorDouble.begin(); iterDouble != vectorDouble.end(); iterDouble++)
@@ -115,22 +115,23 @@ int    PmergeMe::sortInput()
             std::swap(iterDouble->first, iterDouble->second);
 
     std::sort(vectorDouble.begin(), vectorDouble.end());
-    vectorSingle.clear();
+    vecMainChain.clear();
     for (iterDouble = vectorDouble.begin(); iterDouble != vectorDouble.end(); iterDouble++)
     {
         if(iterDouble == vectorDouble.begin())
-            vectorSingle.push_back(iterDouble->second);
-        vectorSingle.push_back(iterDouble->first);
-        vectorSingle2.push_back(iterDouble->second);
+            vecMainChain.push_back(iterDouble->second);
+        vecMainChain.push_back(iterDouble->first);
+        vecPend.push_back(iterDouble->second);
     }
 
     printVectorDouble("After in Double: ");
     std::cout << "-----------------------------------------------------" << std::endl;
-    printVectorSingle("Vec1: ");
+    printvecMainChain("Main Chain: ");
     std::cout << "-----------------------------------------------------" << std::endl;
-    printVectorSingle2("Vec2: ");
+    printvecPend("Pend: ");
     std::cout << "-----------------------------------------------------" << std::endl;
 
+    std::cout << "Jacobs Numbers: ";
     sortUsingJacobsthalNumbers();
     std::cout << "-----------------------------------------------------" << std::endl;
     return(0);
@@ -139,7 +140,7 @@ int    PmergeMe::sortInput()
 
 void    PmergeMe::sortUsingJacobsthalNumbers()
 {
-    generateJacobsthalNumbers(20);
+    generateJacobsthalNumbers(this->vecPend.size());
     for (std::vector<int>::iterator it = jacobNumber.begin(); it != jacobNumber.end(); it++)
         std::cout << *it << " ";
     std::cout <<  std::endl;

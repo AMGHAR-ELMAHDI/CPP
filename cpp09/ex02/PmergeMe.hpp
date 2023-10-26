@@ -26,8 +26,8 @@ class PmergeMe
     private:
         int                                             struggler;
         //-------------------------Vectors-------------------------//
-        std::vector<int>                                vectorSingle;
-        std::vector<int>                                vectorSingle2;
+        std::vector<int>                                vecMainChain;
+        std::vector<int>                                vecPend;
         std::vector<int>                                jacobNumber;
         std::vector<std::pair<int, int> >               vectorDouble;
         //-------------------------Iterators-----------------------//
@@ -43,8 +43,8 @@ class PmergeMe
         
         //-------------------------------------------------------//
         int     parseInput(char **s);
-        void    printVectorSingle(std::string print);
-        void    printVectorSingle2(std::string print);
+        void    printvecMainChain(std::string print);
+        void    printvecPend(std::string print);
         void    printVectorDouble(std::string print);
         int     sortInput();
         void    sortUsingJacobsthalNumbers();
