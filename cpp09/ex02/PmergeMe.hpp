@@ -25,12 +25,15 @@ class PmergeMe
 {
     private:
         int                                             struggler;
+        //-------------------------Vectors-------------------------//
         std::vector<int>                                vectorSingle;
-        std::vector<int>::iterator                      iterSingle;
+        std::vector<int>                                vectorSingle2;
+        std::vector<int>                                jacobNumber;
         std::vector<std::pair<int, int> >               vectorDouble;
+        //-------------------------Iterators-----------------------//
+        std::vector<int>::iterator                      iterSingle;
         std::vector<std::pair<int, int> >::iterator     iterDouble;
-        std::deque<std::pair<int, int> >                deque;
-
+        //---------------------------------------------------------//
     
     public:
         PmergeMe();
@@ -39,9 +42,14 @@ class PmergeMe
         ~PmergeMe();
         
         //-------------------------------------------------------//
-        int    parseInput(char **s);
-        void   printVectorSingle(std::string print);
-        int    sortInput();
+        int     parseInput(char **s);
+        void    printVectorSingle(std::string print);
+        void    printVectorSingle2(std::string print);
+        void    printVectorDouble(std::string print);
+        int     sortInput();
+        void    sortUsingJacobsthalNumbers();
+        void    generateJacobsthalNumbers(int limit);
+        int     jacobsthal(int n);
 };
 
 #endif

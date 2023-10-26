@@ -62,6 +62,22 @@ void   PmergeMe::printVectorSingle(std::string print)
     std::cout << std::endl;
 }
 
+void   PmergeMe::printVectorSingle2(std::string print)
+{
+    std::cout << print;
+    for (std::vector<int>::iterator it = this->vectorSingle2.begin(); it != this->vectorSingle2.end(); it++)
+        std::cout << " " << *it;
+    std::cout << std::endl;
+}
+
+void   PmergeMe::printVectorDouble(std::string print)
+{
+    std::cout << print << std::endl;
+    for (iterDouble = vectorDouble.begin(); iterDouble != vectorDouble.end(); iterDouble++)
+        std::cout << "|" << std::setw(5) << iterDouble->first << "|" << std::setw(5) << iterDouble->second << "|" << std::endl;
+    std::cout << std::endl;
+}
+
 int     PmergeMe::parseInput(char **s)
 {
     int     i = 0, outInt;
@@ -95,8 +111,52 @@ int    PmergeMe::sortInput()
         vectorDouble.push_back(std::make_pair(*iterSingle, *(iterSingle + 1)));
 
     for (iterDouble = vectorDouble.begin(); iterDouble != vectorDouble.end(); iterDouble++)
-        std::cout << "|" << iterDouble->first << "|" << iterDouble->second << "|" << std::endl;
+        if(iterDouble->first < iterDouble->second)
+            std::swap(iterDouble->first, iterDouble->second);
 
-    
+    std::sort(vectorDouble.begin(), vectorDouble.end());
+    vectorSingle.clear();
+    for (iterDouble = vectorDouble.begin(); iterDouble != vectorDouble.end(); iterDouble++)
+    {
+        if(iterDouble == vectorDouble.begin())
+            vectorSingle.push_back(iterDouble->second);
+        vectorSingle.push_back(iterDouble->first);
+        vectorSingle2.push_back(iterDouble->second);
+    }
+
+    printVectorDouble("After in Double: ");
+    std::cout << "-----------------------------------------------------" << std::endl;
+    printVectorSingle("Vec1: ");
+    std::cout << "-----------------------------------------------------" << std::endl;
+    printVectorSingle2("Vec2: ");
+    std::cout << "-----------------------------------------------------" << std::endl;
+
+    sortUsingJacobsthalNumbers();
+    std::cout << "-----------------------------------------------------" << std::endl;
     return(0);
+}
+
+
+void    PmergeMe::sortUsingJacobsthalNumbers()
+{
+    generateJacobsthalNumbers(20);
+    for (std::vector<int>::iterator it = jacobNumber.begin(); it != jacobNumber.end(); it++)
+        std::cout << *it << " ";
+    std::cout <<  std::endl;
+}
+
+int PmergeMe::jacobsthal(int n)
+{
+  if (n == 0)
+    return 0;
+  else if (n == 1)
+    return 1;
+  else
+    return jacobsthal(n - 1) + 2 * jacobsthal(n - 2);
+}
+
+void PmergeMe::generateJacobsthalNumbers(int limit)
+{
+  for (int i = 0; i <= limit; i++)
+    this->jacobNumber.push_back(jacobsthal(i));
 }
