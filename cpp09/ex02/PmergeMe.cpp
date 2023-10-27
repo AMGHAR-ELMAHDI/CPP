@@ -12,30 +12,24 @@
 
 #include "PmergeMe.hpp"
 
-PmergeMe::PmergeMe()
+PmergeMe::PmergeMe() : checkStruggler(false)
 {
-    // std::cout << "PmergeMe Default constructor called" << std::endl;
 }
 
 PmergeMe::PmergeMe(const PmergeMe &obj)
 {
-//    std::cout << "PmergeMe Copy constructor Called " << std::endl;
    *this = obj;
 }
 
 PmergeMe &PmergeMe::operator=(const PmergeMe &other)
 {
-    // std::cout << "PmergeMe Copy assignement opperator called " << std::endl; 
     if (this != &other)
-    {
         (void)other;
-    }
     return *this;
 }
 
 PmergeMe::~PmergeMe()
 {
-    // std::cout << "PmergeMe Destructor called" << std::endl;
 }
 
 int   checkWhiteSpace(std::string str)
@@ -62,13 +56,20 @@ void   PmergeMe::printvecMainChain(std::string print)
     std::cout << std::endl;
 }
 
-
 void   PmergeMe::printvecPend(std::string print)
 {
     std::cout << print;
     for (std::vector<int>::iterator it = this->vecPend.begin(); it != this->vecPend.end(); it++)
         std::cout << " " << *it;
     std::cout << std::endl;
+}
+
+void   PmergeMe::printJacobNumbers(std::string print)
+{
+    std::cout << print;
+    for (std::vector<int>::iterator it = jacobNumber.begin(); it != jacobNumber.end(); it++)
+            std::cout << *it << " ";
+    std::cout <<  std::endl;
 }
 
 void   PmergeMe::printVectorDouble(std::string print)
@@ -92,7 +93,7 @@ int     PmergeMe::parseInput(char **s)
         std::stringstream stream(str);
         if(!(stream >> outInt))
             return(1);
-        outInt  = std::stoi(str);
+        outInt  = std::atoi(str.c_str());
         this->vecMainChain.push_back(outInt);
     }
     if (this->vecMainChain.empty())
@@ -102,19 +103,24 @@ int     PmergeMe::parseInput(char **s)
 
 int    PmergeMe::sortInput()
 {
+    //Remove struggler from Main Chain
     if (this->vecMainChain.size() % 2 != 0)
     {
         this->struggler = vecMainChain.back();
+        checkStruggler = true;
         vecMainChain.pop_back();
     }
 
+    //Fill Double Vector with pairs from Main chain
     for (iterSingle = vecMainChain.begin(); iterSingle != vecMainChain.end(); iterSingle += 2)
         vectorDouble.push_back(std::make_pair(*iterSingle, *(iterSingle + 1)));
 
+    //Sort the Pairs so that the smaller number is always the second one
     for (iterDouble = vectorDouble.begin(); iterDouble != vectorDouble.end(); iterDouble++)
         if(iterDouble->first < iterDouble->second)
             std::swap(iterDouble->first, iterDouble->second);
 
+    //Sort the Main chain inside the DoubleVec and fill the Main Chain Vec with the first numbers and Pend Vec with second numbers
     std::sort(vectorDouble.begin(), vectorDouble.end());
     vecMainChain.clear();
     for (iterDouble = vectorDouble.begin(); iterDouble != vectorDouble.end(); iterDouble++)
@@ -125,34 +131,31 @@ int    PmergeMe::sortInput()
         vecPend.push_back(iterDouble->second);
     }
 
-    printVectorDouble("After in Double: ");
-    std::cout << "-----------------------------------------------------" << std::endl;
-    printvecMainChain("Main Chain: ");
-    std::cout << "-----------------------------------------------------" << std::endl;
-    printvecPend("Pend: ");
-    std::cout << "-----------------------------------------------------" << std::endl;
+    // printVectorDouble("After in Double: ");
+    // std::cout << "-----------------------------------------------------" << std::endl;
+    // printvecMainChain("Main Chain: ");
+    // std::cout << "-----------------------------------------------------" << std::endl;
+    // printvecPend("Pend: ");
+    // std::cout << "-----------------------------------------------------" << std::endl;
 
-    std::cout << "Jacobs Numbers: ";
+    // std::cout << "Jacobs Numbers: ";
     sortUsingJacobsthalNumbers();
-    
-    std::cout << "-----------------------------------------------------" << std::endl;
-    printvecMainChain("Main Chain: ");
-    std::cout << "-----------------------------------------------------" << std::endl;
-    printvecPend("Pend: ");
-    std::cout << "-----------------------------------------------------" << std::endl;
+
+    // std::cout << "-----------------------------------------------------" << std::endl;
+    printvecMainChain("After: ");
+    // std::cout << "-----------------------------------------------------" << std::endl;
     return(0);
 }
 
 void    PmergeMe::sortUsingJacobsthalNumbers()
 {
     generateJacobsthalNumbers(15);
-    for (std::vector<int>::iterator it = jacobNumber.begin(); it != jacobNumber.end(); it++)
-        std::cout << *it << " ";
-    std::cout <<  std::endl;
+    printJacobNumbers("Jacob Numbers: ");
 
     iterSingle = jacobNumber.begin();
     iterSingle += 3;
 
+    //Generate Jackosthal combination numbers
     for (; iterSingle != jacobNumber.end(); iterSingle++)
     {
         int   num = (*iterSingle), numprev = *(iterSingle - 1);
@@ -160,6 +163,7 @@ void    PmergeMe::sortUsingJacobsthalNumbers()
             jacobCombination.push_back(num--);
     }
 
+    //Using binary search to find the index where to insert the pend numbers
     for (std::vector<int>::iterator it = jacobCombination.begin(); it != jacobCombination.end(); it++)
     {
         int num = *it - 1;
@@ -168,6 +172,12 @@ void    PmergeMe::sortUsingJacobsthalNumbers()
             iterSingle = binarySearch(vecMainChain, vecPend[num]) + vecMainChain.begin();
 			vecMainChain.insert(iterSingle, vecPend[num]);
         }
+    }
+    //add the struggler
+    if (checkStruggler == true)
+    {
+        int index = binarySearch(vecMainChain, struggler);
+		vecMainChain.insert(index + vecMainChain.begin(), struggler);
     }
 }
 

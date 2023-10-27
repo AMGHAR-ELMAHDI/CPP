@@ -24,7 +24,9 @@
 class PmergeMe
 {
     private:
+
         int                                             struggler;
+        bool                                             checkStruggler;
         //-------------------------Vectors-------------------------//
         std::vector<int>                                vecMainChain;
         std::vector<int>                                vecPend;
@@ -47,6 +49,7 @@ class PmergeMe
         void    printvecMainChain(std::string print);
         void    printvecPend(std::string print);
         void    printVectorDouble(std::string print);
+        void    printJacobNumbers(std::string print);
         int     sortInput();
         void    sortUsingJacobsthalNumbers();
         void    generateJacobsthalNumbers(int limit);
