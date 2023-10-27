@@ -80,10 +80,12 @@ void   PmergeMe::printVectorDouble(std::string print)
     std::cout << std::endl;
 }
 
-int     PmergeMe::parseInput(char **s)
+int     PmergeMe::parseInput(char **s, int ac)
 {
     int     i = 0, outInt;
     std::string str;
+
+    start = clock();
 
     while (s[++i])
     {
@@ -98,7 +100,15 @@ int     PmergeMe::parseInput(char **s)
     }
     if (this->vecMainChain.empty())
         return (1);
-    return(this->printvecMainChain("Before: "), this->sortInput(), 0);
+    this->printvecMainChain("Before: ");
+    this->sortInput();
+
+    stop = clock();
+
+
+    double duration = ((double)(stop - start) / CLOCKS_PER_SEC);
+    std::cout << "Time to process a range of " << ac - 1 << " elements with std::vector: " << duration << std::endl;
+    return(0);
 }
 
 int    PmergeMe::sortInput()

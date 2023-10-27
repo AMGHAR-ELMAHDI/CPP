@@ -20,13 +20,17 @@
 #include <sstream>
 #include <stack>
 #include <vector>
+#include <ctime>
+
 
 class PmergeMe
 {
     private:
 
         int                                             struggler;
-        bool                                             checkStruggler;
+        bool                                            checkStruggler;
+        clock_t	                                        start;
+        clock_t                                         stop;
         //-------------------------Vectors-------------------------//
         std::vector<int>                                vecMainChain;
         std::vector<int>                                vecPend;
@@ -45,7 +49,7 @@ class PmergeMe
         ~PmergeMe();
         
         //-------------------------------------------------------//
-        int     parseInput(char **s);
+        int     parseInput(char **s, int ac);
         void    printvecMainChain(std::string print);
         void    printvecPend(std::string print);
         void    printVectorDouble(std::string print);
@@ -56,5 +60,7 @@ class PmergeMe
         int     jacobsthal(int n);
         int     binarySearch(std::vector<int> vec, int find);
 };
+
+
 
 #endif

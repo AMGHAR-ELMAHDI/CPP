@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 19:48:40 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/25 00:38:58 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/27 02:22:25 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(int ac, char **av)
     {
         PmergeMe     a;
 
-        if(a.parseInput(av))
+        if(a.parseInput(av, ac - 1))
             std::cout << "Error" << std::endl;
     }
     else
