@@ -32,7 +32,7 @@ PmergeMeDeque::~PmergeMeDeque()
 {
 }
 
-int   checkWhiteSpace(std::string str)
+int   PmergeMeDeque::checkWhiteSpace(std::string str)
 {
     for (size_t i = 0; i < str.length(); i++)
         if(std::isspace(str[i]) == 1)
@@ -40,7 +40,7 @@ int   checkWhiteSpace(std::string str)
     return(0);
 }
 
-int   checkDigit(std::string str)
+int   PmergeMeDeque::checkDigit(std::string str)
 {
     for (size_t i = 0; i < str.length(); i++)
         if(!std::isdigit(str[i]))
@@ -100,13 +100,13 @@ int     PmergeMeDeque::parseInput(char **s, int ac)
     }
     if (this->dequeMainChain.empty())
         return (1);
-    this->printdequeMainChain("Before: ");
+
     this->sortInput();
 
     stop = clock();
 
     double duration = ((double)(stop - start) / CLOCKS_PER_SEC);
-    std::cout << "Time to process a range of " << ac - 1 << " elements with std::deque: " << duration << std::endl;
+    std::cout << "Time to process a range of " << ac << " elements with std::deque: " << duration << std::endl;
     return(0);
 }
 
@@ -120,7 +120,7 @@ int    PmergeMeDeque::sortInput()
         dequeMainChain.pop_back();
     }
 
-    //Fill Double Vector with pairs from Main chain
+    //Fill Double deque with pairs from Main chain
     for (iterSingle = dequeMainChain.begin(); iterSingle != dequeMainChain.end(); iterSingle += 2)
         dequeDouble.push_back(std::make_pair(*iterSingle, *(iterSingle + 1)));
 
@@ -140,19 +140,7 @@ int    PmergeMeDeque::sortInput()
         dequePend.push_back(iterDouble->second);
     }
 
-    // printdequeDouble("After in Double: ");
-    // std::cout << "-----------------------------------------------------" << std::endl;
-    // printdequeMainChain("Main Chain: ");
-    // std::cout << "-----------------------------------------------------" << std::endl;
-    // printdequePend("Pend: ");
-    // std::cout << "-----------------------------------------------------" << std::endl;
-
-    // std::cout << "Jacobs Numbers: ";
     sortUsingJacobsthalNumbers();
-
-    // std::cout << "-----------------------------------------------------" << std::endl;
-    printdequeMainChain("After: ");
-    // std::cout << "-----------------------------------------------------" << std::endl;
     return(0);
 }
 

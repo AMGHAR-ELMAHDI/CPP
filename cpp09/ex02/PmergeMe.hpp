@@ -85,7 +85,7 @@ class PmergeMeDeque
     public:
         PmergeMeDeque();
         PmergeMeDeque(const PmergeMeDeque &obj);
-        PmergeMeDeque &operator=(const PmergeMe &other);
+        PmergeMeDeque &operator=(const PmergeMeDeque &other);
         ~PmergeMeDeque();
         
         //-------------------------------------------------------//
@@ -99,6 +99,9 @@ class PmergeMeDeque
         void    generateJacobsthalNumbers(int limit);
         int     jacobsthal(int n);
         int     binarySearch(std::deque<int> dq, int find);
+        int     checkWhiteSpace(std::string str);
+        int     checkDigit(std::string str);
+
 };
 
 
