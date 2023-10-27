@@ -63,4 +63,43 @@ class PmergeMe
 
 
 
+class PmergeMeDeque
+{
+    private:
+
+        int                                             struggler;
+        bool                                            checkStruggler;
+        clock_t	                                        start;
+        clock_t                                         stop;
+        //-------------------------deque-------------------------//
+        std::deque<int>                                dequeMainChain;
+        std::deque<int>                                dequePend;
+        std::deque<int>                                jacobNumber;
+        std::deque<int>                                jacobCombination;
+        std::deque<std::pair<int, int> >               dequeDouble;
+        //-------------------------Iterators-----------------------//
+        std::deque<int>::iterator                      iterSingle;
+        std::deque<std::pair<int, int> >::iterator     iterDouble;
+        //---------------------------------------------------------//
+    
+    public:
+        PmergeMeDeque();
+        PmergeMeDeque(const PmergeMeDeque &obj);
+        PmergeMeDeque &operator=(const PmergeMe &other);
+        ~PmergeMeDeque();
+        
+        //-------------------------------------------------------//
+        int     parseInput(char **s, int ac);
+        void    printdequeMainChain(std::string print);
+        void    printdequePend(std::string print);
+        void    printdequetorDouble(std::string print);
+        void    printJacobNumbers(std::string print);
+        int     sortInput();
+        void    sortUsingJacobsthalNumbers();
+        void    generateJacobsthalNumbers(int limit);
+        int     jacobsthal(int n);
+        int     binarySearch(std::deque<int> dq, int find);
+};
+
+
 #endif
