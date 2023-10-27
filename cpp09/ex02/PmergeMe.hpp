@@ -51,7 +51,7 @@ class PmergeMe
         void    sortUsingJacobsthalNumbers();
         void    generateJacobsthalNumbers(int limit);
         int     jacobsthal(int n);
-        int     binarySearch(std::vector<int> vec, int x);
+        int     binarySearch(std::vector<int> vec, int find);
 };
 
 #endif

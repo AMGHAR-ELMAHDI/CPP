@@ -134,10 +134,14 @@ int    PmergeMe::sortInput()
 
     std::cout << "Jacobs Numbers: ";
     sortUsingJacobsthalNumbers();
+    
+    std::cout << "-----------------------------------------------------" << std::endl;
+    printvecMainChain("Main Chain: ");
+    std::cout << "-----------------------------------------------------" << std::endl;
+    printvecPend("Pend: ");
     std::cout << "-----------------------------------------------------" << std::endl;
     return(0);
 }
-
 
 void    PmergeMe::sortUsingJacobsthalNumbers()
 {
@@ -151,40 +155,20 @@ void    PmergeMe::sortUsingJacobsthalNumbers()
 
     for (; iterSingle != jacobNumber.end(); iterSingle++)
     {
-        int   num = (*iterSingle);
-
-        jacobCombination.push_back(num--);
-
-        std::vector<int>::iterator it = jacobNumber.begin();
-
-        for (; it != jacobNumber.end(); it++)
-        {
-            if(*it == num)
-                break;
-        }
-        if(it != jacobNumber.end())
-            continue;
-        else
-        {
+        int   num = (*iterSingle), numprev = *(iterSingle - 1);
+        while (num != numprev)
             jacobCombination.push_back(num--);
-            std::vector<int>::iterator it = jacobNumber.begin();
+    }
 
-            for (; it != jacobNumber.end(); it++)
-            {
-                if(*it == num)
-                    break;
-            }
-            if(it != jacobNumber.end())
-                continue;
-            else
-                jacobCombination.push_back(num--);
+    for (std::vector<int>::iterator it = jacobCombination.begin(); it != jacobCombination.end(); it++)
+    {
+        int num = *it - 1;
+        if(num < (int) vecPend.size())
+        {
+            iterSingle = binarySearch(vecMainChain, vecPend[num]) + vecMainChain.begin();
+			vecMainChain.insert(iterSingle, vecPend[num]);
         }
     }
-    
-    std::cout << "----------------Jacob Combination--------------------" << std::endl;
-    for (std::vector<int>::iterator it = jacobCombination.begin(); it != jacobCombination.end(); it++)
-        std::cout << *it << " ";
-    std::cout <<  std::endl;
 }
 
 int PmergeMe::jacobsthal(int n)
@@ -203,10 +187,9 @@ void PmergeMe::generateJacobsthalNumbers(int limit)
     this->jacobNumber.push_back(jacobsthal(i));
 }
 
-
 int PmergeMe::binarySearch(std::vector<int> vec, int x)
 {
-    int     left = 0, right = this->vecMainChain.size();
+    int     left = 0, right = this->vecMainChain.size() - 1;
 
     while (left <= right)
     {
