@@ -105,7 +105,6 @@ int     PmergeMe::parseInput(char **s, int ac)
 
     stop = clock();
 
-
     double duration = ((double)(stop - start) / CLOCKS_PER_SEC);
     std::cout << "Time to process a range of " << ac - 1 << " elements with std::vector: " << duration << std::endl;
     return(0);
@@ -160,7 +159,7 @@ int    PmergeMe::sortInput()
 void    PmergeMe::sortUsingJacobsthalNumbers()
 {
     generateJacobsthalNumbers(15);
-    printJacobNumbers("Jacob Numbers: ");
+    // printJacobNumbers("Jacob Numbers: ");
 
     iterSingle = jacobNumber.begin();
     iterSingle += 3;
