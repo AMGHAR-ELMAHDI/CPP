@@ -84,6 +84,8 @@ int     RPN::parseInput(char *s)
             return(1);
         if(checkSpecial(input))
         {
+            if(stack.size() < 2)
+                return(1);
             this->num2 = this->stack.top();
             this->stack.pop();
             if(!stack.empty())
