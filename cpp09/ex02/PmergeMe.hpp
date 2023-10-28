@@ -67,10 +67,10 @@ class PmergeMeDeque
 {
     private:
 
-        int                                             struggler;
-        bool                                            checkStruggler;
-        clock_t	                                        start;
-        clock_t                                         stop;
+        int                                            struggler;
+        bool                                           checkStruggler;
+        clock_t	                                       start;
+        clock_t                                        stop;
         //-------------------------deque-------------------------//
         std::deque<int>                                dequeMainChain;
         std::deque<int>                                dequePend;

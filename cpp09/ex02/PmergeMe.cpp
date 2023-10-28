@@ -24,7 +24,19 @@ PmergeMe::PmergeMe(const PmergeMe &obj)
 PmergeMe &PmergeMe::operator=(const PmergeMe &other)
 {
     if (this != &other)
-        (void)other;
+    {
+        this->struggler = other.struggler;;
+        this->checkStruggler = other.checkStruggler;;
+        this->start = other.start;;
+        this->stop = other.stop;;
+        this->vecMainChain = other.vecMainChain;;
+        this->vecPend = other.vecPend;;
+        this->jacobNumber = other.jacobNumber;;
+        this->jacobCombination = other.jacobCombination;;
+        this->vectorDouble = other.vectorDouble;;
+        this->iterSingle = other.iterSingle;;
+        this->iterDouble = other.iterDouble;;
+    }
     return *this;
 }
 

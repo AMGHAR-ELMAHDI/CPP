@@ -14,20 +14,17 @@
 
 RPN::RPN()
 {
-    // std::cout << "RPN Default constructor called" << std::endl;
     this->num1 = 0;
     this->num2 = 0;
 }
 
 RPN::RPN(const RPN &obj)
 {
-//    std::cout << "RPN Copy constructor Called " << std::endl;
    *this = obj;
 }
 
 RPN &RPN::operator=(const RPN &other)
 {
-    // std::cout << "RPN Copy assignement opperator called " << std::endl; 
     if (this != &other)
     {
         this->num1 = other.num1;
@@ -40,7 +37,6 @@ RPN &RPN::operator=(const RPN &other)
 
 RPN::~RPN()
 {
-    // std::cout << "RPN Destructor called" << std::endl;
 }
 
 int checkSpecial(std::string str)
@@ -76,7 +72,6 @@ int   checkDigit(std::string str)
 int     RPN::parseInput(char *s)
 {
     int     index = 0;
-    int     special = 0;
     this->input = s;
     std::string sss = this->input;
     if(input.length() < 3)
@@ -89,29 +84,30 @@ int     RPN::parseInput(char *s)
             return(1);
         if(checkSpecial(input))
         {
-            if(special == 1)
-                return(1);
-            special = 1;
             this->num2 = this->stack.top();
             this->stack.pop();
-            this->num1 = this->stack.top();
-            this->stack.pop();
-            if(input == "/")
+            if(!stack.empty())
             {
-                if(this->num2 == 0)
-                    return(1);
-                this->stack.push(this->num1 / this->num2);
+                this->num1 = this->stack.top();
+                this->stack.pop();
+                if(input == "/")
+                {
+                    if(this->num2 == 0)
+                        return(1);
+                    this->stack.push(this->num1 / this->num2);
+                }
+                else if(input == "*")
+                    this->stack.push(this->num1 * this->num2);
+                else if(input == "+")
+                    this->stack.push(this->num1 + this->num2);
+                else if(input == "-")
+                    this->stack.push(this->num1 - this->num2);
             }
-            else if(input == "*")
-                this->stack.push(this->num1 * this->num2);
-            else if(input == "+")
-                this->stack.push(this->num1 + this->num2);
-            else if(input == "-")
-                this->stack.push(this->num1 - this->num2);
+            else
+                return(1);
         }
         else
         {
-            special = 0;
             if(checkDigit(input) == 1)
                 return(1);
             this->stack.push(std::atoi(input.c_str()));
@@ -125,4 +121,3 @@ int     RPN::parseInput(char *s)
     std::cout << "END VALUE: "<< this->stack.top() << std::endl;   
     return(0);
 }
-//"1 8 + / 0"

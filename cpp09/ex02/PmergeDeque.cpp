@@ -24,7 +24,19 @@ PmergeMeDeque::PmergeMeDeque(const PmergeMeDeque &obj)
 PmergeMeDeque &PmergeMeDeque::operator=(const PmergeMeDeque &other)
 {
     if (this != &other)
-        (void)other;
+    {
+        this->struggler = other.struggler;;
+        this->checkStruggler = other.checkStruggler;;
+        this->start = other.start;;
+        this->stop = other.stop;;
+        this->dequeMainChain = other.dequeMainChain;;
+        this->dequePend = other.dequePend;;
+        this->jacobNumber = other.jacobNumber;;
+        this->jacobCombination = other.jacobCombination;;
+        this->dequeDouble = other.dequeDouble;;
+        this->iterSingle = other.iterSingle;;
+        this->iterDouble = other.iterDouble;;
+    }
     return *this;
 }
 
