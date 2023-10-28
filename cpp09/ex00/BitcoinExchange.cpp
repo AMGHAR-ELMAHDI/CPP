@@ -12,24 +12,18 @@
 
 #include "BitcoinExchange.hpp"
 
-BitcoinExchange::BitcoinExchange()
-{
-    // std::cout << "BitcoinExchange Default constructor called" << std::endl;
-}
+BitcoinExchange::BitcoinExchange(){}
 
 BitcoinExchange::BitcoinExchange(const BitcoinExchange &obj)
 {
-//    std::cout << "BitcoinExchange Copy constructor Called " << std::endl;
    *this = obj;
 }
 
 BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
 {
-    // std::cout << "BitcoinExchange Copy assignement opperator called " << std::endl; 
     if (this != &other)
     {
 		this->mapData = other.mapData;
-		// this->mapInput = other.mapInput;
 		this->in = other.in;
 		this->line = other.line;
     }
@@ -38,7 +32,6 @@ BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &other)
 
 BitcoinExchange::~BitcoinExchange()
 {
-    // std::cout << "BitcoinExchange Destructor called" << std::endl;
 }
 
 int		BitcoinExchange::CountPipes(std::string check)
@@ -134,7 +127,7 @@ int   checkDigit(std::string str)
 {
     for (size_t i = 0; i < str.length(); i++)
 	{
-		if(i != 0 && str[i] == '.')
+		if(i != 0 && str[i] == '.' && i + 1 != str.length())
 			continue;
 		else
     	    if(!std::isdigit(str[i]))
@@ -168,21 +161,12 @@ int	BitcoinExchange::checkLines(std::string check)
 	else
 		return(std::cout << "Error: Wrong value" << std::endl, 1);
 
-	std::string newValue = value;
-    std::stringstream stream(newValue);
-	float		outFloat;
-
-	if(!(stream >> outFloat))
-	 	return(std::cout << "Error: Overflow Error" << std::endl, 1);
-
 	if(value.length() == 0 || value.empty() || checkWhiteSpace(value) == 0)
 		return(std::cout << "Error: Empty value" << std::endl, 1);
 
 
 	if(date.length() != 11 || this->CountDashes(date) == 1)
 		return(std::cout << "Error: Wrong argument." << std::endl, 1);
-	else if(value.length() > 5)
-		return(std::cout << "Error: too large a number." << std::endl, 1);
 
 
     std::istringstream iss(date);
@@ -198,8 +182,14 @@ int	BitcoinExchange::checkLines(std::string check)
 	double	yearNum = std::stod(year);
 	double	monthNum = std::stod(month);
 	double	dayNum = std::stod(day);
-	double	valueNum = std::stod(value);
-	
+
+    std::string newValue = value;
+    std::stringstream stream(newValue);
+	double	valueNum;
+	if(!(stream >> valueNum) )
+		return(std::cout << "Error: Wrong Value." << std::endl, 1);
+	valueNum = std::stod(value);
+		
 	if(yearNum >= 2009)
 	{
 		if(yearNum == 2009 && monthNum == 1 && dayNum < 2)
@@ -268,3 +258,4 @@ int     BitcoinExchange::parseDataFile()
 	dataFile.close();
     return 0;
 }
+

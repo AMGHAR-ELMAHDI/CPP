@@ -6,7 +6,7 @@
 /*   By: eamghar <eamghar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 02:32:10 by eamghar           #+#    #+#             */
-/*   Updated: 2023/10/24 15:56:50 by eamghar          ###   ########.fr       */
+/*   Updated: 2023/10/28 16:38:57 by eamghar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ class BitcoinExchange
 {
     private:
         std::map<std::string, std::string> mapData;
-        // std::map<std::string, std::string> mapInput;
         std::string     line;
         size_t			in;
         
