@@ -242,6 +242,45 @@ int     BitcoinExchange::parseInputFile(char *input)
     return 0;
 }
 
+int   checkNumbers(std::string str)
+{
+    for (size_t i = 0; i < str.length(); i++)
+	{
+		if(!std::isdigit(str[i]))
+			return(1);
+	}
+    return(0);
+}
+
+int	checkDataFile(std::string str)
+{
+	int index = str.find(',');
+
+	std::string newStr = str.substr(0, index);
+	std::string ValueStr = str.substr(index + 1, str.length());
+
+	if(newStr.length() != 10 || checkDigit(ValueStr))
+		return(1);
+
+	std::istringstream iss(newStr);
+
+	std::string year =  getNextToken(iss);
+	std::string month =  getNextToken(iss);
+	std::string day =  getNextToken(iss);
+
+	int counter = 0;
+	for (size_t i = 0; i < str.length(); i++)
+		if(str[i] == '-')
+			counter++;
+
+	if(counter != 2 || year.length() != 4 || month.length() != 2 || day.length() != 2)
+		return(1);
+	else if(checkNumbers(year) || checkNumbers(month) || checkNumbers(day))
+		return(1);
+
+	return(0);
+}
+
 int     BitcoinExchange::parseDataFile()
 {
     std::ifstream dataFile("data.csv");
@@ -249,13 +288,19 @@ int     BitcoinExchange::parseDataFile()
         return(std::cout << "Error: can't open data file" << std::endl, 1);
 	
 	std::getline(dataFile, this->line);
+	if(dataFile.eof() || this->line != "date,exchange_rate")
+		return(std::cout << "Error: wrong format of 'date,exchange_rate'" << std::endl, dataFile.close(), 1);
 	while (std::getline(dataFile, this->line))
 	{
+		if(this->line.empty() || checkDataFile(this->line))
+			return(std::cout << "Error: wrong date format" << std::endl, dataFile.close(), 1);
 		this->in = this->line.find(',');
 		this->mapData[this->line.substr(0, this->in)] = &this->line[this->in + 1];
 	}
 
-	dataFile.close();
-    return 0;
+	if(mapData.size() != 1612)
+		return(std::cout << "Error: wrong format of 'date,exchange_rate'" << std::endl, 1);
+
+    return (dataFile.close(), 0);
 }
 
