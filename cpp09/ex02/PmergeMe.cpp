@@ -190,7 +190,9 @@ void    PmergeMe::sortUsingJacobsthalNumbers()
         int num = *it - 1;
         if(num < (int) vecPend.size())
         {
+            std::cout << "num: " <<  num << "--->: " << (int) vecPend.size() << std::endl;
             iterSingle = binarySearch(vecMainChain, vecPend[num]) + vecMainChain.begin();
+            std::cout << "pend: " <<  vecPend[num] << "--->: " << *iterSingle << std::endl;
 			vecMainChain.insert(iterSingle, vecPend[num]);
         }
     }
